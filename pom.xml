@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.aeromexico.sab</groupId>
+	<artifactId>AMX-SAB</artifactId>
+	<version>1.0</version>
+	
+	<packaging>pom</packaging>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<modules>		
+		<module>AMX-SAB-DTO</module>
+		<module>AMX-SAB-API</module>
+		<module>AMX-SAB-BackEnd</module>
+		<module>AMX-SAB-DBEngine</module>
+		<module>AMX-SAB-RestClient</module>
+		<module>AMX-SAB-Web</module>
+		<module>AMX-SAB-AngularFront</module>		
+	</modules>
+</project>

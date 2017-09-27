@@ -1,0 +1,11 @@
+curl -X GET localhost:8070/backend-s1/rest/customers
+
+curl -X GET localhost:8070/backend-s1/rest/customers/1
+
+curl -d '{"name":"N10","address":"A10","phone":"0010","email":"email10@server.com"}' -H "Content-Type: application/json"        -X POST localhost:8070/backend-s1/rest/customers
+
+curl -d '{"name":"N10","address":"A10","phone":"0010","email":"email10@server.com"}' -H "Content-Type: application/json"        -X PUT  localhost:8070/backend-s1/rest/customers/1
+
+curl -d '{"id":2,"name":"N10","address":"A10","phone":"0010","email":"email10@server.com"}' -H "Content-Type: application/json" -X PUT  localhost:8070/backend-s1/rest/customers/1
+
+curl  -X DELETE  localhost:8070/backend-s1/rest/customers/2
