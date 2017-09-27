@@ -8216,7 +8216,7 @@
 				<ModelRefProperty displayName="Pm Discipline" name="pmDiscipline"/>
 				<StringProperty displayName="Pm Author" name="pmAuthor" value="Roberto Guerra"/>
 				<StringProperty displayName="Pm Create Date Time" name="pmCreateDateTime" value="1505258649029"/>
-				<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1505411094366"/>
+				<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1506519696216"/>
 				<StringProperty displayName="Id" name="userID"/>
 				<IntegerProperty displayName="User IDLast Numeric Value" name="userIDLastNumericValue" value="0"/>
 				<IntegerProperty displayName="Backlog Activity Id" name="backlogActivityId" value="0"/>
@@ -8373,9 +8373,9 @@
 						<StringProperty displayName="Sync To Attribute" name="syncToAttribute" value="Yes"/>
 					</ModelProperties>
 				</Model>
-				<Model composite="true" considerDefaultProperties="false" displayModelType="Column" id="9UsWHnqGAqAAcg2j" modelType="DBColumn" name="contraseña">
+				<Model composite="true" considerDefaultProperties="false" displayModelType="Column" id="9UsWHnqGAqAAcg2j" modelType="DBColumn" name="contrasenia">
 					<ModelProperties>
-						<StringProperty displayName="Name" name="name" value="contraseña"/>
+						<StringProperty displayName="Name" name="name" value="contrasenia"/>
 						<StringProperty displayName="Model Type" name="modelType" value="DBColumn"/>
 						<ModelsProperty displayName="Comments" name="comments"/>
 						<HTMLProperty displayName="Description" name="documentation" plainTextValue=""/>
@@ -8394,7 +8394,7 @@
 						<ModelRefProperty displayName="Pm Discipline" name="pmDiscipline"/>
 						<StringProperty displayName="Pm Author" name="pmAuthor" value="Roberto Guerra"/>
 						<StringProperty displayName="Pm Create Date Time" name="pmCreateDateTime" value="1505258689199"/>
-						<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1505258832063"/>
+						<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1506519696216"/>
 						<StringProperty displayName="Id" name="userID"/>
 						<IntegerProperty displayName="User IDLast Numeric Value" name="userIDLastNumericValue" value="0"/>
 						<IntegerProperty displayName="Backlog Activity Id" name="backlogActivityId" value="0"/>
@@ -19197,6 +19197,112 @@
 				<BooleanProperty displayName="Align Column Properties" name="_alignColumnProperties" value="true"/>
 			</DiagramProperties>
 			<Shapes>
+				<Shape height="77" id="t04ag3qGAqBwAQ9q" model="t04ag3qGAqBwAQ9r" name="modulo_perfil" shapeType="DBTable" width="231" x="556" y="493" zorder="2">
+					<DiagramElementProperties>
+						<IntegerProperty displayName="ZOrder" name="zOrder" value="2"/>
+						<ModelRefProperty displayName="Meta Model Element" name="metaModelElement">
+							<ModelRef id="t04ag3qGAqBwAQ9r"/>
+						</ModelRefProperty>
+						<ModelRefProperty displayName="Style" name="style"/>
+						<IntegerProperty displayName="X" name="x" value="556"/>
+						<IntegerProperty displayName="Y" name="y" value="493"/>
+						<IntegerProperty displayName="Width" name="width" value="231"/>
+						<IntegerProperty displayName="Height" name="height" value="77"/>
+						<ColorProperty displayName="Background" name="background" value="Cr:122,207,245,255"/>
+						<ColorProperty displayName="Foreground" name="foreground" value="Cr:0,0,0,255"/>
+						<StringProperty displayName="Creator Diagram Type" name="creatorDiagramType" value="ERDiagram"/>
+						<BooleanProperty displayName="Selectable" name="selectable" value="true"/>
+						<BooleanProperty displayName="Request Reset Caption" name="requestResetCaption" value="false"/>
+						<BooleanProperty displayName="Request Reset Caption Size" name="requestResetCaptionSize" value="false"/>
+						<BooleanProperty displayName="Request Reset Caption Fit Width" name="requestResetCaptionFitWidth" value="false"/>
+						<StringArrayProperty displayName="Referenced By Diagram Ids" name="referencedByDiagramIds"/>
+						<StringArrayProperty displayName="Referenced By Model Addresses" name="referencedByModelAddresses"/>
+						<IntegerProperty displayName="Presentation Option" name="presentationOption" value="4"/>
+						<IntegerProperty displayName="Primitive Shape Type" name="primitiveShapeType" value="0"/>
+						<StringProperty displayName="Custom Text" name="customText"/>
+						<IntegerProperty displayName="Show Stereotype Icon Name" name="showStereotypeIconName" value="0"/>
+						<IntegerProperty displayName="Show Allocated From" name="showAllocatedFrom" value="0"/>
+						<IntegerProperty displayName="Show Allocated To" name="showAllocatedTo" value="0"/>
+						<StringProperty displayName="Display Image Path" name="displayImagePath"/>
+						<StringProperty displayName="Display Stereotype Icon Stereotype Id" name="displayStereotypeIconStereotypeId"/>
+						<StringArrayProperty displayName="Hidden Stereotype Ids" name="hiddenStereotypeIds"/>
+						<BooleanProperty displayName="Override Appearance With Stereotype Icon" name="overrideAppearanceWithStereotypeIcon" value="true"/>
+						<IntegerProperty displayName="Request Set Size Option" name="requestSetSizeOption" value="0"/>
+						<IntegerProperty displayName="Parent Connector Header Length" name="parentConnectorHeaderLength" value="40"/>
+						<IntegerProperty displayName="Parent Connector Line Length" name="parentConnectorLineLength" value="10"/>
+						<BooleanProperty displayName="Connect To Point" name="connectToPoint" value="true"/>
+						<DoubleProperty displayName="Parent Connector DTheta" name="parentConnectorDTheta" value="0.0"/>
+						<IntegerProperty displayName="Connection Point Type" name="connectionPointType" value="2"/>
+						<IntegerProperty displayName="Model Element Name Alignment" name="modelElementNameAlignment" value="9"/>
+						<BooleanProperty displayName="Request Default Size" name="requestDefaultSize" value="false"/>
+						<BooleanProperty displayName="Request Fit Size" name="requestFitSize" value="false"/>
+						<BooleanProperty displayName="Request Fit Size From Center" name="requestFitSizeFromCenter" value="false"/>
+						<IntegerProperty displayName="Col Sort Type" name="colSortType" value="0"/>
+						<IntegerProperty displayName="Show Column Stereotypes" name="showColumnStereotypes" value="0"/>
+						<StringArrayProperty displayName="Hidden Column Ids" name="hiddenColumnIds"/>
+						<IntegerProperty displayName="Show Columns Mode" name="showColumnsMode" value="0"/>
+					</DiagramElementProperties>
+					<ElementFont color="Cr:0,0,0,255" name="Dialog" size="11" style="0"/>
+					<Line cap="0" color="Cr:0,0,0,255" transparency="0" weight="1.0">
+						<Stroke/>
+					</Line>
+					<Caption height="15" internalHeight="-2147483648" internalWidth="-2147483648" side="FreeMove" visible="true" width="231" x="0" y="0"/>
+					<FillColor color="Cr:245,182,122,255" style="1" transparency="0" type="1"/>
+					<CompartmentFont value="none"/>
+				</Shape>
+				<Shape height="105" id="EoKyg3qGAqBwAQ8x" model="EoKyg3qGAqBwAQ8y" name="modulo" shapeType="DBTable" width="262" x="963" y="465" zorder="4">
+					<DiagramElementProperties>
+						<IntegerProperty displayName="ZOrder" name="zOrder" value="4"/>
+						<ModelRefProperty displayName="Meta Model Element" name="metaModelElement">
+							<ModelRef id="EoKyg3qGAqBwAQ8y"/>
+						</ModelRefProperty>
+						<ModelRefProperty displayName="Style" name="style"/>
+						<IntegerProperty displayName="X" name="x" value="963"/>
+						<IntegerProperty displayName="Y" name="y" value="465"/>
+						<IntegerProperty displayName="Width" name="width" value="262"/>
+						<IntegerProperty displayName="Height" name="height" value="105"/>
+						<ColorProperty displayName="Background" name="background" value="Cr:122,207,245,255"/>
+						<ColorProperty displayName="Foreground" name="foreground" value="Cr:0,0,0,255"/>
+						<StringProperty displayName="Creator Diagram Type" name="creatorDiagramType" value="ERDiagram"/>
+						<BooleanProperty displayName="Selectable" name="selectable" value="true"/>
+						<BooleanProperty displayName="Request Reset Caption" name="requestResetCaption" value="false"/>
+						<BooleanProperty displayName="Request Reset Caption Size" name="requestResetCaptionSize" value="false"/>
+						<BooleanProperty displayName="Request Reset Caption Fit Width" name="requestResetCaptionFitWidth" value="false"/>
+						<StringArrayProperty displayName="Referenced By Diagram Ids" name="referencedByDiagramIds"/>
+						<StringArrayProperty displayName="Referenced By Model Addresses" name="referencedByModelAddresses"/>
+						<IntegerProperty displayName="Presentation Option" name="presentationOption" value="4"/>
+						<IntegerProperty displayName="Primitive Shape Type" name="primitiveShapeType" value="0"/>
+						<StringProperty displayName="Custom Text" name="customText"/>
+						<IntegerProperty displayName="Show Stereotype Icon Name" name="showStereotypeIconName" value="0"/>
+						<IntegerProperty displayName="Show Allocated From" name="showAllocatedFrom" value="0"/>
+						<IntegerProperty displayName="Show Allocated To" name="showAllocatedTo" value="0"/>
+						<StringProperty displayName="Display Image Path" name="displayImagePath"/>
+						<StringProperty displayName="Display Stereotype Icon Stereotype Id" name="displayStereotypeIconStereotypeId"/>
+						<StringArrayProperty displayName="Hidden Stereotype Ids" name="hiddenStereotypeIds"/>
+						<BooleanProperty displayName="Override Appearance With Stereotype Icon" name="overrideAppearanceWithStereotypeIcon" value="true"/>
+						<IntegerProperty displayName="Request Set Size Option" name="requestSetSizeOption" value="0"/>
+						<IntegerProperty displayName="Parent Connector Header Length" name="parentConnectorHeaderLength" value="40"/>
+						<IntegerProperty displayName="Parent Connector Line Length" name="parentConnectorLineLength" value="10"/>
+						<BooleanProperty displayName="Connect To Point" name="connectToPoint" value="true"/>
+						<DoubleProperty displayName="Parent Connector DTheta" name="parentConnectorDTheta" value="0.0"/>
+						<IntegerProperty displayName="Connection Point Type" name="connectionPointType" value="2"/>
+						<IntegerProperty displayName="Model Element Name Alignment" name="modelElementNameAlignment" value="9"/>
+						<BooleanProperty displayName="Request Default Size" name="requestDefaultSize" value="false"/>
+						<BooleanProperty displayName="Request Fit Size" name="requestFitSize" value="false"/>
+						<BooleanProperty displayName="Request Fit Size From Center" name="requestFitSizeFromCenter" value="false"/>
+						<IntegerProperty displayName="Col Sort Type" name="colSortType" value="0"/>
+						<IntegerProperty displayName="Show Column Stereotypes" name="showColumnStereotypes" value="0"/>
+						<StringArrayProperty displayName="Hidden Column Ids" name="hiddenColumnIds"/>
+						<IntegerProperty displayName="Show Columns Mode" name="showColumnsMode" value="0"/>
+					</DiagramElementProperties>
+					<ElementFont color="Cr:0,0,0,255" name="Dialog" size="11" style="0"/>
+					<Line cap="0" color="Cr:0,0,0,255" transparency="0" weight="1.0">
+						<Stroke/>
+					</Line>
+					<Caption height="15" internalHeight="-2147483648" internalWidth="-2147483648" side="FreeMove" visible="true" width="262" x="0" y="0"/>
+					<FillColor color="Cr:245,182,122,255" style="1" transparency="0" type="1"/>
+					<CompartmentFont value="none"/>
+				</Shape>
 				<Shape height="178" id="xjojgXqGAqBwAREl" model="xjojgXqGAqBwAREm" name="material_master" shapeType="DBTable" width="250" x="978" y="1620" zorder="6">
 					<DiagramElementProperties>
 						<IntegerProperty displayName="ZOrder" name="zOrder" value="6"/>
@@ -20943,112 +21049,6 @@
 						<Stroke/>
 					</Line>
 					<Caption height="15" internalHeight="-2147483648" internalWidth="-2147483648" side="FreeMove" visible="true" width="198" x="0" y="0"/>
-					<FillColor color="Cr:245,182,122,255" style="1" transparency="0" type="1"/>
-					<CompartmentFont value="none"/>
-				</Shape>
-				<Shape height="105" id="EoKyg3qGAqBwAQ8x" model="EoKyg3qGAqBwAQ8y" name="modulo" shapeType="DBTable" width="262" x="963" y="465" zorder="4">
-					<DiagramElementProperties>
-						<IntegerProperty displayName="ZOrder" name="zOrder" value="4"/>
-						<ModelRefProperty displayName="Meta Model Element" name="metaModelElement">
-							<ModelRef id="EoKyg3qGAqBwAQ8y"/>
-						</ModelRefProperty>
-						<ModelRefProperty displayName="Style" name="style"/>
-						<IntegerProperty displayName="X" name="x" value="963"/>
-						<IntegerProperty displayName="Y" name="y" value="465"/>
-						<IntegerProperty displayName="Width" name="width" value="262"/>
-						<IntegerProperty displayName="Height" name="height" value="105"/>
-						<ColorProperty displayName="Background" name="background" value="Cr:122,207,245,255"/>
-						<ColorProperty displayName="Foreground" name="foreground" value="Cr:0,0,0,255"/>
-						<StringProperty displayName="Creator Diagram Type" name="creatorDiagramType" value="ERDiagram"/>
-						<BooleanProperty displayName="Selectable" name="selectable" value="true"/>
-						<BooleanProperty displayName="Request Reset Caption" name="requestResetCaption" value="false"/>
-						<BooleanProperty displayName="Request Reset Caption Size" name="requestResetCaptionSize" value="false"/>
-						<BooleanProperty displayName="Request Reset Caption Fit Width" name="requestResetCaptionFitWidth" value="false"/>
-						<StringArrayProperty displayName="Referenced By Diagram Ids" name="referencedByDiagramIds"/>
-						<StringArrayProperty displayName="Referenced By Model Addresses" name="referencedByModelAddresses"/>
-						<IntegerProperty displayName="Presentation Option" name="presentationOption" value="4"/>
-						<IntegerProperty displayName="Primitive Shape Type" name="primitiveShapeType" value="0"/>
-						<StringProperty displayName="Custom Text" name="customText"/>
-						<IntegerProperty displayName="Show Stereotype Icon Name" name="showStereotypeIconName" value="0"/>
-						<IntegerProperty displayName="Show Allocated From" name="showAllocatedFrom" value="0"/>
-						<IntegerProperty displayName="Show Allocated To" name="showAllocatedTo" value="0"/>
-						<StringProperty displayName="Display Image Path" name="displayImagePath"/>
-						<StringProperty displayName="Display Stereotype Icon Stereotype Id" name="displayStereotypeIconStereotypeId"/>
-						<StringArrayProperty displayName="Hidden Stereotype Ids" name="hiddenStereotypeIds"/>
-						<BooleanProperty displayName="Override Appearance With Stereotype Icon" name="overrideAppearanceWithStereotypeIcon" value="true"/>
-						<IntegerProperty displayName="Request Set Size Option" name="requestSetSizeOption" value="0"/>
-						<IntegerProperty displayName="Parent Connector Header Length" name="parentConnectorHeaderLength" value="40"/>
-						<IntegerProperty displayName="Parent Connector Line Length" name="parentConnectorLineLength" value="10"/>
-						<BooleanProperty displayName="Connect To Point" name="connectToPoint" value="true"/>
-						<DoubleProperty displayName="Parent Connector DTheta" name="parentConnectorDTheta" value="0.0"/>
-						<IntegerProperty displayName="Connection Point Type" name="connectionPointType" value="2"/>
-						<IntegerProperty displayName="Model Element Name Alignment" name="modelElementNameAlignment" value="9"/>
-						<BooleanProperty displayName="Request Default Size" name="requestDefaultSize" value="false"/>
-						<BooleanProperty displayName="Request Fit Size" name="requestFitSize" value="false"/>
-						<BooleanProperty displayName="Request Fit Size From Center" name="requestFitSizeFromCenter" value="false"/>
-						<IntegerProperty displayName="Col Sort Type" name="colSortType" value="0"/>
-						<IntegerProperty displayName="Show Column Stereotypes" name="showColumnStereotypes" value="0"/>
-						<StringArrayProperty displayName="Hidden Column Ids" name="hiddenColumnIds"/>
-						<IntegerProperty displayName="Show Columns Mode" name="showColumnsMode" value="0"/>
-					</DiagramElementProperties>
-					<ElementFont color="Cr:0,0,0,255" name="Dialog" size="11" style="0"/>
-					<Line cap="0" color="Cr:0,0,0,255" transparency="0" weight="1.0">
-						<Stroke/>
-					</Line>
-					<Caption height="15" internalHeight="-2147483648" internalWidth="-2147483648" side="FreeMove" visible="true" width="262" x="0" y="0"/>
-					<FillColor color="Cr:245,182,122,255" style="1" transparency="0" type="1"/>
-					<CompartmentFont value="none"/>
-				</Shape>
-				<Shape height="77" id="t04ag3qGAqBwAQ9q" model="t04ag3qGAqBwAQ9r" name="modulo_perfil" shapeType="DBTable" width="231" x="556" y="493" zorder="2">
-					<DiagramElementProperties>
-						<IntegerProperty displayName="ZOrder" name="zOrder" value="2"/>
-						<ModelRefProperty displayName="Meta Model Element" name="metaModelElement">
-							<ModelRef id="t04ag3qGAqBwAQ9r"/>
-						</ModelRefProperty>
-						<ModelRefProperty displayName="Style" name="style"/>
-						<IntegerProperty displayName="X" name="x" value="556"/>
-						<IntegerProperty displayName="Y" name="y" value="493"/>
-						<IntegerProperty displayName="Width" name="width" value="231"/>
-						<IntegerProperty displayName="Height" name="height" value="77"/>
-						<ColorProperty displayName="Background" name="background" value="Cr:122,207,245,255"/>
-						<ColorProperty displayName="Foreground" name="foreground" value="Cr:0,0,0,255"/>
-						<StringProperty displayName="Creator Diagram Type" name="creatorDiagramType" value="ERDiagram"/>
-						<BooleanProperty displayName="Selectable" name="selectable" value="true"/>
-						<BooleanProperty displayName="Request Reset Caption" name="requestResetCaption" value="false"/>
-						<BooleanProperty displayName="Request Reset Caption Size" name="requestResetCaptionSize" value="false"/>
-						<BooleanProperty displayName="Request Reset Caption Fit Width" name="requestResetCaptionFitWidth" value="false"/>
-						<StringArrayProperty displayName="Referenced By Diagram Ids" name="referencedByDiagramIds"/>
-						<StringArrayProperty displayName="Referenced By Model Addresses" name="referencedByModelAddresses"/>
-						<IntegerProperty displayName="Presentation Option" name="presentationOption" value="4"/>
-						<IntegerProperty displayName="Primitive Shape Type" name="primitiveShapeType" value="0"/>
-						<StringProperty displayName="Custom Text" name="customText"/>
-						<IntegerProperty displayName="Show Stereotype Icon Name" name="showStereotypeIconName" value="0"/>
-						<IntegerProperty displayName="Show Allocated From" name="showAllocatedFrom" value="0"/>
-						<IntegerProperty displayName="Show Allocated To" name="showAllocatedTo" value="0"/>
-						<StringProperty displayName="Display Image Path" name="displayImagePath"/>
-						<StringProperty displayName="Display Stereotype Icon Stereotype Id" name="displayStereotypeIconStereotypeId"/>
-						<StringArrayProperty displayName="Hidden Stereotype Ids" name="hiddenStereotypeIds"/>
-						<BooleanProperty displayName="Override Appearance With Stereotype Icon" name="overrideAppearanceWithStereotypeIcon" value="true"/>
-						<IntegerProperty displayName="Request Set Size Option" name="requestSetSizeOption" value="0"/>
-						<IntegerProperty displayName="Parent Connector Header Length" name="parentConnectorHeaderLength" value="40"/>
-						<IntegerProperty displayName="Parent Connector Line Length" name="parentConnectorLineLength" value="10"/>
-						<BooleanProperty displayName="Connect To Point" name="connectToPoint" value="true"/>
-						<DoubleProperty displayName="Parent Connector DTheta" name="parentConnectorDTheta" value="0.0"/>
-						<IntegerProperty displayName="Connection Point Type" name="connectionPointType" value="2"/>
-						<IntegerProperty displayName="Model Element Name Alignment" name="modelElementNameAlignment" value="9"/>
-						<BooleanProperty displayName="Request Default Size" name="requestDefaultSize" value="false"/>
-						<BooleanProperty displayName="Request Fit Size" name="requestFitSize" value="false"/>
-						<BooleanProperty displayName="Request Fit Size From Center" name="requestFitSizeFromCenter" value="false"/>
-						<IntegerProperty displayName="Col Sort Type" name="colSortType" value="0"/>
-						<IntegerProperty displayName="Show Column Stereotypes" name="showColumnStereotypes" value="0"/>
-						<StringArrayProperty displayName="Hidden Column Ids" name="hiddenColumnIds"/>
-						<IntegerProperty displayName="Show Columns Mode" name="showColumnsMode" value="0"/>
-					</DiagramElementProperties>
-					<ElementFont color="Cr:0,0,0,255" name="Dialog" size="11" style="0"/>
-					<Line cap="0" color="Cr:0,0,0,255" transparency="0" weight="1.0">
-						<Stroke/>
-					</Line>
-					<Caption height="15" internalHeight="-2147483648" internalWidth="-2147483648" side="FreeMove" visible="true" width="231" x="0" y="0"/>
 					<FillColor color="Cr:245,182,122,255" style="1" transparency="0" type="1"/>
 					<CompartmentFont value="none"/>
 				</Shape>
