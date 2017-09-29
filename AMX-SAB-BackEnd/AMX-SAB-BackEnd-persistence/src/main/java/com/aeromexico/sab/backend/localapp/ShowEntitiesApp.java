@@ -21,7 +21,7 @@ public class ShowEntitiesApp {
 	private static EntityManager        entityManager;
 
 	static { //runs when the main class is loaded.
-		System.setProperty("derby.stream.error.method","com.gonet.papadoc.persistence.test.DerbySlf4jBridge.bridge");
+		//System.setProperty("derby.stream.error.method","com.gonet.papadoc.persistence.test.DerbySlf4jBridge.bridge");
 		System.setProperty("org.jboss.logging.provider", "slf4j");		
 		System.setProperty("derby.system.home", System.getProperty("user.home")+"/DERBY_DATABASES");
 	}		
@@ -33,7 +33,7 @@ public class ShowEntitiesApp {
 	public static void installCreateDB() {
 		
 		logger.info("loading persistence.xml ");
-		entityManagerFactory = Persistence.createEntityManagerFactory("AMX_SAB_PU_MEMORY");
+		entityManagerFactory = Persistence.createEntityManagerFactory("AMX_SAB_PU_MEMORY_TEST");
 		//entityManagerFactory = Persistence.createEntityManagerFactory("AMX_SAB_PU");
 		logger.info("ok loaded persistence.xml ");
 		logger.info("entityManager = "+entityManagerFactory);

@@ -42,13 +42,7 @@
     </properties>
     
 	<dependencies>
-		<!--
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>AMX-SAB-BackEnd-api</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    	-->
+		<!--  Apache DERBY for JUnit persistence tests -->
 		<dependency>
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derby</artifactId>
@@ -58,34 +52,15 @@
 		<dependency>
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derbyLocale_es</artifactId>
-			<version>${apache.derby.version}</version>
+			<version>${apache.derby.version}</version>			
 		</dependency>
-		
+		<!--  MS SQLServer for JUnit persistence tests -->
 		<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derbyclient</artifactId>
-			<version>${apache.derby.version}</version>
+			<groupId>com.hynnet</groupId>
+			<artifactId>sqljdbc4-chs</artifactId>
+			<version>4.0.2206.100</version>
+			<scope>test</scope>
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>org.apache.derby</groupId>
-			<artifactId>derbynet</artifactId>
-			<version>${apache.derby.version}</version>
-		</dependency>
-		-->
-		<!-- EclipseLink JPA 2.5.x Provider 
-		
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>eclipselink</artifactId>
-            <version>${eclipselink.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
-            <version>${eclipselink.version}</version>        
-        </dependency>
-		-->
 		
 		<!-- hibernate JPA 2.1 provider -->
 		
@@ -94,21 +69,7 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.entitymanager.version}</version>
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>${hibernate.validator.version}</version>
-		</dependency>		
-		-->
-		<!-- validation API -->
-		<!--
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.0.0.GA</version>
-		</dependency>		
-		-->
+
 		<!-- LOGING -->
 		<dependency>		
 			<groupId>log4j</groupId>
@@ -140,8 +101,12 @@
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
 			</resource>
+			<resource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+			</resource>
 		</resources>
-			
+		
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
