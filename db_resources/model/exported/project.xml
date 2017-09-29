@@ -8216,7 +8216,7 @@
 				<ModelRefProperty displayName="Pm Discipline" name="pmDiscipline"/>
 				<StringProperty displayName="Pm Author" name="pmAuthor" value="Roberto Guerra"/>
 				<StringProperty displayName="Pm Create Date Time" name="pmCreateDateTime" value="1505258649029"/>
-				<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1506519696216"/>
+				<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1506556802288"/>
 				<StringProperty displayName="Id" name="userID"/>
 				<IntegerProperty displayName="User IDLast Numeric Value" name="userIDLastNumericValue" value="0"/>
 				<IntegerProperty displayName="Backlog Activity Id" name="backlogActivityId" value="0"/>
@@ -8455,7 +8455,7 @@
 						<ModelRefProperty displayName="Pm Discipline" name="pmDiscipline"/>
 						<StringProperty displayName="Pm Author" name="pmAuthor" value="Roberto Guerra"/>
 						<StringProperty displayName="Pm Create Date Time" name="pmCreateDateTime" value="1505258724087"/>
-						<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1505258832063"/>
+						<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1506556802289"/>
 						<StringProperty displayName="Id" name="userID"/>
 						<IntegerProperty displayName="User IDLast Numeric Value" name="userIDLastNumericValue" value="0"/>
 						<IntegerProperty displayName="Backlog Activity Id" name="backlogActivityId" value="0"/>
@@ -8471,7 +8471,7 @@
 						<StringProperty displayName="Db Column Name" name="dbColumnName"/>
 						<StringProperty displayName="Default Value" name="defaultValue"/>
 						<StringProperty displayName="Foreign Key Name Pattern" name="foreignKeyNamePattern"/>
-						<StringProperty displayName="Type" internalValue="22" name="type" value="datetime"/>
+						<StringProperty displayName="Type" internalValue="58" name="type" value="timestamp"/>
 						<IntegerProperty displayName="Identity Seed" name="identitySeed" value="-1"/>
 						<IntegerProperty displayName="Identity Increment" name="identityIncrement" value="-1"/>
 						<IntegerProperty displayName="Sequence Allocation Size" name="sequenceAllocationSize" value="-1"/>
@@ -8485,7 +8485,7 @@
 						<IntegerProperty displayName="Scale" name="scale" value="0"/>
 						<StringProperty displayName="DDLClauses" name="DDLClauses"/>
 						<StringProperty displayName="Collation" name="collation"/>
-						<StringProperty displayName="Id Generator" name="idGenerator" value="native"/>
+						<StringProperty displayName="Id Generator" name="idGenerator"/>
 						<ModelsProperty displayName="Foreign Key Constraints" name="foreignKeyConstraints"/>
 						<ModelsProperty displayName="User Types" name="userTypes"/>
 						<TextModelProperty displayName="Id Generator Key" name="idGeneratorKey"/>
@@ -17909,7 +17909,7 @@
 				<ModelRefProperty displayName="Pm Discipline" name="pmDiscipline"/>
 				<StringProperty displayName="Pm Author" name="pmAuthor" value="alfredo.estrada"/>
 				<StringProperty displayName="Pm Create Date Time" name="pmCreateDateTime" value="1505415683171"/>
-				<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1505415919183"/>
+				<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1506654369488"/>
 				<StringProperty displayName="Id" name="userID"/>
 				<IntegerProperty displayName="User IDLast Numeric Value" name="userIDLastNumericValue" value="0"/>
 				<IntegerProperty displayName="Backlog Activity Id" name="backlogActivityId" value="0"/>
@@ -17944,9 +17944,9 @@
 				</DiagramElementRefProperty>
 			</ModelProperties>
 			<ChildModels>
-				<Model composite="true" considerDefaultProperties="false" displayModelType="Column" id="abojgXqGAqBwAREo" modelType="DBColumn" name="lnumero_parte">
+				<Model composite="true" considerDefaultProperties="false" displayModelType="Column" id="abojgXqGAqBwAREo" modelType="DBColumn" name="numero_parte">
 					<ModelProperties>
-						<StringProperty displayName="Name" name="name" value="lnumero_parte"/>
+						<StringProperty displayName="Name" name="name" value="numero_parte"/>
 						<StringProperty displayName="Model Type" name="modelType" value="DBColumn"/>
 						<ModelsProperty displayName="Comments" name="comments"/>
 						<HTMLProperty displayName="Description" name="documentation" plainTextValue=""/>
@@ -17965,7 +17965,7 @@
 						<ModelRefProperty displayName="Pm Discipline" name="pmDiscipline"/>
 						<StringProperty displayName="Pm Author" name="pmAuthor" value="alfredo.estrada"/>
 						<StringProperty displayName="Pm Create Date Time" name="pmCreateDateTime" value="1505415683478"/>
-						<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1505415816380"/>
+						<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1506654369488"/>
 						<StringProperty displayName="Id" name="userID"/>
 						<IntegerProperty displayName="User IDLast Numeric Value" name="userIDLastNumericValue" value="0"/>
 						<IntegerProperty displayName="Backlog Activity Id" name="backlogActivityId" value="0"/>
@@ -17995,7 +17995,7 @@
 						<IntegerProperty displayName="Scale" name="scale" value="0"/>
 						<StringProperty displayName="DDLClauses" name="DDLClauses"/>
 						<StringProperty displayName="Collation" name="collation"/>
-						<StringProperty displayName="Id Generator" name="idGenerator" value="native"/>
+						<StringProperty displayName="Id Generator" name="idGenerator"/>
 						<ModelsProperty displayName="Foreign Key Constraints" name="foreignKeyConstraints">
 							<Model composite="true" considerDefaultProperties="false" displayModelType="DBForeignKeyConstraint" id="6bojgXqGAqBwAREp" modelType="DBForeignKeyConstraint" name="">
 								<ModelProperties>
@@ -19113,7 +19113,7 @@
 				<StringProperty displayName="Pm Phase Id" name="pmPhaseId"/>
 				<StringProperty displayName="Pm Author" name="pmAuthor" value="Roberto Guerra"/>
 				<StringProperty displayName="Pm Create Date Time" name="pmCreateDateTime" value="1504814523153"/>
-				<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1506482952482"/>
+				<StringProperty displayName="Pm Last Modified" name="pmLastModified" value="1506654364498"/>
 				<StringProperty displayName="Teamwork Author" name="teamworkAuthor"/>
 				<LongProperty displayName="Teamwork Create Date Time" name="teamworkCreateDateTime" value="0"/>
 				<BooleanProperty displayName="Show Legend" name="showLegend" value="false"/>
