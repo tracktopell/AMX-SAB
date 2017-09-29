@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-		<artifactId>TestArch4BackEnd</artifactId>
-		<groupId>com.tracktopell.testarch4.backend</groupId>
-		<version>1.0</version>
-	  </parent>
-	
-    <groupId>com.tracktopell.testarch4.backend</groupId>
-    <artifactId>TestArch4BackEnd-persistence</artifactId>
-	<name>TestArch4BackEnd-ejb</name>
+	<parent>
+        <groupId>com.aeromexico.sab</groupId>
+		<artifactId>AMX-SAB-BackEnd</artifactId>
+		<version>1.0</version>		
+    </parent>
+    
+    <artifactId>AMX-SAB-BackEnd-persistence</artifactId>
+	<name>AMX-SAB-BackEnd-persistence</name>
 
     <version>1.0</version>
     <packaging>jar</packaging>
@@ -18,12 +17,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<spring.version>4.1.6.RELEASE</spring.version>
-		<apache.derby.version>10.13.1.1</apache.derby.version>		
-		<eclipselink.version>2.5.2</eclipselink.version>
-
-		<project.mainclass>com.aeromexico.sab.localapp.DBInstaller</project.mainclass>
-		<project.showentitiesApp>com.aeromexico.sab.localapp.ShowEntitiesApp</project.showentitiesApp>
+		
+		<apache.derby.version>10.13.1.1</apache.derby.version>
+		
+		<hibernate.entitymanager.version>5.0.10.Final</hibernate.entitymanager.version>
+		<hibernate.validator.version>5.2.4.Final</hibernate.validator.version>
+		
+		<project.mainclass>com.aeromexico.sab.backend.localapp.DBInstaller</project.mainclass>
+		<project.showentitiesApp>com.aeromexico.sab.backend.localapp.ShowEntitiesApp</project.showentitiesApp>
 				
 		<derby.server.port>1527</derby.server.port>
 		
@@ -34,15 +35,20 @@
 		<win.path.separator>;</win.path.separator>
 		<win.file.separator>\</win.file.separator>
 		
+		<!--
+		<spring.version>4.1.6.RELEASE</spring.version>
+		<eclipselink.version>2.5.2</eclipselink.version>
+		-->
     </properties>
     
 	<dependencies>
+		<!--
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>OpenLegacy-FullStack-Exam-Persistence-API</artifactId>
+            <artifactId>AMX-SAB-BackEnd-api</artifactId>
             <version>${project.version}</version>
         </dependency>
-    	
+    	-->
 		<dependency>
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derby</artifactId>
@@ -60,13 +66,13 @@
 			<artifactId>derbyclient</artifactId>
 			<version>${apache.derby.version}</version>
 		</dependency>
-				
+		<!--
 		<dependency>
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derbynet</artifactId>
 			<version>${apache.derby.version}</version>
 		</dependency>
-		
+		-->
 		<!-- EclipseLink JPA 2.5.x Provider 
 		
         <dependency>
@@ -84,29 +90,26 @@
 		<!-- hibernate JPA 2.1 provider -->
 		
 		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-			<version>1.0.0.Final</version>
-		</dependency>
-		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.2.0.Final</version>
+			<version>${hibernate.entitymanager.version}</version>
 		</dependency>
+		<!--
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
-			<version>4.2.0.Final</version>
+			<version>${hibernate.validator.version}</version>
 		</dependency>		
-		
+		-->
 		<!-- validation API -->
-		
+		<!--
 		<dependency>
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>1.0.0.GA</version>
 		</dependency>		
-		
+		-->
+		<!-- LOGING -->
 		<dependency>		
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
@@ -122,23 +125,7 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.5</version>
 		</dependency>
-		<!--
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-pool</groupId>
-			<artifactId>commons-pool</artifactId>
-			<version>1.5.7</version>
-		</dependency>
-		<dependency>
-			<groupId>tomcat</groupId>
-			<artifactId>naming-common</artifactId>
-			<version>4.1.36</version>			
-		</dependency>
-		-->
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

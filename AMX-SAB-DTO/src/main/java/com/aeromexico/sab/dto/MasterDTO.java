@@ -14,66 +14,57 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class MasterDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 468121027;
+    private static final long serialVersionUID = 250421012;
 
     
     /**
     * id kit
     */
-    // Simple: PK?true, FK?false, class=java.lang.String, o=idKit
     private String idKit;
     
     /**
     * nombre es
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombreEs
     private String nombreEs;
     
     /**
     * nombre en
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombreEn
     private String nombreEn;
     
     /**
     * url multimedia
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=urlMultimedia
     private String urlMultimedia;
     
     /**
     * contenedor
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=contenedor
     private String contenedor;
     
     /**
     * id unidad medida
     */
-    // Simple: PK?false, FK?true, class=int, o=idUnidadMedida
     private int idUnidadMedida;
     
     /**
     * id instrucciones nacionales
     */
-    // Simple: PK?false, FK?true, class=int, o=idInstruccionesNacionales
     private int idInstruccionesNacionales;
     
     /**
     * id instrucciones internac
     */
-    // Simple: PK?false, FK?true, class=int, o=idInstruccionesInternac
     private int idInstruccionesInternac;
     
     /**
     * id tipo kit
     */
-    // Simple: PK?false, FK?true, class=int, o=idTipoKit
     private int idTipoKit;
 
     /** 

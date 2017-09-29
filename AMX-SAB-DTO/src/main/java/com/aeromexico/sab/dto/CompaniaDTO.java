@@ -14,36 +14,32 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class CompaniaDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 980546781;
+    private static final long serialVersionUID = 1044036744;
 
     
     /**
     * id compania
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idCompania
     private Integer idCompania;
     
     /**
     * cve compania
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=cveCompania
     private String cveCompania;
     
     /**
     * nombre
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombre
     private String nombre;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
 
     /** 
@@ -132,7 +128,7 @@ public class CompaniaDTO implements java.io.Serializable {
 		x.idCompania = (jObj.getInt("idCompania"));
 		x.cveCompania = (jObj.getString("cveCompania"));
 		x.nombre = (jObj.getString("nombre"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		
 		return x;
 	}

@@ -1,0 +1,446 @@
+2# 2017-09-28 15:46:32 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:35 installCreateDB - loading persistence.xml 
+2# 2017-09-28 15:46:33 INFO  org.hibernate.jpa.internal.util.LogHelper:31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: AMX_SAB_PU_MEMORY
+	...]
+2# 2017-09-28 15:46:33 INFO  org.hibernate.jpa.internal.util.LogHelper:31 logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: AMX_SAB_PU_MEMORY
+	...]
+2# 2017-09-28 15:46:33 INFO  org.hibernate.Version:37 logVersion - HHH000412: Hibernate Core {5.0.10.Final}
+2# 2017-09-28 15:46:33 INFO  org.hibernate.Version:37 logVersion - HHH000412: Hibernate Core {5.0.10.Final}
+2# 2017-09-28 15:46:33 INFO  org.hibernate.cfg.Environment:213 <clinit> - HHH000206: hibernate.properties not found
+2# 2017-09-28 15:46:33 INFO  org.hibernate.cfg.Environment:213 <clinit> - HHH000206: hibernate.properties not found
+2# 2017-09-28 15:46:33 INFO  org.hibernate.cfg.Environment:317 buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+2# 2017-09-28 15:46:33 INFO  org.hibernate.cfg.Environment:317 buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+2# 2017-09-28 15:46:33 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager:66 <clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2# 2017-09-28 15:46:33 INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager:66 <clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2# 2017-09-28 15:46:33 WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:71 configure - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2# 2017-09-28 15:46:33 WARN  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:71 configure - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2# 2017-09-28 15:46:33 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:127 buildCreator - HHH10001005: using driver [org.apache.derby.jdbc.EmbeddedDriver] at URL [jdbc:derby:memory:AMX_SAB_DB_DEV;create=true]
+2# 2017-09-28 15:46:33 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:127 buildCreator - HHH10001005: using driver [org.apache.derby.jdbc.EmbeddedDriver] at URL [jdbc:derby:memory:AMX_SAB_DB_DEV;create=true]
+2# 2017-09-28 15:46:33 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:136 buildCreator - HHH10001001: Connection properties: {user=AMX_SAB_DEV_USR, password=****}
+2# 2017-09-28 15:46:33 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:136 buildCreator - HHH10001001: Connection properties: {user=AMX_SAB_DEV_USR, password=****}
+2# 2017-09-28 15:46:33 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:141 buildCreator - HHH10001003: Autocommit mode: false
+2# 2017-09-28 15:46:33 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:141 buildCreator - HHH10001003: Autocommit mode: false
+2# 2017-09-28 15:46:33 INFO  org.hibernate.engine.jdbc.connections.internal.PooledConnections:39 <init> - HHH000115: Hibernate connection pool size: 20 (min=1)
+2# 2017-09-28 15:46:33 INFO  org.hibernate.engine.jdbc.connections.internal.PooledConnections:39 <init> - HHH000115: Hibernate connection pool size: 20 (min=1)
+2# 2017-09-28 15:46:34 INFO  org.hibernate.dialect.Dialect:156 <init> - HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
+2# 2017-09-28 15:46:34 INFO  org.hibernate.dialect.Dialect:156 <init> - HHH000400: Using dialect: org.hibernate.dialect.DerbyDialect
+2# 2017-09-28 15:46:34 WARN  org.hibernate.dialect.DerbyDialect:60 <init> - HHH000430: The DerbyDialect dialect has been deprecated; use one of the version-specific dialects instead
+2# 2017-09-28 15:46:34 WARN  org.hibernate.dialect.DerbyDialect:60 <init> - HHH000430: The DerbyDialect dialect has been deprecated; use one of the version-specific dialects instead
+2# 2017-09-28 15:46:37 INFO  org.hibernate.tool.hbm2ddl.SchemaExport:400 execute - HHH000227: Running hbm2ddl schema export
+2# 2017-09-28 15:46:37 INFO  org.hibernate.tool.hbm2ddl.SchemaExport:400 execute - HHH000227: Running hbm2ddl schema export
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion drop constraint FK5mshmdxkaol5roq13021yu8gp
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion drop constraint FK5mshmdxkaol5roq13021yu8gp
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion drop constraint FK2yd5dekjl99iarh21j78jom9n
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion drop constraint FK2yd5dekjl99iarh21j78jom9n
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_audifono drop constraint FKamd57ddkdfaqce8isfju3fs99
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_audifono drop constraint FKamd57ddkdfaqce8isfju3fs99
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_audifono drop constraint FKbpv8rvfqsnbg5b7tn92okelci
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_audifono drop constraint FKbpv8rvfqsnbg5b7tn92okelci
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_audifono drop constraint FKcybwdg1ysa3flopcah552pq53
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_audifono drop constraint FKcybwdg1ysa3flopcah552pq53
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_capacidad drop constraint FKmcaujsukclvrw6kcjgwc90nrp
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_capacidad drop constraint FKmcaujsukclvrw6kcjgwc90nrp
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_capacidad drop constraint FKs779e3l3b0op35l0a3jic1lk7
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_capacidad drop constraint FKs779e3l3b0op35l0a3jic1lk7
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_sistema_entretenimiento drop constraint FKnnahbbgskqjcktyx9oyfepju4
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_sistema_entretenimiento drop constraint FKnnahbbgskqjcktyx9oyfepju4
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_sistema_entretenimiento drop constraint FK59xqgwwctw4rflyuok4vgog1h
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table avion_sistema_entretenimiento drop constraint FK59xqgwwctw4rflyuok4vgog1h
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table ciudad drop constraint FKdphd3gattwwgw3hybw5a61c3w
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table ciudad drop constraint FKdphd3gattwwgw3hybw5a61c3w
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table codigo_servicio drop constraint FKmptxpb95rpt4ahf68b9jjcnnf
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table codigo_servicio drop constraint FKmptxpb95rpt4ahf68b9jjcnnf
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table contacto_proveedor_estacion drop constraint FK103j3uywgnhqy4ul7ra7yarhj
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table contacto_proveedor_estacion drop constraint FK103j3uywgnhqy4ul7ra7yarhj
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table contacto_proveedor_estacion drop constraint FKou94y038612ot2rj4gib4h630
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table contacto_proveedor_estacion drop constraint FKou94y038612ot2rj4gib4h630
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table contacto_proveedor_estacion drop constraint FKseka65hba6xnjnl4105fshufr
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table contacto_proveedor_estacion drop constraint FKseka65hba6xnjnl4105fshufr
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table empleado drop constraint FKjkyo2v29gibuwqndd6hs7yupm
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table empleado drop constraint FKjkyo2v29gibuwqndd6hs7yupm
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table empleado drop constraint FK22ttlmq6nb9mohkso5om5jps4
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table empleado drop constraint FK22ttlmq6nb9mohkso5om5jps4
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table empleado drop constraint FKfph0tliqdvfv9liix3sku9px0
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table empleado drop constraint FKfph0tliqdvfv9liix3sku9px0
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table empleado drop constraint FK9je8eimnk9985ugm3djw2lvk9
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table empleado drop constraint FK9je8eimnk9985ugm3djw2lvk9
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table equipamiento_comisariato drop constraint FK3knjyupeu5y5ix9oyy614ql04
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table equipamiento_comisariato drop constraint FK3knjyupeu5y5ix9oyy614ql04
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table equipamiento_comisariato drop constraint FKigw0qsh3vsbf1xk556wo32rs7
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table equipamiento_comisariato drop constraint FKigw0qsh3vsbf1xk556wo32rs7
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table estacion drop constraint FK4cshbr4faba259hyk2o4fkbvw
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table estacion drop constraint FK4cshbr4faba259hyk2o4fkbvw
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table horario drop constraint FKkmq0hahu1ycdv0hdlke5eym3i
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table horario drop constraint FKkmq0hahu1ycdv0hdlke5eym3i
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table master drop constraint FK3a7t8rcxo0p6d0tij4chsj7bv
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table master drop constraint FK3a7t8rcxo0p6d0tij4chsj7bv
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table master drop constraint FKluyme4iicv3p2cbskmxt3we9e
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table master drop constraint FKluyme4iicv3p2cbskmxt3we9e
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table master drop constraint FKe1i9au6h3yg9pceol4wkvncle
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table master drop constraint FKe1i9au6h3yg9pceol4wkvncle
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table master drop constraint FK69gx1csm0j25515d5i7iij3eb
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table master drop constraint FK69gx1csm0j25515d5i7iij3eb
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material drop constraint FKhnory65b0on5tg3agx7cfckg7
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material drop constraint FKhnory65b0on5tg3agx7cfckg7
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material drop constraint FKoypb6prkhjr5320s50kwnih0c
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material drop constraint FKoypb6prkhjr5320s50kwnih0c
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material drop constraint FK1igm2awbjwwbes0u5horpgcxi
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material drop constraint FK1igm2awbjwwbes0u5horpgcxi
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material_master drop constraint FKkxbq396k4uwoig4h9na5pt2vy
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material_master drop constraint FKkxbq396k4uwoig4h9na5pt2vy
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material_master drop constraint FK4vvtvmv12myv7dvoa50nushv0
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material_master drop constraint FK4vvtvmv12myv7dvoa50nushv0
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material_master drop constraint FK8jgmrdvwe9yirw0kvtm2xajkb
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material_master drop constraint FK8jgmrdvwe9yirw0kvtm2xajkb
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modelo_avion drop constraint FKlxnc12uy8xhx9p6i339qbw3uk
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modelo_avion drop constraint FKlxnc12uy8xhx9p6i339qbw3uk
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modelo_avion drop constraint FKlm3b8hghxxu6dn2i0dcpl98s
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modelo_avion drop constraint FKlm3b8hghxxu6dn2i0dcpl98s
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modelo_avion drop constraint FKl7hvfnr6tiu8kyx1uqdb0ycwd
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modelo_avion drop constraint FKl7hvfnr6tiu8kyx1uqdb0ycwd
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modulo drop constraint FKo3c9usqj18ajqv5j84d3bb4s2
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modulo drop constraint FKo3c9usqj18ajqv5j84d3bb4s2
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modulo_perfil drop constraint FKl51kwmvs33u6tjdwdgq8f4l33
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modulo_perfil drop constraint FKl51kwmvs33u6tjdwdgq8f4l33
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modulo_perfil drop constraint FKf3jk75gquf28iti3kwfujvrnt
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table modulo_perfil drop constraint FKf3jk75gquf28iti3kwfujvrnt
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table pais drop constraint FKfk3ausj1oi4hc10xjg3xiyhho
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table pais drop constraint FKfk3ausj1oi4hc10xjg3xiyhho
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table PERFIL_USUARIO drop constraint FK8xbexrlntdw4xisrdde7xte3n
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table PERFIL_USUARIO drop constraint FK8xbexrlntdw4xisrdde7xte3n
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table PERFIL_USUARIO drop constraint FK80avvwb8aeoll80kovkn6lyjs
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table PERFIL_USUARIO drop constraint FK80avvwb8aeoll80kovkn6lyjs
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table proveedor drop constraint FK17y6xu5l4df956l6c5u3sn9a2
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table proveedor drop constraint FK17y6xu5l4df956l6c5u3sn9a2
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table PROVEEDOR_ESTACION drop constraint FK31et9dx9j23noyvkhdu2d2rbd
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table PROVEEDOR_ESTACION drop constraint FK31et9dx9j23noyvkhdu2d2rbd
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table PROVEEDOR_ESTACION drop constraint FK9m8d1i3sk5cp5oh673du08vkk
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table PROVEEDOR_ESTACION drop constraint FK9m8d1i3sk5cp5oh673du08vkk
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table tipo_equipo_avion drop constraint FKodu5sjkwkd4efo3f4l0iw7t0c
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table tipo_equipo_avion drop constraint FKodu5sjkwkd4efo3f4l0iw7t0c
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FK3d15v5sm5rivm6rxerxi168es
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FK3d15v5sm5rivm6rxerxi168es
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FK4yfvhyoycnfvji5dwgl3q2hhh
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FK4yfvhyoycnfvji5dwgl3q2hhh
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FKr6aqko8x9q386wfv8nbkf09oh
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FKr6aqko8x9q386wfv8nbkf09oh
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FKqmptj1dddaxtrelcq5cukapuk
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FKqmptj1dddaxtrelcq5cukapuk
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FKon7pqu8slwouqj477slwexqlf
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FKon7pqu8slwouqj477slwexqlf
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FK5rpqq94d689ms4sf3cd6vkuq5
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table vuelo drop constraint FK5rpqq94d689ms4sf3cd6vkuq5
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table area
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table area
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table avion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table avion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table avion_audifono
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table avion_audifono
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table avion_capacidad
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table avion_capacidad
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table avion_sistema_entretenimiento
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table avion_sistema_entretenimiento
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table categoria_material
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table categoria_material
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table ciudad
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table ciudad
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table clase
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table clase
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table codigo_servicio
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table codigo_servicio
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table compania
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table compania
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table contacto_proveedor_estacion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table contacto_proveedor_estacion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table empleado
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table empleado
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table equipamiento_comisariato
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table equipamiento_comisariato
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table estacion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table estacion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table horario
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table horario
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table master
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table master
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table material
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table material
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table material_master
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table material_master
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table modelo_avion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table modelo_avion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table modulo
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table modulo
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table modulo_perfil
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table modulo_perfil
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table pais
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table pais
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table parametros
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table parametros
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table perfil
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table perfil
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table PERFIL_USUARIO
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table PERFIL_USUARIO
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table proveedor
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table proveedor
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table PROVEEDOR_ESTACION
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table PROVEEDOR_ESTACION
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table region
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table region
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table relacion_flota
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table relacion_flota
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table sistema_entretenimiento
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table sistema_entretenimiento
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table tipo_equipo_avion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table tipo_equipo_avion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table tipo_proveedor
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table tipo_proveedor
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table traduccion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table traduccion
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table usuario
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table usuario
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table vuelo
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: drop table vuelo
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:37 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - El esquema 'AMX_SAB_DEV_USR' no existe.
+2# 2017-09-28 15:46:38 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material_master add constraint FK4vvtvmv12myv7dvoa50nushv0 foreign key (ID_KIT) references master
+2# 2017-09-28 15:46:38 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material_master add constraint FK4vvtvmv12myv7dvoa50nushv0 foreign key (ID_KIT) references master
+2# 2017-09-28 15:46:38 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - La restricción 'FK4VVTVMV12MYV7DVOA50NUSHV0' no es válida: los tipos de las columnas de la clave ajena no coinciden con los tipos de las columnas a las que se hace referencia.
+2# 2017-09-28 15:46:38 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - La restricción 'FK4VVTVMV12MYV7DVOA50NUSHV0' no es válida: los tipos de las columnas de la clave ajena no coinciden con los tipos de las columnas a las que se hace referencia.
+2# 2017-09-28 15:46:38 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material_master add constraint FK8jgmrdvwe9yirw0kvtm2xajkb foreign key (LNUMERO_PARTE) references material
+2# 2017-09-28 15:46:38 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:484 perform - HHH000389: Unsuccessful: alter table material_master add constraint FK8jgmrdvwe9yirw0kvtm2xajkb foreign key (LNUMERO_PARTE) references material
+2# 2017-09-28 15:46:38 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - La restricción 'FK8JGMRDVWE9YIRW0KVTM2XAJKB' no es válida: los tipos de las columnas de la clave ajena no coinciden con los tipos de las columnas a las que se hace referencia.
+2# 2017-09-28 15:46:38 ERROR org.hibernate.tool.hbm2ddl.SchemaExport:485 perform - La restricción 'FK8JGMRDVWE9YIRW0KVTM2XAJKB' no es válida: los tipos de las columnas de la clave ajena no coinciden con los tipos de las columnas a las que se hace referencia.
+2# 2017-09-28 15:46:38 INFO  org.hibernate.tool.hbm2ddl.SchemaExport:436 execute - HHH000476: Executing import script 'initial_data.sql'
+2# 2017-09-28 15:46:38 INFO  org.hibernate.tool.hbm2ddl.SchemaExport:436 execute - HHH000476: Executing import script 'initial_data.sql'
+2# 2017-09-28 15:46:38 INFO  org.hibernate.tool.hbm2ddl.SchemaExport:464 execute - HHH000230: Schema export complete
+2# 2017-09-28 15:46:38 INFO  org.hibernate.tool.hbm2ddl.SchemaExport:464 execute - HHH000230: Schema export complete
+2# 2017-09-28 15:46:38 INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator:47 initiateService - HHH000397: Using ASTQueryTranslatorFactory
+2# 2017-09-28 15:46:38 INFO  org.hibernate.hql.internal.QueryTranslatorFactoryInitiator:47 initiateService - HHH000397: Using ASTQueryTranslatorFactory
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:38 installCreateDB - ok loaded persistence.xml 
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:39 installCreateDB - entityManager = org.hibernate.jpa.internal.EntityManagerFactoryImpl@6a0094c9
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:41 installCreateDB - entityManager = org.hibernate.jpa.internal.EntityManagerImpl@4047d2d9
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:45 installCreateDB - ====================================>>>
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:47 installCreateDB - JPA Entities: 
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Proveedor
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:MaterialMaster
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:TipoEquipoAvion
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Master
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:AvionSistemaEntretenimiento
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Horario
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Modulo
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Avion
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Empleado
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:ContactoProveedorEstacion
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Pais
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Vuelo
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:TipoProveedor
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Clase
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Estacion
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:SistemaEntretenimiento
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:EquipamientoComisariato
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:ModeloAvion
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Usuario
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:CodigoServicio
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Material
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Ciudad
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Traduccion
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:AvionCapacidad
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:RelacionFlota
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:CategoriaMaterial
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:AvionAudifono
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Parametros
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Area
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Region
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Compania
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:Perfil
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:49 installCreateDB - 	Entity:ModuloPerfil
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:52 installCreateDB - Total size:33
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:55 installCreateDB - ---------------------------[TB]>>>
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:57 installCreateDB - Perfil before:-->
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:59 installCreateDB - 	->Perfil:Perfil{idPerfil=1|nombre=s0-1|estatus=1|serialVersionUID=1198108795}
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:59 installCreateDB - 	->Perfil:Perfil{idPerfil=2|nombre=s0-2|estatus=1|serialVersionUID=1198108795}
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:59 installCreateDB - 	->Perfil:Perfil{idPerfil=3|nombre=s0-3|estatus=1|serialVersionUID=1198108795}
+2# 2017-09-28 15:46:39 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:61 installCreateDB - Perfil before:<--
+2# 2017-09-28 15:46:40 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:74 installCreateDB - Perfil after:-->
+2# 2017-09-28 15:46:40 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:76 installCreateDB - 	->Perfil:Perfil{idPerfil=1|nombre=s0-1|estatus=1|serialVersionUID=1198108795}
+2# 2017-09-28 15:46:40 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:76 installCreateDB - 	->Perfil:Perfil{idPerfil=2|nombre=s0-2|estatus=1|serialVersionUID=1198108795}
+2# 2017-09-28 15:46:40 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:76 installCreateDB - 	->Perfil:Perfil{idPerfil=3|nombre=s0-3|estatus=1|serialVersionUID=1198108795}
+2# 2017-09-28 15:46:40 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:76 installCreateDB - 	->Perfil:Perfil{idPerfil=4|nombre=PERF_973|estatus=1|serialVersionUID=1198108795}
+2# 2017-09-28 15:46:40 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:78 installCreateDB - Perfil after:<--
+2# 2017-09-28 15:46:40 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:81 installCreateDB - ---------------------------[TC]<<<
+2# 2017-09-28 15:46:40 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:82 installCreateDB - <<<====================================
+2# 2017-09-28 15:46:40 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:85 installCreateDB - entityManager closed
+2# 2017-09-28 15:46:40 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:235 stop - HHH10001008: Cleaning up connection pool [jdbc:derby:memory:AMX_SAB_DB_DEV;create=true]
+2# 2017-09-28 15:46:40 INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl:235 stop - HHH10001008: Cleaning up connection pool [jdbc:derby:memory:AMX_SAB_DB_DEV;create=true]
+2# 2017-09-28 15:46:40 INFO  com.aeromexico.sab.backend.localapp.ShowEntitiesApp:89 installCreateDB - entityManagerFatory closed

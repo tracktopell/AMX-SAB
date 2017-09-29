@@ -2,19 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>TestArch4</artifactId>
-		<groupId>com.tracktopell.testarch4</groupId>
-		<version>1.0</version>
-	</parent>
-	<groupId>com.tracktopell.testarch4.backend</groupId>
-	<artifactId>TestArch4BackEnd</artifactId>
-	<version>1.0</version>
+        <groupId>com.aeromexico.sab</groupId>
+		<artifactId>AMX-SAB</artifactId>
+		<version>1.0</version>		
+    </parent>
+    
+    <artifactId>AMX-SAB-BackEnd</artifactId>
+	<name>AMX-SAB-BackEnd</name>
+
 	<packaging>pom</packaging>
-	<name>TestArch4BackEnd</name>
+	
 	<modules>
-		<module>TestArch4BackEnd-ejb</module>
-		<module>TestArch4BackEnd-ws</module>    
-		<module>TestArch4BackEnd-ear</module>
-		<module>TestArch4BackEnd-remote</module>
+		<module>AMX-SAB-BackEnd-persistence</module>
+		<!--
+		<module>AMX-SAB-BackEnd-ear</module>    
+		<module>AMX-SAB-BackEnd-remote</module>
+		<module>AMX-SAB-BackEnd-ejb</module>
+		<module>AMX-SAB-BackEnd-ws</module>
+		-->
 	</modules>
 </project>

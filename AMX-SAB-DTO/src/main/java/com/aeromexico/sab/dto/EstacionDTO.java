@@ -14,48 +14,42 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class EstacionDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 495053715;
+    private static final long serialVersionUID = 1880587981;
 
     
     /**
     * id estacion
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idEstacion
     private Integer idEstacion;
     
     /**
     * nombre
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombre
     private String nombre;
     
     /**
     * clave iata
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=claveIata
     private String claveIata;
     
     /**
     * id ciudad
     */
-    // Simple: PK?false, FK?true, class=int, o=idCiudad
     private int idCiudad;
     
     /**
     * observaciones
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=observaciones
     private String observaciones;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
 
     /** 
@@ -164,7 +158,7 @@ public class EstacionDTO implements java.io.Serializable {
 		x.claveIata = (jObj.getString("claveIata"));
 		x.idCiudad = (jObj.getInt("idCiudad"));
 		x.observaciones = (jObj.getString("observaciones"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		
 		return x;
 	}

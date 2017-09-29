@@ -14,66 +14,57 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class EquipamientoComisariatoDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 1406718218;
+    private static final long serialVersionUID = 1452126962;
 
     
     /**
     * id equipamiento comisariato
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idEquipamientoComisariato
     private Integer idEquipamientoComisariato;
     
     /**
     * id avion
     */
-    // Simple: PK?false, FK?true, class=int, o=idAvion
     private int idAvion;
     
     /**
     * nombre es
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombreEs
     private String nombreEs;
     
     /**
     * nombre en
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombreEn
     private String nombreEn;
     
     /**
     * cantidad
     */
-    // Simple: PK?false, FK?false, class=int, o=cantidad
     private int cantidad;
     
     /**
     * peso
     */
-    // Simple: PK?false, FK?false, class=double, o=peso
     private double peso;
     
     /**
     * observaciones
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=observaciones
     private String observaciones;
     
     /**
     * numero parte
     */
-    // Simple: PK?false, FK?true, class=java.lang.String, o=numeroParte
     private String numeroParte;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
 
     /** 
@@ -212,7 +203,7 @@ public class EquipamientoComisariatoDTO implements java.io.Serializable {
 		x.peso = (jObj.getDouble("peso"));
 		x.observaciones = (jObj.getString("observaciones"));
 		x.numeroParte = (jObj.getString("numeroParte"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		
 		return x;
 	}

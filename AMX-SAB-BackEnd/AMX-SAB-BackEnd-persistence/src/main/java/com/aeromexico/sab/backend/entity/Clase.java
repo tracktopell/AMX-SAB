@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table clase.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -49,7 +50,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Clase.findByEstatus", query = "SELECT c FROM Clase c WHERE c.estatus = :estatus")
 })
 public class Clase implements java.io.Serializable {
-    private static final long serialVersionUID = 1595428806;
+    private static final long serialVersionUID = 159413332;
     
     /**
     * The 'id clase' Maps to COLUMN 'id_clase'
@@ -57,6 +58,7 @@ public class Clase implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_CLASE" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -68,8 +70,9 @@ public class Clase implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "NOMBRE" , length=50, nullable=false)
     private String nombre;
     
@@ -78,8 +81,9 @@ public class Clase implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 10)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 10)
     @Column(name = "CLAVE" , length=10, nullable=false)
     private String clave;
     
@@ -88,7 +92,8 @@ public class Clase implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
     /** 

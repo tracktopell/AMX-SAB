@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table parametros.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -49,7 +50,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Parametros.findByEstatus", query = "SELECT p FROM Parametros p WHERE p.estatus = :estatus")
 })
 public class Parametros implements java.io.Serializable {
-    private static final long serialVersionUID = 868693306;
+    private static final long serialVersionUID = 990368553;
     
     /**
     * The 'id parametro' Maps to COLUMN 'id_parametro'
@@ -57,6 +58,7 @@ public class Parametros implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_PARAMETRO" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -68,8 +70,9 @@ public class Parametros implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "CLAVE" , length=50, nullable=false)
     private String clave;
     
@@ -78,7 +81,8 @@ public class Parametros implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "VALOR" , nullable=false)
     private int valor;
     
@@ -87,104 +91,105 @@ public class Parametros implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
     /** 
     * Map the relation to material_master table where has id_unidad_medida object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUnidadMedida")
     // material_master Well know as MaterialMaster
     private List<MaterialMaster> materialMasterThatHasThisIdUnidadMedidaList;
     
     /** 
     * Map the relation to master table where has id_unidad_medida object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUnidadMedida")
     // master Well know as Master
     private List<Master> masterThatHasThisIdUnidadMedidaList;
     
     /** 
     * Map the relation to master table where has id_instrucciones_nacionales object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idInstruccionesNacionales")
     // master Well know as Master
     private List<Master> masterThatHasThisIdInstruccionesNacionalesList;
     
     /** 
     * Map the relation to master table where has id_tipo_kit object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idTipoKit")
     // master Well know as Master
     private List<Master> masterThatHasThisIdTipoKitList;
     
     /** 
     * Map the relation to master table where has id_instrucciones_internac object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idInstruccionesInternac")
     // master Well know as Master
     private List<Master> masterThatHasThisIdInstruccionesInternacList;
     
     /** 
     * Map the relation to material table where has tipo_abastecimiento object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoAbastecimiento")
     // material Well know as Material
     private List<Material> materialThatHasThisTipoAbastecimientoList;
     
     /** 
     * Map the relation to material table where has categoria object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "categoria")
     // material Well know as Material
     private List<Material> materialThatHasThisCategoriaList;
     
     /** 
     * Map the relation to vuelo table where has tipo_vuelo object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoVuelo")
     // vuelo Well know as Vuelo
     private List<Vuelo> vueloThatHasThisTipoVueloList;
     
     /** 
     * Map the relation to vuelo table where has tipo_cabina object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoCabina")
     // vuelo Well know as Vuelo
     private List<Vuelo> vueloThatHasThisTipoCabinaList;
     
     /** 
     * Map the relation to codigo_servicio table where has tipo_codigo_servicio object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoCodigoServicio")
     // codigo_servicio Well know as CodigoServicio
     private List<CodigoServicio> codigoServicioThatHasThisTipoCodigoServicioList;
     
     /** 
     * Map the relation to avion_audifono table where has tipo_audifono object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoAudifono")
     // avion_audifono Well know as AvionAudifono
     private List<AvionAudifono> avionAudifonoThatHasThisTipoAudifonoList;
     
     /** 
     * Map the relation to modelo_avion table where has tipo_cabina object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoCabina")
     // modelo_avion Well know as ModeloAvion
     private List<ModeloAvion> modeloAvionThatHasThisTipoCabinaList;
     
     /** 
     * Map the relation to modelo_avion table where has id_fabricante object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idFabricante")
     // modelo_avion Well know as ModeloAvion
     private List<ModeloAvion> modeloAvionThatHasThisIdFabricanteList;
     
     /** 
     * Map the relation to avion table where has id_conectividad object mapped column of for this class.
     */ 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "parametros")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idConectividad")
     // avion Well know as Avion
     private List<Avion> avionThatHasThisIdConectividadList;
     

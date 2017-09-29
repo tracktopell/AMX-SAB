@@ -15,8 +15,10 @@ import javax.persistence.TemporalType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -24,25 +26,27 @@ import javax.xml.bind.annotation.XmlTransient;
  * Class for mapping JPA Embedable PK of Table material_master_P_K.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Embeddable
 
 @XmlRootElement
 public class MaterialMasterPK implements java.io.Serializable {
-    private static final long serialVersionUID = 812265671;
+    private static final long serialVersionUID = 626202354;
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "LNUMERO_PARTE", nullable= false)
     private String lnumeroParte;
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 10)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 10)
     @Column(name = "ID_KIT", nullable= false)
     private String idKit;
 

@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
  * ESB JPA Entity of Table avion.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 @Stateless
 public class AvionFacade extends AbstractFacade<Avion> implements AvionFacadeRemote {
@@ -58,9 +58,9 @@ public class AvionFacade extends AbstractFacade<Avion> implements AvionFacadeRem
 			    paramAsigned++;
 			    sbq.append(" and x.estatus = :estatus");
 			}
-			if(x.getnull() != null){
+			if(x.getIdConectividad() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.idConectividad = :idConectividad");
 			}
 			
 		} else {
@@ -85,8 +85,8 @@ public class AvionFacade extends AbstractFacade<Avion> implements AvionFacadeRem
 			if(x.getEstatus() != null){
 			    nq.setParameter("estatus",x.getEstatus());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getIdConectividad() != null){
+			    nq.setParameter("idConectividad",x.getIdConectividad());
 			}
 			
 		}		

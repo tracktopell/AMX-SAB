@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
  * ESB JPA Entity of Table vuelo.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 @Stateless
 public class VueloFacade extends AbstractFacade<Vuelo> implements VueloFacadeRemote {
@@ -46,9 +46,9 @@ public class VueloFacade extends AbstractFacade<Vuelo> implements VueloFacadeRem
 			    paramAsigned++;
 			    sbq.append(" and x.numeroVuelo = :numeroVuelo");
 			}
-			if(x.getnull() != null){
+			if(x.getTipoVuelo() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.tipoVuelo = :tipoVuelo");
 			}
 			if(x.getEstacionOrigen() != null){
 			    paramAsigned++;
@@ -58,9 +58,9 @@ public class VueloFacade extends AbstractFacade<Vuelo> implements VueloFacadeRem
 			    paramAsigned++;
 			    sbq.append(" and x.estacionDestino = :estacionDestino");
 			}
-			if(x.getnull() != null){
+			if(x.getTipoCabina() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.tipoCabina = :tipoCabina");
 			}
 			if(x.getCompania() != null){
 			    paramAsigned++;
@@ -88,8 +88,8 @@ public class VueloFacade extends AbstractFacade<Vuelo> implements VueloFacadeRem
 			if(x.getNumeroVuelo() != (0) ){
 			    nq.setParameter("numeroVuelo",x.getNumeroVuelo());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getTipoVuelo() != null){
+			    nq.setParameter("tipoVuelo",x.getTipoVuelo());
 			}
 			if(x.getEstacionOrigen() != null){
 			    nq.setParameter("estacionOrigen",x.getEstacionOrigen());
@@ -97,8 +97,8 @@ public class VueloFacade extends AbstractFacade<Vuelo> implements VueloFacadeRem
 			if(x.getEstacionDestino() != null){
 			    nq.setParameter("estacionDestino",x.getEstacionDestino());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getTipoCabina() != null){
+			    nq.setParameter("tipoCabina",x.getTipoCabina());
 			}
 			if(x.getCompania() != null){
 			    nq.setParameter("compania",x.getCompania());

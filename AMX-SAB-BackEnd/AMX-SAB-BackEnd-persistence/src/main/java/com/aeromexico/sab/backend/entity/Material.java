@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table material.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -44,16 +45,16 @@ import javax.validation.constraints.Size;
     @NamedQuery(name = "Material.findAll", query = "SELECT m FROM Material m")
     , @NamedQuery(name = "Material.countAll", query = "SELECT COUNT(m) FROM Material m")
     , @NamedQuery(name = "Material.findByNumeroParte", query = "SELECT m FROM Material m WHERE m.numeroParte = :numeroParte")
-    , @NamedQuery(name = "Material.findByParametros", query = "SELECT m FROM Material m WHERE m.parametros = :parametros")
+    , @NamedQuery(name = "Material.findBycategoria", query = "SELECT m FROM Material m WHERE m.categoria = :categoria")
     , @NamedQuery(name = "Material.findByDescripcionEs", query = "SELECT m FROM Material m WHERE m.descripcionEs = :descripcionEs")
     , @NamedQuery(name = "Material.findByDescripcionEn", query = "SELECT m FROM Material m WHERE m.descripcionEn = :descripcionEn")
-    , @NamedQuery(name = "Material.findByParametros", query = "SELECT m FROM Material m WHERE m.parametros = :parametros")
+    , @NamedQuery(name = "Material.findBytipoAbastecimiento", query = "SELECT m FROM Material m WHERE m.tipoAbastecimiento = :tipoAbastecimiento")
     , @NamedQuery(name = "Material.findByUrlMultimedia", query = "SELECT m FROM Material m WHERE m.urlMultimedia = :urlMultimedia")
     , @NamedQuery(name = "Material.findBycategoriaMaterial", query = "SELECT m FROM Material m WHERE m.categoriaMaterial = :categoriaMaterial")
     , @NamedQuery(name = "Material.findByEstatus", query = "SELECT m FROM Material m WHERE m.estatus = :estatus")
 })
 public class Material implements java.io.Serializable {
-    private static final long serialVersionUID = 424058530;
+    private static final long serialVersionUID = 1831932724;
     
     /**
     * The 'numero parte' Maps to COLUMN 'numero_parte'
@@ -61,7 +62,8 @@ public class Material implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
-    @Size(min = 1, max = 50)
+    //@Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "NUMERO_PARTE" , length=50, nullable=false  )
     private String numeroParte;
@@ -72,15 +74,16 @@ public class Material implements java.io.Serializable {
     
     @JoinColumn(name = "CATEGORIA" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros categoria;
     
     /**
     * The 'descripcion es' Maps to COLUMN 'descripcion_es'
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 120)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 120)
     @Column(name = "DESCRIPCION_ES" , length=120, nullable=false)
     private String descripcionEs;
     
@@ -89,7 +92,7 @@ public class Material implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 120)
+    //@Size(max = 120)
     @Column(name = "DESCRIPCION_EN" , length=120, nullable=true)
     private String descripcionEn;
     
@@ -99,14 +102,14 @@ public class Material implements java.io.Serializable {
     
     @JoinColumn(name = "TIPO_ABASTECIMIENTO" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros tipoAbastecimiento;
     
     /**
     * The 'url multimedia' Maps to COLUMN 'url_multimedia'
     */
     
     @Basic(optional = true)
-    @Size(max = 255)
+    //@Size(max = 255)
     @Column(name = "URL_MULTIMEDIA" , length=255, nullable=true)
     private String urlMultimedia;
     
@@ -123,7 +126,8 @@ public class Material implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
     /** 
@@ -148,8 +152,8 @@ public class Material implements java.io.Serializable {
     public String getNumeroParte() { return this.numeroParte;}
     public void setNumeroParte(String v) { this.numeroParte = v; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getCategoria(){ return this.categoria ; }
+    public void setCategoria(Parametros x){ this.categoria = x; }
     
     public String getDescripcionEs() { return this.descripcionEs;}
     public void setDescripcionEs(String v) { this.descripcionEs = v; }
@@ -157,8 +161,8 @@ public class Material implements java.io.Serializable {
     public String getDescripcionEn() { return this.descripcionEn;}
     public void setDescripcionEn(String v) { this.descripcionEn = v; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getTipoAbastecimiento(){ return this.tipoAbastecimiento ; }
+    public void setTipoAbastecimiento(Parametros x){ this.tipoAbastecimiento = x; }
     
     public String getUrlMultimedia() { return this.urlMultimedia;}
     public void setUrlMultimedia(String v) { this.urlMultimedia = v; }
@@ -179,10 +183,10 @@ public class Material implements java.io.Serializable {
     public int hashCode() {
         int hash = 0;
 		hash += String.valueOf(numeroParte).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(categoria).hashCode();
 		hash += String.valueOf(descripcionEs).hashCode();
 		hash += String.valueOf(descripcionEn).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(tipoAbastecimiento).hashCode();
 		hash += String.valueOf(urlMultimedia).hashCode();
 		hash += String.valueOf(categoriaMaterial).hashCode();
 		hash += String.valueOf(estatus).hashCode();
@@ -205,10 +209,10 @@ public class Material implements java.io.Serializable {
         }		
 		Material other = (Material ) o;
 		if (!Objects.equals(this.numeroParte, other.numeroParte)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.categoria, other.categoria)) { return false; }		
 		if (!Objects.equals(this.descripcionEs, other.descripcionEs)) { return false; }		
 		if (!Objects.equals(this.descripcionEn, other.descripcionEn)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.tipoAbastecimiento, other.tipoAbastecimiento)) { return false; }		
 		if (!Objects.equals(this.urlMultimedia, other.urlMultimedia)) { return false; }		
 		if (!Objects.equals(this.categoriaMaterial, other.categoriaMaterial)) { return false; }		
 		if (!Objects.equals(this.estatus, other.estatus)) { return false; }		
@@ -223,10 +227,10 @@ public class Material implements java.io.Serializable {
 		StringBuilder sb=new StringBuilder();
 		sb.append("Material{");
 		sb.append("numeroParte" ).append("=").append(numeroParte).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("categoria" ).append("=").append(categoria).append("|");
 		sb.append("descripcionEs" ).append("=").append(descripcionEs).append("|");
 		sb.append("descripcionEn" ).append("=").append(descripcionEn).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("tipoAbastecimiento" ).append("=").append(tipoAbastecimiento).append("|");
 		sb.append("urlMultimedia" ).append("=").append(urlMultimedia).append("|");
 		sb.append("categoriaMaterial" ).append("=").append(categoriaMaterial).append("|");
 		sb.append("estatus" ).append("=").append(estatus).append("|");

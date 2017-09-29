@@ -14,30 +14,27 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class RelacionFlotaDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 1078694789;
+    private static final long serialVersionUID = 1072408673;
 
     
     /**
     * id relacion flota
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idRelacionFlota
     private Integer idRelacionFlota;
     
     /**
     * revision
     */
-    // Simple: PK?false, FK?false, class=int, o=revision
     private int revision;
     
     /**
     * fecha
     */
-    // Simple: PK?false, FK?false, class=java.sql.Date, o=fecha
     private java.sql.Date fecha;
 
     /** 

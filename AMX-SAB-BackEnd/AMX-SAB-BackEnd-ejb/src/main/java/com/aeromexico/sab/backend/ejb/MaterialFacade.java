@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
  * ESB JPA Entity of Table material.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 @Stateless
 public class MaterialFacade extends AbstractFacade<Material> implements MaterialFacadeRemote {
@@ -42,9 +42,9 @@ public class MaterialFacade extends AbstractFacade<Material> implements Material
 			    paramAsigned++;
 			    sbq.append(" and x.numeroParte = :numeroParte");
 			}
-			if(x.getnull() != null){
+			if(x.getCategoria() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.categoria = :categoria");
 			}
 			if(x.getDescripcionEs() != null){
 			    paramAsigned++;
@@ -54,9 +54,9 @@ public class MaterialFacade extends AbstractFacade<Material> implements Material
 			    paramAsigned++;
 			    sbq.append(" and x.descripcionEn = :descripcionEn");
 			}
-			if(x.getnull() != null){
+			if(x.getTipoAbastecimiento() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.tipoAbastecimiento = :tipoAbastecimiento");
 			}
 			if(x.getUrlMultimedia() != null){
 			    paramAsigned++;
@@ -81,8 +81,8 @@ public class MaterialFacade extends AbstractFacade<Material> implements Material
 			if(x.getNumeroParte() != null){
 			    nq.setParameter("numeroParte",x.getNumeroParte());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getCategoria() != null){
+			    nq.setParameter("categoria",x.getCategoria());
 			}
 			if(x.getDescripcionEs() != null){
 			    nq.setParameter("descripcionEs",x.getDescripcionEs());
@@ -90,8 +90,8 @@ public class MaterialFacade extends AbstractFacade<Material> implements Material
 			if(x.getDescripcionEn() != null){
 			    nq.setParameter("descripcionEn",x.getDescripcionEn());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getTipoAbastecimiento() != null){
+			    nq.setParameter("tipoAbastecimiento",x.getTipoAbastecimiento());
 			}
 			if(x.getUrlMultimedia() != null){
 			    nq.setParameter("urlMultimedia",x.getUrlMultimedia());

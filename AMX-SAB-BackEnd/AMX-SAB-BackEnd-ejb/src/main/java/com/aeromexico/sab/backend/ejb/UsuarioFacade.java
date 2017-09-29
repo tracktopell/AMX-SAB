@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
  * ESB JPA Entity of Table usuario.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 @Stateless
 public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFacadeRemote {
@@ -46,9 +46,9 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
 			    paramAsigned++;
 			    sbq.append(" and x.email = :email");
 			}
-			if(x.getContraseña() != null){
+			if(x.getContrasenia() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.contraseña = :contraseña");
+			    sbq.append(" and x.contrasenia = :contrasenia");
 			}
 			if(x.getEstatus() != null){
 			    paramAsigned++;
@@ -68,8 +68,8 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
 			if(x.getEmail() != null){
 			    nq.setParameter("email",x.getEmail());
 			}
-			if(x.getContraseña() != null){
-			    nq.setParameter("contraseña",x.getContraseña());
+			if(x.getContrasenia() != null){
+			    nq.setParameter("contrasenia",x.getContrasenia());
 			}
 			if(x.getEstatus() != null){
 			    nq.setParameter("estatus",x.getEstatus());

@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
  * ESB JPA Entity of Table material_master.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 @Stateless
 public class MaterialMasterFacade extends AbstractFacade<MaterialMaster> implements MaterialMasterFacadeRemote {
@@ -50,9 +50,9 @@ public class MaterialMasterFacade extends AbstractFacade<MaterialMaster> impleme
 			    paramAsigned++;
 			    sbq.append(" and x.peso = :peso");
 			}
-			if(x.getnull() != null){
+			if(x.getIdUnidadMedida() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.idUnidadMedida = :idUnidadMedida");
 			}
 			if(x.getObservaciones() != null){
 			    paramAsigned++;
@@ -83,8 +83,8 @@ public class MaterialMasterFacade extends AbstractFacade<MaterialMaster> impleme
 			if(x.getPeso() != null){
 			    nq.setParameter("peso",x.getPeso());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getIdUnidadMedida() != null){
+			    nq.setParameter("idUnidadMedida",x.getIdUnidadMedida());
 			}
 			if(x.getObservaciones() != null){
 			    nq.setParameter("observaciones",x.getObservaciones());

@@ -8,6 +8,8 @@
     </parent>
     
 	<artifactId>AMX-SAB-DTO</artifactId>
+	<name>AMX-SAB-DTO</name>
+	
     <packaging>jar</packaging>
 	
     <properties>

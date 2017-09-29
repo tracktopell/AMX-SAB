@@ -14,66 +14,57 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class VueloDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 834600351;
+    private static final long serialVersionUID = 558638686;
 
     
     /**
     * id vuelo
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idVuelo
     private Integer idVuelo;
     
     /**
     * numero vuelo
     */
-    // Simple: PK?false, FK?false, class=int, o=numeroVuelo
     private int numeroVuelo;
     
     /**
     * tipo vuelo
     */
-    // Simple: PK?false, FK?true, class=int, o=tipoVuelo
     private int tipoVuelo;
     
     /**
     * id estacion origen
     */
-    // Simple: PK?false, FK?true, class=int, o=idEstacionOrigen
     private int idEstacionOrigen;
     
     /**
     * id estacion destino
     */
-    // Simple: PK?false, FK?true, class=int, o=idEstacionDestino
     private int idEstacionDestino;
     
     /**
     * tipo cabina
     */
-    // Simple: PK?false, FK?true, class=int, o=tipoCabina
     private int tipoCabina;
     
     /**
     * id compania
     */
-    // Simple: PK?false, FK?true, class=int, o=idCompania
     private int idCompania;
     
     /**
     * id clase
     */
-    // Simple: PK?false, FK?true, class=int, o=idClase
     private int idClase;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
 
     /** 
@@ -212,7 +203,7 @@ public class VueloDTO implements java.io.Serializable {
 		x.tipoCabina = (jObj.getInt("tipoCabina"));
 		x.idCompania = (jObj.getInt("idCompania"));
 		x.idClase = (jObj.getInt("idClase"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		
 		return x;
 	}

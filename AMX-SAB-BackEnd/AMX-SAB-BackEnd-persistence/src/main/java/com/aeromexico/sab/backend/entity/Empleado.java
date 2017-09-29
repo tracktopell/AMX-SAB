@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table empleado.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -57,7 +58,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Empleado.findByEsatus", query = "SELECT e FROM Empleado e WHERE e.esatus = :esatus")
 })
 public class Empleado implements java.io.Serializable {
-    private static final long serialVersionUID = 1555009629;
+    private static final long serialVersionUID = 1746572565;
     
     /**
     * The 'id empleado' Maps to COLUMN 'id_empleado'
@@ -65,6 +66,7 @@ public class Empleado implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_EMPLEADO" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -76,8 +78,9 @@ public class Empleado implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "NOMBRE" , length=50, nullable=false)
     private String nombre;
     
@@ -86,8 +89,9 @@ public class Empleado implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "APELLIDO_PATERNO" , length=50, nullable=false)
     private String apellidoPaterno;
     
@@ -96,7 +100,7 @@ public class Empleado implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 50)
+    //@Size(max = 50)
     @Column(name = "APELLIDO_MATERNO" , length=50, nullable=true)
     private String apellidoMaterno;
     
@@ -105,7 +109,7 @@ public class Empleado implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 25)
+    //@Size(max = 25)
     @Column(name = "TELEFONO" , length=25, nullable=true)
     private String telefono;
     
@@ -114,7 +118,7 @@ public class Empleado implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 10)
+    //@Size(max = 10)
     @Column(name = "EXTENSION" , length=10, nullable=true)
     private String extension;
     
@@ -123,7 +127,8 @@ public class Empleado implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "DIRECTORIO_SAB" , nullable=false)
     private Short directorioSab;
     
@@ -164,7 +169,8 @@ public class Empleado implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESATUS" , nullable=false)
     private Short esatus;
 

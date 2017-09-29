@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table avion_capacidad.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -49,7 +50,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "AvionCapacidad.findByCapacidad", query = "SELECT a FROM AvionCapacidad a WHERE a.capacidad = :capacidad")
 })
 public class AvionCapacidad implements java.io.Serializable {
-    private static final long serialVersionUID = 1023892928;
+    private static final long serialVersionUID = 1915910607;
     
     /**
     * The 'id avion capacidad' Maps to COLUMN 'id_avion_capacidad'
@@ -57,6 +58,7 @@ public class AvionCapacidad implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_AVION_CAPACIDAD" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -84,7 +86,8 @@ public class AvionCapacidad implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "CAPACIDAD" , nullable=false)
     private int capacidad;
 

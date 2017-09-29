@@ -14,12 +14,12 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class MaterialMasterDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 603742814;
+    private static final long serialVersionUID = 303563356;
 
     
     /**
@@ -30,37 +30,31 @@ public class MaterialMasterDTO implements java.io.Serializable {
     /**
     * cantidad
     */
-    // Simple: PK?false, FK?false, class=int, o=cantidad
     private int cantidad;
     
     /**
     * peso
     */
-    // Simple: PK?false, FK?false, class=float, o=peso
     private float peso;
     
     /**
     * id unidad medida
     */
-    // Simple: PK?false, FK?true, class=int, o=idUnidadMedida
     private int idUnidadMedida;
     
     /**
     * observaciones
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=observaciones
     private String observaciones;
     
     /**
     * lnumero parte
     */
-    // Simple: PK?true, FK?true, class=java.lang.String, o=lnumeroParte
     private String lnumeroParte;
     
     /**
     * id kit
     */
-    // Simple: PK?true, FK?true, class=java.lang.String, o=idKit
     private String idKit;
 
     /** 
@@ -167,7 +161,7 @@ public class MaterialMasterDTO implements java.io.Serializable {
 		JSONObject jObj = new JSONObject(json);
 		
 		x.cantidad = (jObj.getInt("cantidad"));
-		x.peso = (jObj.getfloat("peso"));
+		x.peso = (float)(jObj.getDouble("peso"));
 		x.idUnidadMedida = (jObj.getInt("idUnidadMedida"));
 		x.observaciones = (jObj.getString("observaciones"));
 		x.lnumeroParte = (jObj.getString("lnumeroParte"));

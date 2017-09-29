@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table avion_audifono.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -46,10 +47,10 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "AvionAudifono.findByIdAvionAudifono", query = "SELECT a FROM AvionAudifono a WHERE a.idAvionAudifono = :idAvionAudifono")
     , @NamedQuery(name = "AvionAudifono.findByavion", query = "SELECT a FROM AvionAudifono a WHERE a.avion = :avion")
     , @NamedQuery(name = "AvionAudifono.findByclase", query = "SELECT a FROM AvionAudifono a WHERE a.clase = :clase")
-    , @NamedQuery(name = "AvionAudifono.findByParametros", query = "SELECT a FROM AvionAudifono a WHERE a.parametros = :parametros")
+    , @NamedQuery(name = "AvionAudifono.findBytipoAudifono", query = "SELECT a FROM AvionAudifono a WHERE a.tipoAudifono = :tipoAudifono")
 })
 public class AvionAudifono implements java.io.Serializable {
-    private static final long serialVersionUID = 1607521710;
+    private static final long serialVersionUID = 1389133897;
     
     /**
     * The 'id avion audifono' Maps to COLUMN 'id_avion_audifono'
@@ -57,6 +58,7 @@ public class AvionAudifono implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_AVION_AUDIFONO" , nullable=false  )
     private Integer idAvionAudifono;
@@ -83,7 +85,7 @@ public class AvionAudifono implements java.io.Serializable {
     
     @JoinColumn(name = "TIPO_AUDIFONO" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros tipoAudifono;
 
 	// =========================================================================
     // =========================================================================
@@ -105,8 +107,8 @@ public class AvionAudifono implements java.io.Serializable {
     public Clase getClase(){ return this.clase ; }
     public void setClase(Clase x){ this.clase = x; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getTipoAudifono(){ return this.tipoAudifono ; }
+    public void setTipoAudifono(Parametros x){ this.tipoAudifono = x; }
     
     // O2M <*>    
 	// M2M <*>
@@ -117,7 +119,7 @@ public class AvionAudifono implements java.io.Serializable {
 		hash += String.valueOf(idAvionAudifono).hashCode();
 		hash += String.valueOf(avion).hashCode();
 		hash += String.valueOf(clase).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(tipoAudifono).hashCode();
         return hash;
     }
 
@@ -139,7 +141,7 @@ public class AvionAudifono implements java.io.Serializable {
 		if (!Objects.equals(this.idAvionAudifono, other.idAvionAudifono)) { return false; }		
 		if (!Objects.equals(this.avion, other.avion)) { return false; }		
 		if (!Objects.equals(this.clase, other.clase)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.tipoAudifono, other.tipoAudifono)) { return false; }		
     	return true;
     }
 
@@ -153,7 +155,7 @@ public class AvionAudifono implements java.io.Serializable {
 		sb.append("idAvionAudifono" ).append("=").append(idAvionAudifono).append("|");
 		sb.append("avion" ).append("=").append(avion).append("|");
 		sb.append("clase" ).append("=").append(clase).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("tipoAudifono" ).append("=").append(tipoAudifono).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();
 	}

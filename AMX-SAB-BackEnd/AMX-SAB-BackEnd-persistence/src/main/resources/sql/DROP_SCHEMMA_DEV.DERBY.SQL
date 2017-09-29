@@ -1,0 +1,37 @@
+-- ============================= ELIMINADO DEL ESQUEMA DE LA BASE DE DATOS ====================
+-- ===================================== TABLES (35) ===============================
+DROP TABLE avion;
+DROP TABLE contacto_proveedor_estacion;
+DROP TABLE estacion;
+DROP TABLE modulo;
+DROP TABLE modelo_avion;
+DROP TABLE avion_audifono;
+DROP TABLE proveedor_estacion;
+DROP TABLE codigo_servicio;
+DROP TABLE modulo_perfil;
+DROP TABLE avion_capacidad;
+DROP TABLE pais;
+DROP TABLE horario;
+DROP TABLE avion_sistema_entretenimiento;
+DROP TABLE equipamiento_comisariato;
+DROP TABLE ciudad;
+DROP TABLE vuelo;
+DROP TABLE material;
+DROP TABLE master;
+DROP TABLE perfil_usuario;
+DROP TABLE material_master;
+DROP TABLE proveedor;
+DROP TABLE empleado;
+DROP TABLE tipo_equipo_avion;
+DROP TABLE perfil;
+DROP TABLE area;
+DROP TABLE clase;
+DROP TABLE sistema_entretenimiento;
+DROP TABLE usuario;
+DROP TABLE relacion_flota;
+DROP TABLE categoria_material;
+DROP TABLE parametros;
+DROP TABLE traduccion;
+DROP TABLE tipo_proveedor;
+DROP TABLE compania;
+DROP TABLE region;

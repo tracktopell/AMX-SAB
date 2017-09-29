@@ -14,54 +14,47 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class ProveedorDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 713338599;
+    private static final long serialVersionUID = 321001045;
 
     
     /**
     * id proveedor
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idProveedor
     private Integer idProveedor;
     
     /**
     * id tipo proveedor
     */
-    // Simple: PK?false, FK?true, class=int, o=idTipoProveedor
     private int idTipoProveedor;
     
     /**
     * id estacion
     */
-    // Simple: PK?false, FK?false, class=int, o=idEstacion
     private int idEstacion;
     
     /**
     * nombre
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombre
     private String nombre;
     
     /**
     * cve proveedor
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=cveProveedor
     private String cveProveedor;
     
     /**
     * razon social
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=razonSocial
     private String razonSocial;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
 
     /** 
@@ -180,7 +173,7 @@ public class ProveedorDTO implements java.io.Serializable {
 		x.nombre = (jObj.getString("nombre"));
 		x.cveProveedor = (jObj.getString("cveProveedor"));
 		x.razonSocial = (jObj.getString("razonSocial"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		
 		return x;
 	}

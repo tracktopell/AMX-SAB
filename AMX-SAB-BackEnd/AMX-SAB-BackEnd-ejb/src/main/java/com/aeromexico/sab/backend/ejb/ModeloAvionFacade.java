@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
  * ESB JPA Entity of Table modelo_avion.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 @Stateless
 public class ModeloAvionFacade extends AbstractFacade<ModeloAvion> implements ModeloAvionFacadeRemote {
@@ -50,17 +50,17 @@ public class ModeloAvionFacade extends AbstractFacade<ModeloAvion> implements Mo
 			    paramAsigned++;
 			    sbq.append(" and x.descripcion = :descripcion");
 			}
-			if(x.getnull() != null){
+			if(x.getTipoCabina() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.tipoCabina = :tipoCabina");
 			}
 			if(x.getCompania() != null){
 			    paramAsigned++;
 			    sbq.append(" and x.compania = :compania");
 			}
-			if(x.getnull() != null){
+			if(x.getIdFabricante() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.idFabricante = :idFabricante");
 			}
 			if(x.getEstaus() != null){
 			    paramAsigned++;
@@ -83,14 +83,14 @@ public class ModeloAvionFacade extends AbstractFacade<ModeloAvion> implements Mo
 			if(x.getDescripcion() != null){
 			    nq.setParameter("descripcion",x.getDescripcion());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getTipoCabina() != null){
+			    nq.setParameter("tipoCabina",x.getTipoCabina());
 			}
 			if(x.getCompania() != null){
 			    nq.setParameter("compania",x.getCompania());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getIdFabricante() != null){
+			    nq.setParameter("idFabricante",x.getIdFabricante());
 			}
 			if(x.getEstaus() != null){
 			    nq.setParameter("estaus",x.getEstaus());

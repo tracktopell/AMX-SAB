@@ -14,36 +14,32 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class UsuarioDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 1989780873;
+    private static final long serialVersionUID = 1922154895;
 
     
     /**
     * id usuario
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idUsuario
     private Integer idUsuario;
     
     /**
     * email
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=email
     private String email;
     
     /**
-    * contraseña
+    * contrasenia
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=contraseña
-    private String contraseña;
+    private String contrasenia;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
 
     /** 
@@ -67,11 +63,11 @@ public class UsuarioDTO implements java.io.Serializable {
     public void setEmail(String v) {
         this.email = v;
     }
-    public String getContraseña() {
-        return this.contraseña;
+    public String getContrasenia() {
+        return this.contrasenia;
     }
-    public void setContraseña(String v) {
-        this.contraseña = v;
+    public void setContrasenia(String v) {
+        this.contrasenia = v;
     }
     public Short getEstatus() {
         return this.estatus;
@@ -85,7 +81,7 @@ public class UsuarioDTO implements java.io.Serializable {
         int hash = 0;
 		hash += String.valueOf(idUsuario).hashCode();
 		hash += String.valueOf(email).hashCode();
-		hash += String.valueOf(contraseña).hashCode();
+		hash += String.valueOf(contrasenia).hashCode();
 		hash += String.valueOf(estatus).hashCode();
         return hash;
     }
@@ -107,7 +103,7 @@ public class UsuarioDTO implements java.io.Serializable {
 		UsuarioDTO  other = (UsuarioDTO ) o;
 		if (!Objects.equals(this.idUsuario, other.idUsuario)) { return false; }		
 		if (!Objects.equals(this.email, other.email)) { return false; }		
-		if (!Objects.equals(this.contraseña, other.contraseña)) { return false; }		
+		if (!Objects.equals(this.contrasenia, other.contrasenia)) { return false; }		
 		if (!Objects.equals(this.estatus, other.estatus)) { return false; }		
     	return true;
     }
@@ -120,7 +116,7 @@ public class UsuarioDTO implements java.io.Serializable {
 		JSONObject jsonObj = new JSONObject();
 		jsonObj.put("idUsuario", this.idUsuario);
 		jsonObj.put("email", this.email);
-		jsonObj.put("contraseña", this.contraseña);
+		jsonObj.put("contrasenia", this.contrasenia);
 		jsonObj.put("estatus", this.estatus);
 		return jsonObj.toString();
     }
@@ -131,8 +127,8 @@ public class UsuarioDTO implements java.io.Serializable {
 		
 		x.idUsuario = (jObj.getInt("idUsuario"));
 		x.email = (jObj.getString("email"));
-		x.contraseña = (jObj.getString("contraseña"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.contrasenia = (jObj.getString("contrasenia"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		
 		return x;
 	}

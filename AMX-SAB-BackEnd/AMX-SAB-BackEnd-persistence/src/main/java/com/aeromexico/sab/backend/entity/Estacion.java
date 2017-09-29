@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table estacion.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -51,7 +52,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Estacion.findByEstatus", query = "SELECT e FROM Estacion e WHERE e.estatus = :estatus")
 })
 public class Estacion implements java.io.Serializable {
-    private static final long serialVersionUID = 495053715;
+    private static final long serialVersionUID = 1880587981;
     
     /**
     * The 'id estacion' Maps to COLUMN 'id_estacion'
@@ -59,6 +60,7 @@ public class Estacion implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_ESTACION" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -70,8 +72,9 @@ public class Estacion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "NOMBRE" , length=50, nullable=false)
     private String nombre;
     
@@ -80,8 +83,9 @@ public class Estacion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 3)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 3)
     @Column(name = "CLAVE_IATA" , length=3, nullable=false)
     private String claveIata;
     
@@ -98,7 +102,7 @@ public class Estacion implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 150)
+    //@Size(max = 150)
     @Column(name = "OBSERVACIONES" , length=150, nullable=true)
     private String observaciones;
     
@@ -107,7 +111,8 @@ public class Estacion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
     /** 

@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table relacion_flota.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -48,7 +49,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "RelacionFlota.findByFecha", query = "SELECT r FROM RelacionFlota r WHERE r.fecha = :fecha")
 })
 public class RelacionFlota implements java.io.Serializable {
-    private static final long serialVersionUID = 1078694789;
+    private static final long serialVersionUID = 1072408673;
     
     /**
     * The 'id relacion flota' Maps to COLUMN 'id_relacion_flota'
@@ -56,6 +57,7 @@ public class RelacionFlota implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_RELACION_FLOTA" , nullable=false  )
     private Integer idRelacionFlota;
@@ -65,7 +67,8 @@ public class RelacionFlota implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "REVISION" , nullable=false)
     private int revision;
     
@@ -74,7 +77,8 @@ public class RelacionFlota implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "FECHA" , nullable=false)
     private java.sql.Date fecha;
 

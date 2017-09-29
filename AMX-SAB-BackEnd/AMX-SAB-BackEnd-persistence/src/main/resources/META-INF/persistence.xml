@@ -1,80 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence  version="2.0" 
-              xmlns="http://java.sun.com/xml/ns/persistence" 
-              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
-                                  http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
-				
+
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
 	<persistence-unit name="AMX_SAB_PU" transaction-type="RESOURCE_LOCAL">
 		
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
-		<properties>
-			
-			<property name="hibernate.archive.autodetection"   value="class" />
-			<property name="hibernate.dialect"                 value="org.hibernate.dialect.DerbyDialect" />
-						
-			<property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver" />
-			<property name="hibernate.connection.url"          value="jdbc:derby://localhost:${derby.server.port}/AMX_SAB_DB_DEV;create=true" />
+		<properties>			
+			<property name="javax.persistence.jdbc.driver"     value="org.apache.derby.jdbc.ClientDriver" />
+			<property name="javax.persistence.jdbc.url"        value="jdbc:derby://localhost:${derby.server.port}/AMX_SAB_DB_DEV" />
 			<property name="javax.persistence.jdbc.user"       value="AMX_SAB_DEV_USR"/>
 			<property name="javax.persistence.jdbc.password"   value="AMX_SAB_DEV_PWD"/>
 
 			<property name="hibernate.show_sql"                value="true"/>
-			<property name="hibernate.flushMode"               value="FLUSH_AUTO" />
-			<property name="hibernate.hbm2ddl.auto"            value="update" />
+			<property name="hibernate.format_sql"              value="true"/>
+			<property name="hibernate.flushMode"               value="FLUSH_AUTO" />			
+			<property name="hibernate.archive.autodetection"   value="class" />
+			<property name="hibernate.dialect"                 value="org.hibernate.dialect.DerbyDialect" />
 			
+			<property name="hibernate.hbm2ddl.auto"            value="validate" />						
 		</properties>
 	</persistence-unit>
-	
-	<persistence-unit name="AMX_SAB_PU_CREATE" transaction-type="RESOURCE_LOCAL">
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-		
-		<exclude-unlisted-classes>false</exclude-unlisted-classes>
-		<properties>
-			
-			<property name="hibernate.archive.autodetection"   value="class" />
-			<property name="hibernate.dialect"                 value="org.hibernate.dialect.DerbyDialect" />
-			
-			<property name="javax.persistence.schema-generation.database.action"       value="drop-and-create"/>
-			<property name="javax.persistence.schema-generation.scripts.action"        value="drop-and-create"/>
-			<property name="javax.persistence.schema-generation.scripts.create-target" value="sampleCreate.ddl"/>
-			<property name="javax.persistence.schema-generation.scripts.drop-target"   value="sampleDrop.ddl"/>
-			
-			<property name="javax.persistence.sql-load-script-source"                  value="sql/FIRST_DATA_DEV.DERBY.SQL"/>
-						
-			<property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.ClientDriver" />
-			<property name="hibernate.connection.url"          value="jdbc:derby://localhost:${derby.server.port}/AMX_SAB_DB_DEV;create=true" />
-			<property name="javax.persistence.jdbc.user"       value="AMX_SAB_DEV_USR"/>
-			<property name="javax.persistence.jdbc.password"   value="AMX_SAB_DEV_PWD"/>
-
-			<property name="hibernate.show_sql"                value="true"/>
-			<property name="hibernate.flushMode"               value="FLUSH_AUTO" />
-			<property name="hibernate.hbm2ddl.auto"            value="update" />
-			
-		</properties>
-	</persistence-unit>	
-	
 	
 	<persistence-unit name="AMX_SAB_PU_MEMORY" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
-			
-			<property name="hibernate.archive.autodetection"   value="class" />
-			<property name="hibernate.dialect"                 value="org.hibernate.dialect.DerbyDialect" />
-						
-			<property name="hibernate.connection.driver_class" value="org.apache.derby.jdbc.EmbeddedDriver" />
-			<property name="hibernate.connection.url"          value="jdbc:derby:memory:AMX_SAB_DB_DEV;create=true" />
+			<property name="javax.persistence.jdbc.driver"     value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="javax.persistence.jdbc.url"        value="jdbc:derby:memory:AMX_SAB_DB_DEV;create=true" />
 			<property name="javax.persistence.jdbc.user"       value="AMX_SAB_DEV_USR"/>
 			<property name="javax.persistence.jdbc.password"   value="AMX_SAB_DEV_PWD"/>
 
 			<property name="hibernate.show_sql"                value="true"/>
-			<property name="hibernate.flushMode"               value="FLUSH_AUTO" />
-			<property name="hibernate.hbm2ddl.auto"            value="update" />
+			<property name="hibernate.format_sql"              value="true"/>
+			<property name="hibernate.flushMode"               value="FLUSH_AUTO" />			
+			<property name="hibernate.archive.autodetection"   value="class" />
+			<property name="hibernate.dialect"                 value="org.hibernate.dialect.DerbyDialect" />
+			
+			<property name="hibernate.hbm2ddl.auto"            value="create" />
+			<property name="hibernate.hbm2ddl.import_files"    value="initial_data.sql"/>
 			
 		</properties>
 	</persistence-unit>		
-	
+		
 </persistence>

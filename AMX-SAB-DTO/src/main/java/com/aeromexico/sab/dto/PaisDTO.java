@@ -14,42 +14,37 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class PaisDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 1324119927;
+    private static final long serialVersionUID = 2065951873;
 
     
     /**
     * id pais
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idPais
     private Integer idPais;
     
     /**
     * cve pais
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=cvePais
     private String cvePais;
     
     /**
     * nombre
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombre
     private String nombre;
     
     /**
     * id region
     */
-    // Simple: PK?false, FK?true, class=int, o=idRegion
     private int idRegion;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
 
     /** 
@@ -148,7 +143,7 @@ public class PaisDTO implements java.io.Serializable {
 		x.cvePais = (jObj.getString("cvePais"));
 		x.nombre = (jObj.getString("nombre"));
 		x.idRegion = (jObj.getInt("idRegion"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		
 		return x;
 	}

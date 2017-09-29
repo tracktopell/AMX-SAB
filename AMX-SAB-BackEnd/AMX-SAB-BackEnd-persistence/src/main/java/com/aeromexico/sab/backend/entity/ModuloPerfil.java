@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table modulo_perfil.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -49,14 +50,15 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "ModuloPerfil.findByModuloPerfilPK", query = "SELECT m FROM ModuloPerfil m WHERE m.moduloPerfilPK = :moduloPerfilPK")
 })
 public class ModuloPerfil implements java.io.Serializable {
-    private static final long serialVersionUID = 2093631819;
+    private static final long serialVersionUID = 793589513;
     
     /**
     * The 'permiso rwd' Maps to COLUMN 'permiso_rwd'
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "PERMISO_RWD" , nullable=false)
     private Short permisoRwd;
     

@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
  * ESB JPA Entity of Table codigo_servicio.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 @Stateless
 public class CodigoServicioFacade extends AbstractFacade<CodigoServicio> implements CodigoServicioFacadeRemote {
@@ -54,9 +54,9 @@ public class CodigoServicioFacade extends AbstractFacade<CodigoServicio> impleme
 			    paramAsigned++;
 			    sbq.append(" and x.estatus = :estatus");
 			}
-			if(x.getnull() != null){
+			if(x.getTipoCodigoServicio() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.tipoCodigoServicio = :tipoCodigoServicio");
 			}
 			
 		} else {
@@ -78,8 +78,8 @@ public class CodigoServicioFacade extends AbstractFacade<CodigoServicio> impleme
 			if(x.getEstatus() != null){
 			    nq.setParameter("estatus",x.getEstatus());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getTipoCodigoServicio() != null){
+			    nq.setParameter("tipoCodigoServicio",x.getTipoCodigoServicio());
 			}
 			
 		}		

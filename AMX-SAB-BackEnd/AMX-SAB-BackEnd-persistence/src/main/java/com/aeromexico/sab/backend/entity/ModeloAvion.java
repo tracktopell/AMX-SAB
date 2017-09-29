@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table modelo_avion.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -46,13 +47,13 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "ModeloAvion.findByIdModeloAvion", query = "SELECT m FROM ModeloAvion m WHERE m.idModeloAvion = :idModeloAvion")
     , @NamedQuery(name = "ModeloAvion.findByModelo", query = "SELECT m FROM ModeloAvion m WHERE m.modelo = :modelo")
     , @NamedQuery(name = "ModeloAvion.findByDescripcion", query = "SELECT m FROM ModeloAvion m WHERE m.descripcion = :descripcion")
-    , @NamedQuery(name = "ModeloAvion.findByParametros", query = "SELECT m FROM ModeloAvion m WHERE m.parametros = :parametros")
+    , @NamedQuery(name = "ModeloAvion.findBytipoCabina", query = "SELECT m FROM ModeloAvion m WHERE m.tipoCabina = :tipoCabina")
     , @NamedQuery(name = "ModeloAvion.findBycompania", query = "SELECT m FROM ModeloAvion m WHERE m.compania = :compania")
-    , @NamedQuery(name = "ModeloAvion.findByParametros", query = "SELECT m FROM ModeloAvion m WHERE m.parametros = :parametros")
+    , @NamedQuery(name = "ModeloAvion.findByidFabricante", query = "SELECT m FROM ModeloAvion m WHERE m.idFabricante = :idFabricante")
     , @NamedQuery(name = "ModeloAvion.findByEstaus", query = "SELECT m FROM ModeloAvion m WHERE m.estaus = :estaus")
 })
 public class ModeloAvion implements java.io.Serializable {
-    private static final long serialVersionUID = 363771819;
+    private static final long serialVersionUID = 960604060;
     
     /**
     * The 'id modelo avion' Maps to COLUMN 'id_modelo_avion'
@@ -60,6 +61,7 @@ public class ModeloAvion implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_MODELO_AVION" , nullable=false  )
     private Integer idModeloAvion;
@@ -69,8 +71,9 @@ public class ModeloAvion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "MODELO" , length=50, nullable=false)
     private String modelo;
     
@@ -79,7 +82,7 @@ public class ModeloAvion implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 200)
+    //@Size(max = 200)
     @Column(name = "DESCRIPCION" , length=200, nullable=true)
     private String descripcion;
     
@@ -89,7 +92,7 @@ public class ModeloAvion implements java.io.Serializable {
     
     @JoinColumn(name = "TIPO_CABINA" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros tipoCabina;
     
     /**
     * The 'id compania' Maps to COLUMN 'id_compania'
@@ -105,14 +108,15 @@ public class ModeloAvion implements java.io.Serializable {
     
     @JoinColumn(name = "ID_FABRICANTE" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros idFabricante;
     
     /**
     * The 'estaus' Maps to COLUMN 'estaus'
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTAUS" , nullable=false)
     private Short estaus;
     /** 
@@ -143,14 +147,14 @@ public class ModeloAvion implements java.io.Serializable {
     public String getDescripcion() { return this.descripcion;}
     public void setDescripcion(String v) { this.descripcion = v; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getTipoCabina(){ return this.tipoCabina ; }
+    public void setTipoCabina(Parametros x){ this.tipoCabina = x; }
     
     public Compania getCompania(){ return this.compania ; }
     public void setCompania(Compania x){ this.compania = x; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getIdFabricante(){ return this.idFabricante ; }
+    public void setIdFabricante(Parametros x){ this.idFabricante = x; }
     
     public Short getEstaus() { return this.estaus;}
     public void setEstaus(Short v) { this.estaus = v; }
@@ -167,9 +171,9 @@ public class ModeloAvion implements java.io.Serializable {
 		hash += String.valueOf(idModeloAvion).hashCode();
 		hash += String.valueOf(modelo).hashCode();
 		hash += String.valueOf(descripcion).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(tipoCabina).hashCode();
 		hash += String.valueOf(compania).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(idFabricante).hashCode();
 		hash += String.valueOf(estaus).hashCode();
         return hash;
     }
@@ -192,9 +196,9 @@ public class ModeloAvion implements java.io.Serializable {
 		if (!Objects.equals(this.idModeloAvion, other.idModeloAvion)) { return false; }		
 		if (!Objects.equals(this.modelo, other.modelo)) { return false; }		
 		if (!Objects.equals(this.descripcion, other.descripcion)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.tipoCabina, other.tipoCabina)) { return false; }		
 		if (!Objects.equals(this.compania, other.compania)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.idFabricante, other.idFabricante)) { return false; }		
 		if (!Objects.equals(this.estaus, other.estaus)) { return false; }		
     	return true;
     }
@@ -209,9 +213,9 @@ public class ModeloAvion implements java.io.Serializable {
 		sb.append("idModeloAvion" ).append("=").append(idModeloAvion).append("|");
 		sb.append("modelo" ).append("=").append(modelo).append("|");
 		sb.append("descripcion" ).append("=").append(descripcion).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("tipoCabina" ).append("=").append(tipoCabina).append("|");
 		sb.append("compania" ).append("=").append(compania).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("idFabricante" ).append("=").append(idFabricante).append("|");
 		sb.append("estaus" ).append("=").append(estaus).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();

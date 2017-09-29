@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table modulo.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -49,7 +50,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Modulo.findByUri", query = "SELECT m FROM Modulo m WHERE m.uri = :uri")
 })
 public class Modulo implements java.io.Serializable {
-    private static final long serialVersionUID = 189568618;
+    private static final long serialVersionUID = 51228289;
     
     /**
     * The 'id modulo' Maps to COLUMN 'id_modulo'
@@ -57,6 +58,7 @@ public class Modulo implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_MODULO" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -76,7 +78,7 @@ public class Modulo implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 100)
+    //@Size(max = 100)
     @Column(name = "NOMBRE" , length=100, nullable=true)
     private String nombre;
     
@@ -85,8 +87,9 @@ public class Modulo implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 255)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 255)
     @Column(name = "URI" , length=255, nullable=false)
     private String uri;
     /** 

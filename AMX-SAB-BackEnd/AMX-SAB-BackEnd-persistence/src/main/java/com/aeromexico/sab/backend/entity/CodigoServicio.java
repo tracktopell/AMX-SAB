@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table codigo_servicio.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -47,10 +48,10 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "CodigoServicio.findByCveCodigoServicio", query = "SELECT c FROM CodigoServicio c WHERE c.cveCodigoServicio = :cveCodigoServicio")
     , @NamedQuery(name = "CodigoServicio.findByNombre", query = "SELECT c FROM CodigoServicio c WHERE c.nombre = :nombre")
     , @NamedQuery(name = "CodigoServicio.findByEstatus", query = "SELECT c FROM CodigoServicio c WHERE c.estatus = :estatus")
-    , @NamedQuery(name = "CodigoServicio.findByParametros", query = "SELECT c FROM CodigoServicio c WHERE c.parametros = :parametros")
+    , @NamedQuery(name = "CodigoServicio.findBytipoCodigoServicio", query = "SELECT c FROM CodigoServicio c WHERE c.tipoCodigoServicio = :tipoCodigoServicio")
 })
 public class CodigoServicio implements java.io.Serializable {
-    private static final long serialVersionUID = 1828972342;
+    private static final long serialVersionUID = 1854731462;
     
     /**
     * The 'id codigo servicio' Maps to COLUMN 'id_codigo_servicio'
@@ -58,6 +59,7 @@ public class CodigoServicio implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_CODIGO_SERVICIO" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -69,8 +71,9 @@ public class CodigoServicio implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 3)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 3)
     @Column(name = "CVE_CODIGO_SERVICIO" , length=3, nullable=false)
     private String cveCodigoServicio;
     
@@ -79,8 +82,9 @@ public class CodigoServicio implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 100)
     @Column(name = "NOMBRE" , length=100, nullable=false)
     private String nombre;
     
@@ -89,7 +93,8 @@ public class CodigoServicio implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
     
@@ -99,7 +104,7 @@ public class CodigoServicio implements java.io.Serializable {
     
     @JoinColumn(name = "TIPO_CODIGO_SERVICIO" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros tipoCodigoServicio;
 
 	// =========================================================================
     // =========================================================================
@@ -124,8 +129,8 @@ public class CodigoServicio implements java.io.Serializable {
     public Short getEstatus() { return this.estatus;}
     public void setEstatus(Short v) { this.estatus = v; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getTipoCodigoServicio(){ return this.tipoCodigoServicio ; }
+    public void setTipoCodigoServicio(Parametros x){ this.tipoCodigoServicio = x; }
     
     // O2M <*>    
 	// M2M <*>
@@ -137,7 +142,7 @@ public class CodigoServicio implements java.io.Serializable {
 		hash += String.valueOf(cveCodigoServicio).hashCode();
 		hash += String.valueOf(nombre).hashCode();
 		hash += String.valueOf(estatus).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(tipoCodigoServicio).hashCode();
         return hash;
     }
 
@@ -160,7 +165,7 @@ public class CodigoServicio implements java.io.Serializable {
 		if (!Objects.equals(this.cveCodigoServicio, other.cveCodigoServicio)) { return false; }		
 		if (!Objects.equals(this.nombre, other.nombre)) { return false; }		
 		if (!Objects.equals(this.estatus, other.estatus)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.tipoCodigoServicio, other.tipoCodigoServicio)) { return false; }		
     	return true;
     }
 
@@ -175,7 +180,7 @@ public class CodigoServicio implements java.io.Serializable {
 		sb.append("cveCodigoServicio" ).append("=").append(cveCodigoServicio).append("|");
 		sb.append("nombre" ).append("=").append(nombre).append("|");
 		sb.append("estatus" ).append("=").append(estatus).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("tipoCodigoServicio" ).append("=").append(tipoCodigoServicio).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();
 	}

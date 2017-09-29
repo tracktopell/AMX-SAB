@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table sistema_entretenimiento.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -50,7 +51,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "SistemaEntretenimiento.findByEstatus", query = "SELECT s FROM SistemaEntretenimiento s WHERE s.estatus = :estatus")
 })
 public class SistemaEntretenimiento implements java.io.Serializable {
-    private static final long serialVersionUID = 2129789493;
+    private static final long serialVersionUID = 824909230;
     
     /**
     * The 'id sistema entretenimiento' Maps to COLUMN 'id_sistema_entretenimiento'
@@ -58,6 +59,7 @@ public class SistemaEntretenimiento implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_SISTEMA_ENTRETENIMIENTO" , nullable=false  )
     private Integer idSistemaEntretenimiento;
@@ -67,8 +69,9 @@ public class SistemaEntretenimiento implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "TIPO" , length=50, nullable=false)
     private String tipo;
     
@@ -77,7 +80,7 @@ public class SistemaEntretenimiento implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 15)
+    //@Size(max = 15)
     @Column(name = "VERSION" , length=15, nullable=true)
     private String version;
     
@@ -86,7 +89,7 @@ public class SistemaEntretenimiento implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 200)
+    //@Size(max = 200)
     @Column(name = "DESCRIPCION" , length=200, nullable=true)
     private String descripcion;
     
@@ -95,7 +98,8 @@ public class SistemaEntretenimiento implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
     /** 

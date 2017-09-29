@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table proveedor.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -52,7 +53,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Proveedor.findByEstatus", query = "SELECT p FROM Proveedor p WHERE p.estatus = :estatus")
 })
 public class Proveedor implements java.io.Serializable {
-    private static final long serialVersionUID = 713338599;
+    private static final long serialVersionUID = 321001045;
     
     /**
     * The 'id proveedor' Maps to COLUMN 'id_proveedor'
@@ -60,6 +61,7 @@ public class Proveedor implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_PROVEEDOR" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -79,7 +81,8 @@ public class Proveedor implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ID_ESTACION" , nullable=false)
     private int idEstacion;
     
@@ -88,8 +91,9 @@ public class Proveedor implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "NOMBRE" , length=50, nullable=false)
     private String nombre;
     
@@ -98,8 +102,9 @@ public class Proveedor implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 3)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 3)
     @Column(name = "CVE_PROVEEDOR" , length=3, nullable=false)
     private String cveProveedor;
     
@@ -108,7 +113,7 @@ public class Proveedor implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 150)
+    //@Size(max = 150)
     @Column(name = "RAZON_SOCIAL" , length=150, nullable=true)
     private String razonSocial;
     
@@ -117,7 +122,8 @@ public class Proveedor implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
     /** 

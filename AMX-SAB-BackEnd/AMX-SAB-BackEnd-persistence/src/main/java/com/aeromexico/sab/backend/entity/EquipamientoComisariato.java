@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table equipamiento_comisariato.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -54,7 +55,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "EquipamientoComisariato.findByEstatus", query = "SELECT e FROM EquipamientoComisariato e WHERE e.estatus = :estatus")
 })
 public class EquipamientoComisariato implements java.io.Serializable {
-    private static final long serialVersionUID = 1406718218;
+    private static final long serialVersionUID = 1452126962;
     
     /**
     * The 'id equipamiento comisariato' Maps to COLUMN 'id_equipamiento_comisariato'
@@ -62,6 +63,7 @@ public class EquipamientoComisariato implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_EQUIPAMIENTO_COMISARIATO" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -81,8 +83,9 @@ public class EquipamientoComisariato implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "NOMBRE_ES" , length=50, nullable=false)
     private String nombreEs;
     
@@ -91,7 +94,7 @@ public class EquipamientoComisariato implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 50)
+    //@Size(max = 50)
     @Column(name = "NOMBRE_EN" , length=50, nullable=true)
     private String nombreEn;
     
@@ -100,7 +103,8 @@ public class EquipamientoComisariato implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "CANTIDAD" , nullable=false)
     private int cantidad;
     
@@ -109,7 +113,8 @@ public class EquipamientoComisariato implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "PESO" , nullable=false)
     private double peso;
     
@@ -118,7 +123,7 @@ public class EquipamientoComisariato implements java.io.Serializable {
     */
     
     @Basic(optional = true)
-    @Size(max = 250)
+    //@Size(max = 250)
     @Column(name = "OBSERVACIONES" , length=250, nullable=true)
     private String observaciones;
     
@@ -135,7 +140,8 @@ public class EquipamientoComisariato implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
 

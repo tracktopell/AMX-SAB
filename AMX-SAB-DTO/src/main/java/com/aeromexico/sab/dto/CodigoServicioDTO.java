@@ -14,42 +14,37 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class CodigoServicioDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 1828972342;
+    private static final long serialVersionUID = 1854731462;
 
     
     /**
     * id codigo servicio
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idCodigoServicio
     private Integer idCodigoServicio;
     
     /**
     * cve codigo servicio
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=cveCodigoServicio
     private String cveCodigoServicio;
     
     /**
     * nombre
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombre
     private String nombre;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
     
     /**
     * tipo codigo servicio
     */
-    // Simple: PK?false, FK?true, class=int, o=tipoCodigoServicio
     private int tipoCodigoServicio;
 
     /** 
@@ -147,7 +142,7 @@ public class CodigoServicioDTO implements java.io.Serializable {
 		x.idCodigoServicio = (jObj.getInt("idCodigoServicio"));
 		x.cveCodigoServicio = (jObj.getString("cveCodigoServicio"));
 		x.nombre = (jObj.getString("nombre"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		x.tipoCodigoServicio = (jObj.getInt("tipoCodigoServicio"));
 		
 		return x;

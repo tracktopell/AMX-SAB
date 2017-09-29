@@ -15,8 +15,10 @@ import javax.persistence.TemporalType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -24,23 +26,25 @@ import javax.xml.bind.annotation.XmlTransient;
  * Class for mapping JPA Embedable PK of Table modulo_perfil_P_K.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Embeddable
 
 @XmlRootElement
 public class ModuloPerfilPK implements java.io.Serializable {
-    private static final long serialVersionUID = 99550389;
+    private static final long serialVersionUID = 1604839423;
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "MODULOID_MODULO", nullable= false)
     private Integer moduloidModulo;
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "PERFILID_PERFIL", nullable= false)
     private Integer perfilidPerfil;
 

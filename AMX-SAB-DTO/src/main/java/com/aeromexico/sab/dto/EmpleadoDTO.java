@@ -14,84 +14,72 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class EmpleadoDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 1555009629;
+    private static final long serialVersionUID = 1746572565;
 
     
     /**
     * id empleado
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idEmpleado
     private Integer idEmpleado;
     
     /**
     * nombre
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombre
     private String nombre;
     
     /**
     * apellido paterno
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=apellidoPaterno
     private String apellidoPaterno;
     
     /**
     * apellido materno
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=apellidoMaterno
     private String apellidoMaterno;
     
     /**
     * telefono
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=telefono
     private String telefono;
     
     /**
     * extension
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=extension
     private String extension;
     
     /**
     * directorio sab
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=directorioSab
     private Short directorioSab;
     
     /**
     * id compania
     */
-    // Simple: PK?false, FK?true, class=int, o=idCompania
     private int idCompania;
     
     /**
     * id usuario
     */
-    // Simple: PK?false, FK?true, class=int, o=idUsuario
     private int idUsuario;
     
     /**
     * id area
     */
-    // Simple: PK?false, FK?true, class=java.lang.Integer, o=idArea
     private Integer idArea;
     
     /**
     * id estacion
     */
-    // Simple: PK?false, FK?true, class=int, o=idEstacion
     private int idEstacion;
     
     /**
     * esatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=esatus
     private Short esatus;
 
     /** 
@@ -255,12 +243,12 @@ public class EmpleadoDTO implements java.io.Serializable {
 		x.apellidoMaterno = (jObj.getString("apellidoMaterno"));
 		x.telefono = (jObj.getString("telefono"));
 		x.extension = (jObj.getString("extension"));
-		x.directorioSab = (jObj.getShort("directorioSab"));
+		x.directorioSab = (short)(jObj.getInt("directorioSab"));
 		x.idCompania = (jObj.getInt("idCompania"));
 		x.idUsuario = (jObj.getInt("idUsuario"));
 		x.idArea = (jObj.getInt("idArea"));
 		x.idEstacion = (jObj.getInt("idEstacion"));
-		x.esatus = (jObj.getShort("esatus"));
+		x.esatus = (short)(jObj.getInt("esatus"));
 		
 		return x;
 	}

@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
  * ESB JPA Entity of Table master.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 @Stateless
 public class MasterFacade extends AbstractFacade<Master> implements MasterFacadeRemote {
@@ -58,21 +58,21 @@ public class MasterFacade extends AbstractFacade<Master> implements MasterFacade
 			    paramAsigned++;
 			    sbq.append(" and x.contenedor = :contenedor");
 			}
-			if(x.getnull() != null){
+			if(x.getIdUnidadMedida() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.idUnidadMedida = :idUnidadMedida");
 			}
-			if(x.getnull() != null){
+			if(x.getIdInstruccionesNacionales() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.idInstruccionesNacionales = :idInstruccionesNacionales");
 			}
-			if(x.getnull() != null){
+			if(x.getIdInstruccionesInternac() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.idInstruccionesInternac = :idInstruccionesInternac");
 			}
-			if(x.getnull() != null){
+			if(x.getIdTipoKit() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.idTipoKit = :idTipoKit");
 			}
 			
 		} else {
@@ -97,17 +97,17 @@ public class MasterFacade extends AbstractFacade<Master> implements MasterFacade
 			if(x.getContenedor() != null){
 			    nq.setParameter("contenedor",x.getContenedor());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getIdUnidadMedida() != null){
+			    nq.setParameter("idUnidadMedida",x.getIdUnidadMedida());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getIdInstruccionesNacionales() != null){
+			    nq.setParameter("idInstruccionesNacionales",x.getIdInstruccionesNacionales());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getIdInstruccionesInternac() != null){
+			    nq.setParameter("idInstruccionesInternac",x.getIdInstruccionesInternac());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getIdTipoKit() != null){
+			    nq.setParameter("idTipoKit",x.getIdTipoKit());
 			}
 			
 		}		

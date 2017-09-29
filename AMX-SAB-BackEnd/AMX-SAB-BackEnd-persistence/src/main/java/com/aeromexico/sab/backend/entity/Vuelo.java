@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table vuelo.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -45,16 +46,16 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Vuelo.countAll", query = "SELECT COUNT(v) FROM Vuelo v")
     , @NamedQuery(name = "Vuelo.findByIdVuelo", query = "SELECT v FROM Vuelo v WHERE v.idVuelo = :idVuelo")
     , @NamedQuery(name = "Vuelo.findByNumeroVuelo", query = "SELECT v FROM Vuelo v WHERE v.numeroVuelo = :numeroVuelo")
-    , @NamedQuery(name = "Vuelo.findByParametros", query = "SELECT v FROM Vuelo v WHERE v.parametros = :parametros")
+    , @NamedQuery(name = "Vuelo.findBytipoVuelo", query = "SELECT v FROM Vuelo v WHERE v.tipoVuelo = :tipoVuelo")
     , @NamedQuery(name = "Vuelo.findByestacionOrigen", query = "SELECT v FROM Vuelo v WHERE v.estacionOrigen = :estacionOrigen")
     , @NamedQuery(name = "Vuelo.findByestacionDestino", query = "SELECT v FROM Vuelo v WHERE v.estacionDestino = :estacionDestino")
-    , @NamedQuery(name = "Vuelo.findByParametros", query = "SELECT v FROM Vuelo v WHERE v.parametros = :parametros")
+    , @NamedQuery(name = "Vuelo.findBytipoCabina", query = "SELECT v FROM Vuelo v WHERE v.tipoCabina = :tipoCabina")
     , @NamedQuery(name = "Vuelo.findBycompania", query = "SELECT v FROM Vuelo v WHERE v.compania = :compania")
     , @NamedQuery(name = "Vuelo.findByclase", query = "SELECT v FROM Vuelo v WHERE v.clase = :clase")
     , @NamedQuery(name = "Vuelo.findByEstatus", query = "SELECT v FROM Vuelo v WHERE v.estatus = :estatus")
 })
 public class Vuelo implements java.io.Serializable {
-    private static final long serialVersionUID = 834600351;
+    private static final long serialVersionUID = 558638686;
     
     /**
     * The 'id vuelo' Maps to COLUMN 'id_vuelo'
@@ -62,6 +63,7 @@ public class Vuelo implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_VUELO" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -73,7 +75,8 @@ public class Vuelo implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "NUMERO_VUELO" , nullable=false)
     private int numeroVuelo;
     
@@ -83,7 +86,7 @@ public class Vuelo implements java.io.Serializable {
     
     @JoinColumn(name = "TIPO_VUELO" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros tipoVuelo;
     
     /**
     * The 'id estacion origen' Maps to COLUMN 'id_estacion_origen'
@@ -107,7 +110,7 @@ public class Vuelo implements java.io.Serializable {
     
     @JoinColumn(name = "TIPO_CABINA" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros tipoCabina;
     
     /**
     * The 'id compania' Maps to COLUMN 'id_compania'
@@ -130,7 +133,8 @@ public class Vuelo implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
 
@@ -151,8 +155,8 @@ public class Vuelo implements java.io.Serializable {
     public int getNumeroVuelo() { return this.numeroVuelo;}
     public void setNumeroVuelo(int v) { this.numeroVuelo = v; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getTipoVuelo(){ return this.tipoVuelo ; }
+    public void setTipoVuelo(Parametros x){ this.tipoVuelo = x; }
     
     public Estacion getEstacionOrigen(){ return this.estacionOrigen ; }
     public void setEstacionOrigen(Estacion x){ this.estacionOrigen = x; }
@@ -160,8 +164,8 @@ public class Vuelo implements java.io.Serializable {
     public Estacion getEstacionDestino(){ return this.estacionDestino ; }
     public void setEstacionDestino(Estacion x){ this.estacionDestino = x; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getTipoCabina(){ return this.tipoCabina ; }
+    public void setTipoCabina(Parametros x){ this.tipoCabina = x; }
     
     public Compania getCompania(){ return this.compania ; }
     public void setCompania(Compania x){ this.compania = x; }
@@ -180,10 +184,10 @@ public class Vuelo implements java.io.Serializable {
         int hash = 0;
 		hash += String.valueOf(idVuelo).hashCode();
 		hash += String.valueOf(numeroVuelo).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(tipoVuelo).hashCode();
 		hash += String.valueOf(estacionOrigen).hashCode();
 		hash += String.valueOf(estacionDestino).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(tipoCabina).hashCode();
 		hash += String.valueOf(compania).hashCode();
 		hash += String.valueOf(clase).hashCode();
 		hash += String.valueOf(estatus).hashCode();
@@ -207,10 +211,10 @@ public class Vuelo implements java.io.Serializable {
 		Vuelo other = (Vuelo ) o;
 		if (!Objects.equals(this.idVuelo, other.idVuelo)) { return false; }		
 		if (!Objects.equals(this.numeroVuelo, other.numeroVuelo)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.tipoVuelo, other.tipoVuelo)) { return false; }		
 		if (!Objects.equals(this.estacionOrigen, other.estacionOrigen)) { return false; }		
 		if (!Objects.equals(this.estacionDestino, other.estacionDestino)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.tipoCabina, other.tipoCabina)) { return false; }		
 		if (!Objects.equals(this.compania, other.compania)) { return false; }		
 		if (!Objects.equals(this.clase, other.clase)) { return false; }		
 		if (!Objects.equals(this.estatus, other.estatus)) { return false; }		
@@ -226,10 +230,10 @@ public class Vuelo implements java.io.Serializable {
 		sb.append("Vuelo{");
 		sb.append("idVuelo" ).append("=").append(idVuelo).append("|");
 		sb.append("numeroVuelo" ).append("=").append(numeroVuelo).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("tipoVuelo" ).append("=").append(tipoVuelo).append("|");
 		sb.append("estacionOrigen" ).append("=").append(estacionOrigen).append("|");
 		sb.append("estacionDestino" ).append("=").append(estacionDestino).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("tipoCabina" ).append("=").append(tipoCabina).append("|");
 		sb.append("compania" ).append("=").append(compania).append("|");
 		sb.append("clase" ).append("=").append(clase).append("|");
 		sb.append("estatus" ).append("=").append(estatus).append("|");

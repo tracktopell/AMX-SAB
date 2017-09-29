@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table usuario.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -45,11 +46,11 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Usuario.countAll", query = "SELECT COUNT(u) FROM Usuario u")
     , @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.idUsuario = :idUsuario")
     , @NamedQuery(name = "Usuario.findByEmail", query = "SELECT u FROM Usuario u WHERE u.email = :email")
-    , @NamedQuery(name = "Usuario.findByContraseña", query = "SELECT u FROM Usuario u WHERE u.contraseña = :contraseña")
+    , @NamedQuery(name = "Usuario.findByContrasenia", query = "SELECT u FROM Usuario u WHERE u.contrasenia = :contrasenia")
     , @NamedQuery(name = "Usuario.findByEstatus", query = "SELECT u FROM Usuario u WHERE u.estatus = :estatus")
 })
 public class Usuario implements java.io.Serializable {
-    private static final long serialVersionUID = 1989780873;
+    private static final long serialVersionUID = 1922154895;
     
     /**
     * The 'id usuario' Maps to COLUMN 'id_usuario'
@@ -57,6 +58,7 @@ public class Usuario implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_USUARIO" , nullable=false  )
     private Integer idUsuario;
@@ -66,27 +68,30 @@ public class Usuario implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 100)
     @Column(name = "EMAIL" , length=100, nullable=false)
     private String email;
     
     /**
-    * The 'contraseña' Maps to COLUMN 'contraseña'
+    * The 'contrasenia' Maps to COLUMN 'contrasenia'
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 255)
-    @Column(name = "CONTRASEÑA" , length=255, nullable=false)
-    private String contraseña;
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 255)
+    @Column(name = "CONTRASENIA" , length=255, nullable=false)
+    private String contrasenia;
     
     /**
     * The 'fecha creacion' Maps to COLUMN 'fecha_creacion'
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "FECHA_CREACION" , nullable=false)
     private java.sql.Date fechaCreacion;
     
@@ -95,7 +100,8 @@ public class Usuario implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
     /** 
@@ -134,8 +140,8 @@ public class Usuario implements java.io.Serializable {
     public String getEmail() { return this.email;}
     public void setEmail(String v) { this.email = v; }
     
-    public String getContraseña() { return this.contraseña;}
-    public void setContraseña(String v) { this.contraseña = v; }
+    public String getContrasenia() { return this.contrasenia;}
+    public void setContrasenia(String v) { this.contrasenia = v; }
     
     public java.sql.Date getFechaCreacion() { return this.fechaCreacion;}
     public void setFechaCreacion(java.sql.Date v) { this.fechaCreacion = v; }
@@ -160,7 +166,7 @@ public class Usuario implements java.io.Serializable {
         int hash = 0;
 		hash += String.valueOf(idUsuario).hashCode();
 		hash += String.valueOf(email).hashCode();
-		hash += String.valueOf(contraseña).hashCode();
+		hash += String.valueOf(contrasenia).hashCode();
 		hash += String.valueOf(fechaCreacion).hashCode();
 		hash += String.valueOf(estatus).hashCode();
         return hash;
@@ -183,7 +189,7 @@ public class Usuario implements java.io.Serializable {
 		Usuario other = (Usuario ) o;
 		if (!Objects.equals(this.idUsuario, other.idUsuario)) { return false; }		
 		if (!Objects.equals(this.email, other.email)) { return false; }		
-		if (!Objects.equals(this.contraseña, other.contraseña)) { return false; }		
+		if (!Objects.equals(this.contrasenia, other.contrasenia)) { return false; }		
 		if (!Objects.equals(this.fechaCreacion, other.fechaCreacion)) { return false; }		
 		if (!Objects.equals(this.estatus, other.estatus)) { return false; }		
     	return true;
@@ -198,7 +204,7 @@ public class Usuario implements java.io.Serializable {
 		sb.append("Usuario{");
 		sb.append("idUsuario" ).append("=").append(idUsuario).append("|");
 		sb.append("email" ).append("=").append(email).append("|");
-		sb.append("contraseña" ).append("=").append(contraseña).append("|");
+		sb.append("contrasenia" ).append("=").append(contrasenia).append("|");
 		sb.append("fechaCreacion" ).append("=").append(fechaCreacion).append("|");
 		sb.append("estatus" ).append("=").append(estatus).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");

@@ -12,8 +12,8 @@ import javax.persistence.TypedQuery;
  * ESB JPA Entity of Table avion_audifono.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 @Stateless
 public class AvionAudifonoFacade extends AbstractFacade<AvionAudifono> implements AvionAudifonoFacadeRemote {
@@ -50,9 +50,9 @@ public class AvionAudifonoFacade extends AbstractFacade<AvionAudifono> implement
 			    paramAsigned++;
 			    sbq.append(" and x.clase = :clase");
 			}
-			if(x.getnull() != null){
+			if(x.getTipoAudifono() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.null = :null");
+			    sbq.append(" and x.tipoAudifono = :tipoAudifono");
 			}
 			
 		} else {
@@ -71,8 +71,8 @@ public class AvionAudifonoFacade extends AbstractFacade<AvionAudifono> implement
 			if(x.getClase() != null){
 			    nq.setParameter("clase",x.getClase());
 			}
-			if(x.getnull() != null){
-			    nq.setParameter("null",x.getnull());
+			if(x.getTipoAudifono() != null){
+			    nq.setParameter("tipoAudifono",x.getTipoAudifono());
 			}
 			
 		}		

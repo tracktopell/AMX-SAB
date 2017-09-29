@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table master.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -48,13 +49,13 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Master.findByNombreEn", query = "SELECT m FROM Master m WHERE m.nombreEn = :nombreEn")
     , @NamedQuery(name = "Master.findByUrlMultimedia", query = "SELECT m FROM Master m WHERE m.urlMultimedia = :urlMultimedia")
     , @NamedQuery(name = "Master.findByContenedor", query = "SELECT m FROM Master m WHERE m.contenedor = :contenedor")
-    , @NamedQuery(name = "Master.findByParametros", query = "SELECT m FROM Master m WHERE m.parametros = :parametros")
-    , @NamedQuery(name = "Master.findByParametros", query = "SELECT m FROM Master m WHERE m.parametros = :parametros")
-    , @NamedQuery(name = "Master.findByParametros", query = "SELECT m FROM Master m WHERE m.parametros = :parametros")
-    , @NamedQuery(name = "Master.findByParametros", query = "SELECT m FROM Master m WHERE m.parametros = :parametros")
+    , @NamedQuery(name = "Master.findByidUnidadMedida", query = "SELECT m FROM Master m WHERE m.idUnidadMedida = :idUnidadMedida")
+    , @NamedQuery(name = "Master.findByidInstruccionesNacionales", query = "SELECT m FROM Master m WHERE m.idInstruccionesNacionales = :idInstruccionesNacionales")
+    , @NamedQuery(name = "Master.findByidInstruccionesInternac", query = "SELECT m FROM Master m WHERE m.idInstruccionesInternac = :idInstruccionesInternac")
+    , @NamedQuery(name = "Master.findByidTipoKit", query = "SELECT m FROM Master m WHERE m.idTipoKit = :idTipoKit")
 })
 public class Master implements java.io.Serializable {
-    private static final long serialVersionUID = 468121027;
+    private static final long serialVersionUID = 250421012;
     
     /**
     * The 'id kit' Maps to COLUMN 'id_kit'
@@ -62,7 +63,8 @@ public class Master implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
-    @Size(min = 1, max = 10)
+    //@Size(min = 1, max = 10)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_KIT" , length=10, nullable=false  )
     private String idKit;
@@ -72,8 +74,9 @@ public class Master implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "NOMBRE_ES" , length=50, nullable=false)
     private String nombreEs;
     
@@ -82,8 +85,9 @@ public class Master implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "NOMBRE_EN" , length=50, nullable=false)
     private String nombreEn;
     
@@ -92,8 +96,9 @@ public class Master implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 255)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 255)
     @Column(name = "URL_MULTIMEDIA" , length=255, nullable=false)
     private String urlMultimedia;
     
@@ -102,8 +107,9 @@ public class Master implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "CONTENEDOR" , length=50, nullable=false)
     private String contenedor;
     
@@ -113,7 +119,7 @@ public class Master implements java.io.Serializable {
     
     @JoinColumn(name = "ID_UNIDAD_MEDIDA" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros idUnidadMedida;
     
     /**
     * The 'id instrucciones nacionales' Maps to COLUMN 'id_instrucciones_nacionales'
@@ -121,7 +127,7 @@ public class Master implements java.io.Serializable {
     
     @JoinColumn(name = "ID_INSTRUCCIONES_NACIONALES" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros idInstruccionesNacionales;
     
     /**
     * The 'id instrucciones internac' Maps to COLUMN 'id_instrucciones_internac'
@@ -129,7 +135,7 @@ public class Master implements java.io.Serializable {
     
     @JoinColumn(name = "ID_INSTRUCCIONES_INTERNAC" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros idInstruccionesInternac;
     
     /**
     * The 'id tipo kit' Maps to COLUMN 'id_tipo_kit'
@@ -137,7 +143,7 @@ public class Master implements java.io.Serializable {
     
     @JoinColumn(name = "ID_TIPO_KIT" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros idTipoKit;
 
 	// =========================================================================
     // =========================================================================
@@ -165,17 +171,17 @@ public class Master implements java.io.Serializable {
     public String getContenedor() { return this.contenedor;}
     public void setContenedor(String v) { this.contenedor = v; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getIdUnidadMedida(){ return this.idUnidadMedida ; }
+    public void setIdUnidadMedida(Parametros x){ this.idUnidadMedida = x; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getIdInstruccionesNacionales(){ return this.idInstruccionesNacionales ; }
+    public void setIdInstruccionesNacionales(Parametros x){ this.idInstruccionesNacionales = x; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getIdInstruccionesInternac(){ return this.idInstruccionesInternac ; }
+    public void setIdInstruccionesInternac(Parametros x){ this.idInstruccionesInternac = x; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getIdTipoKit(){ return this.idTipoKit ; }
+    public void setIdTipoKit(Parametros x){ this.idTipoKit = x; }
     
     // O2M <*>    
 	// M2M <*>
@@ -188,10 +194,10 @@ public class Master implements java.io.Serializable {
 		hash += String.valueOf(nombreEn).hashCode();
 		hash += String.valueOf(urlMultimedia).hashCode();
 		hash += String.valueOf(contenedor).hashCode();
-		hash += String.valueOf(parametros).hashCode();
-		hash += String.valueOf(parametros).hashCode();
-		hash += String.valueOf(parametros).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(idUnidadMedida).hashCode();
+		hash += String.valueOf(idInstruccionesNacionales).hashCode();
+		hash += String.valueOf(idInstruccionesInternac).hashCode();
+		hash += String.valueOf(idTipoKit).hashCode();
         return hash;
     }
 
@@ -215,10 +221,10 @@ public class Master implements java.io.Serializable {
 		if (!Objects.equals(this.nombreEn, other.nombreEn)) { return false; }		
 		if (!Objects.equals(this.urlMultimedia, other.urlMultimedia)) { return false; }		
 		if (!Objects.equals(this.contenedor, other.contenedor)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.idUnidadMedida, other.idUnidadMedida)) { return false; }		
+		if (!Objects.equals(this.idInstruccionesNacionales, other.idInstruccionesNacionales)) { return false; }		
+		if (!Objects.equals(this.idInstruccionesInternac, other.idInstruccionesInternac)) { return false; }		
+		if (!Objects.equals(this.idTipoKit, other.idTipoKit)) { return false; }		
     	return true;
     }
 
@@ -234,10 +240,10 @@ public class Master implements java.io.Serializable {
 		sb.append("nombreEn" ).append("=").append(nombreEn).append("|");
 		sb.append("urlMultimedia" ).append("=").append(urlMultimedia).append("|");
 		sb.append("contenedor" ).append("=").append(contenedor).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("idUnidadMedida" ).append("=").append(idUnidadMedida).append("|");
+		sb.append("idInstruccionesNacionales" ).append("=").append(idInstruccionesNacionales).append("|");
+		sb.append("idInstruccionesInternac" ).append("=").append(idInstruccionesInternac).append("|");
+		sb.append("idTipoKit" ).append("=").append(idTipoKit).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();
 	}

@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table perfil.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -48,7 +49,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Perfil.findByEstatus", query = "SELECT p FROM Perfil p WHERE p.estatus = :estatus")
 })
 public class Perfil implements java.io.Serializable {
-    private static final long serialVersionUID = 2093176254;
+    private static final long serialVersionUID = 1198108795;
     
     /**
     * The 'id perfil' Maps to COLUMN 'id_perfil'
@@ -56,6 +57,7 @@ public class Perfil implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_PERFIL" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -67,8 +69,9 @@ public class Perfil implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "NOMBRE" , length=50, nullable=false)
     private String nombre;
     
@@ -77,7 +80,8 @@ public class Perfil implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
 

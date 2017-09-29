@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table avion.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -48,10 +49,10 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Avion.findByMatricula", query = "SELECT a FROM Avion a WHERE a.matricula = :matricula")
     , @NamedQuery(name = "Avion.findByMatriculaCorta", query = "SELECT a FROM Avion a WHERE a.matriculaCorta = :matriculaCorta")
     , @NamedQuery(name = "Avion.findByEstatus", query = "SELECT a FROM Avion a WHERE a.estatus = :estatus")
-    , @NamedQuery(name = "Avion.findByParametros", query = "SELECT a FROM Avion a WHERE a.parametros = :parametros")
+    , @NamedQuery(name = "Avion.findByidConectividad", query = "SELECT a FROM Avion a WHERE a.idConectividad = :idConectividad")
 })
 public class Avion implements java.io.Serializable {
-    private static final long serialVersionUID = 664223387;
+    private static final long serialVersionUID = 1342443276;
     
     /**
     * The 'id avion' Maps to COLUMN 'id_avion'
@@ -59,6 +60,7 @@ public class Avion implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_AVION" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -78,8 +80,9 @@ public class Avion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "MATRICULA" , length=50, nullable=false)
     private String matricula;
     
@@ -88,8 +91,9 @@ public class Avion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 10)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 10)
     @Column(name = "MATRICULA_CORTA" , length=10, nullable=false)
     private String matriculaCorta;
     
@@ -98,7 +102,8 @@ public class Avion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
     
@@ -108,7 +113,7 @@ public class Avion implements java.io.Serializable {
     
     @JoinColumn(name = "ID_CONECTIVIDAD" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros idConectividad;
     /** 
     * Map the relation to equipamiento_comisariato table where has id_avion object mapped column of for this class.
     */ 
@@ -164,8 +169,8 @@ public class Avion implements java.io.Serializable {
     public Short getEstatus() { return this.estatus;}
     public void setEstatus(Short v) { this.estatus = v; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getIdConectividad(){ return this.idConectividad ; }
+    public void setIdConectividad(Parametros x){ this.idConectividad = x; }
     
     // O2M <*>    
     public List<EquipamientoComisariato> getEquipamientoComisariatoThatHasThisAvionList(){ return this.equipamientoComisariatoThatHasThisAvionList; }
@@ -190,7 +195,7 @@ public class Avion implements java.io.Serializable {
 		hash += String.valueOf(matricula).hashCode();
 		hash += String.valueOf(matriculaCorta).hashCode();
 		hash += String.valueOf(estatus).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(idConectividad).hashCode();
         return hash;
     }
 
@@ -214,7 +219,7 @@ public class Avion implements java.io.Serializable {
 		if (!Objects.equals(this.matricula, other.matricula)) { return false; }		
 		if (!Objects.equals(this.matriculaCorta, other.matriculaCorta)) { return false; }		
 		if (!Objects.equals(this.estatus, other.estatus)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.idConectividad, other.idConectividad)) { return false; }		
     	return true;
     }
 
@@ -230,7 +235,7 @@ public class Avion implements java.io.Serializable {
 		sb.append("matricula" ).append("=").append(matricula).append("|");
 		sb.append("matriculaCorta" ).append("=").append(matriculaCorta).append("|");
 		sb.append("estatus" ).append("=").append(estatus).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("idConectividad" ).append("=").append(idConectividad).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();
 	}

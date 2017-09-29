@@ -14,42 +14,37 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class CategoriaMaterialDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 142257191;
+    private static final long serialVersionUID = 1480010240;
 
     
     /**
     * id categoria material
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idCategoriaMaterial
     private Integer idCategoriaMaterial;
     
     /**
     * nombre es
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombreEs
     private String nombreEs;
     
     /**
     * nombre en
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=nombreEn
     private String nombreEn;
     
     /**
     * descripcion
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=descripcion
     private String descripcion;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
 
     /** 
@@ -148,7 +143,7 @@ public class CategoriaMaterialDTO implements java.io.Serializable {
 		x.nombreEs = (jObj.getString("nombreEs"));
 		x.nombreEn = (jObj.getString("nombreEn"));
 		x.descripcion = (jObj.getString("descripcion"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		
 		return x;
 	}

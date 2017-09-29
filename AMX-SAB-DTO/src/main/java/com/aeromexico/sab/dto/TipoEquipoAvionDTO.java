@@ -14,42 +14,37 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class TipoEquipoAvionDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 664740647;
+    private static final long serialVersionUID = 1528902577;
 
     
     /**
     * id tipo equipo avion
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idTipoEquipoAvion
     private Integer idTipoEquipoAvion;
     
     /**
     * id modelo avion
     */
-    // Simple: PK?false, FK?true, class=int, o=idModeloAvion
     private int idModeloAvion;
     
     /**
     * total aviones
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=totalAviones
     private Short totalAviones;
     
     /**
     * tipo equipo
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=tipoEquipo
     private String tipoEquipo;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
 
     /** 
@@ -146,9 +141,9 @@ public class TipoEquipoAvionDTO implements java.io.Serializable {
 		
 		x.idTipoEquipoAvion = (jObj.getInt("idTipoEquipoAvion"));
 		x.idModeloAvion = (jObj.getInt("idModeloAvion"));
-		x.totalAviones = (jObj.getShort("totalAviones"));
+		x.totalAviones = (short)(jObj.getInt("totalAviones"));
 		x.tipoEquipo = (jObj.getString("tipoEquipo"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		
 		return x;
 	}

@@ -14,42 +14,37 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class HorarioDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 1283928880;
+    private static final long serialVersionUID = 668386784;
 
     
     /**
     * id horario
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idHorario
     private Integer idHorario;
     
     /**
     * id region
     */
-    // Simple: PK?false, FK?true, class=int, o=idRegion
     private int idRegion;
     
     /**
     * hora inicio
     */
-    // Simple: PK?false, FK?false, class=java.sql.Time, o=horaInicio
     private java.sql.Time horaInicio;
     
     /**
     * hora fin
     */
-    // Simple: PK?false, FK?false, class=java.sql.Time, o=horaFin
     private java.sql.Time horaFin;
     
     /**
     * estatus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estatus
     private Short estatus;
 
     /** 
@@ -146,9 +141,9 @@ public class HorarioDTO implements java.io.Serializable {
 		
 		x.idHorario = (jObj.getInt("idHorario"));
 		x.idRegion = (jObj.getInt("idRegion"));
-		x.horaInicio = (jObj.getTime("horaInicio"));
-		x.horaFin = (jObj.getTime("horaFin"));
-		x.estatus = (jObj.getShort("estatus"));
+		x.horaInicio = new java.sql.Time(jObj.getLong("horaInicio"));
+		x.horaFin = new java.sql.Time(jObj.getLong("horaFin"));
+		x.estatus = (short)(jObj.getInt("estatus"));
 		
 		return x;
 	}

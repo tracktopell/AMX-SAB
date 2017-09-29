@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table material_master.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -45,21 +46,22 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "MaterialMaster.countAll", query = "SELECT COUNT(m) FROM MaterialMaster m")
     , @NamedQuery(name = "MaterialMaster.findByCantidad", query = "SELECT m FROM MaterialMaster m WHERE m.cantidad = :cantidad")
     , @NamedQuery(name = "MaterialMaster.findByPeso", query = "SELECT m FROM MaterialMaster m WHERE m.peso = :peso")
-    , @NamedQuery(name = "MaterialMaster.findByParametros", query = "SELECT m FROM MaterialMaster m WHERE m.parametros = :parametros")
+    , @NamedQuery(name = "MaterialMaster.findByidUnidadMedida", query = "SELECT m FROM MaterialMaster m WHERE m.idUnidadMedida = :idUnidadMedida")
     , @NamedQuery(name = "MaterialMaster.findByObservaciones", query = "SELECT m FROM MaterialMaster m WHERE m.observaciones = :observaciones")
     , @NamedQuery(name = "MaterialMaster.findBymateriall", query = "SELECT m FROM MaterialMaster m WHERE m.materiall = :materiall")
     , @NamedQuery(name = "MaterialMaster.findBymaster", query = "SELECT m FROM MaterialMaster m WHERE m.master = :master")
     , @NamedQuery(name = "MaterialMaster.findByMaterialMasterPK", query = "SELECT m FROM MaterialMaster m WHERE m.materialMasterPK = :materialMasterPK")
 })
 public class MaterialMaster implements java.io.Serializable {
-    private static final long serialVersionUID = 603742814;
+    private static final long serialVersionUID = 303563356;
     
     /**
     * The 'cantidad' Maps to COLUMN 'cantidad'
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "CANTIDAD" , nullable=false)
     private int cantidad;
     
@@ -68,7 +70,8 @@ public class MaterialMaster implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "PESO" , nullable=false)
     private float peso;
     
@@ -78,15 +81,16 @@ public class MaterialMaster implements java.io.Serializable {
     
     @JoinColumn(name = "ID_UNIDAD_MEDIDA" , referencedColumnName = "ID_PARAMETRO")
     @ManyToOne(optional = false)
-    private Parametros parametros;
+    private Parametros idUnidadMedida;
     
     /**
     * The 'observaciones' Maps to COLUMN 'observaciones'
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 255)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 255)
     @Column(name = "OBSERVACIONES" , length=255, nullable=false)
     private String observaciones;
     
@@ -130,8 +134,8 @@ public class MaterialMaster implements java.io.Serializable {
     public float getPeso() { return this.peso;}
     public void setPeso(float v) { this.peso = v; }
     
-    public Parametros getParametros() { return this.parametros;}
-    public void setParametros(Parametros v) { this.parametros = v; }
+    public Parametros getIdUnidadMedida(){ return this.idUnidadMedida ; }
+    public void setIdUnidadMedida(Parametros x){ this.idUnidadMedida = x; }
     
     public String getObservaciones() { return this.observaciones;}
     public void setObservaciones(String v) { this.observaciones = v; }
@@ -153,7 +157,7 @@ public class MaterialMaster implements java.io.Serializable {
         int hash = 0;
 		hash += String.valueOf(cantidad).hashCode();
 		hash += String.valueOf(peso).hashCode();
-		hash += String.valueOf(parametros).hashCode();
+		hash += String.valueOf(idUnidadMedida).hashCode();
 		hash += String.valueOf(observaciones).hashCode();
 		hash += String.valueOf(materiall).hashCode();
 		hash += String.valueOf(master).hashCode();
@@ -178,7 +182,7 @@ public class MaterialMaster implements java.io.Serializable {
 		MaterialMaster other = (MaterialMaster ) o;
 		if (!Objects.equals(this.cantidad, other.cantidad)) { return false; }		
 		if (!Objects.equals(this.peso, other.peso)) { return false; }		
-		if (!Objects.equals(this.parametros, other.parametros)) { return false; }		
+		if (!Objects.equals(this.idUnidadMedida, other.idUnidadMedida)) { return false; }		
 		if (!Objects.equals(this.observaciones, other.observaciones)) { return false; }		
 		if (!Objects.equals(this.materiall, other.materiall)) { return false; }		
 		if (!Objects.equals(this.master, other.master)) { return false; }		
@@ -195,7 +199,7 @@ public class MaterialMaster implements java.io.Serializable {
 		sb.append("MaterialMaster{");
 		sb.append("cantidad" ).append("=").append(cantidad).append("|");
 		sb.append("peso" ).append("=").append(peso).append("|");
-		sb.append("parametros" ).append("=").append(parametros).append("|");
+		sb.append("idUnidadMedida" ).append("=").append(idUnidadMedida).append("|");
 		sb.append("observaciones" ).append("=").append(observaciones).append("|");
 		sb.append("materiall" ).append("=").append(materiall).append("|");
 		sb.append("master" ).append("=").append(master).append("|");

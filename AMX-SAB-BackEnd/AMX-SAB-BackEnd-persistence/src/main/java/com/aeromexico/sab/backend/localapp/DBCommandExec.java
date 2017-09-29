@@ -1,4 +1,4 @@
-package com.tracktopell.openlegacy.fullstackexam.localapp;
+package com.aeromexico.sab.backend.localapp;
 
 import java.io.*;
 
@@ -39,7 +39,7 @@ public class DBCommandExec {
         return printInfoDBOnStartup;
     }
     
-    protected Connection getConnection() throws IllegalStateException, SQLException {
+    public Connection getConnection() throws IllegalStateException, SQLException {
         Connection conn = null;
         try {
             logger.fine("getConnection: ...try get Connection (using " + connectionProperties + ")for Create DB.");
@@ -339,7 +339,7 @@ public class DBCommandExec {
 	
     public int shellDB(InputStream is,boolean continueWithErrors) {
 		boolean prinToConsole = true;
-		boolean repeatInput   = true;
+		boolean repeatInput   = false;
 		Console console = null;
 		int exitStatus = -1;
 		try{
@@ -400,20 +400,45 @@ public class DBCommandExec {
 			parameters4CreateAndExecute.put(PARAM_CONNECTION_JDBC_PASSWORD    , password);
 			
             dbInstaller = new DBCommandExec(parameters4CreateAndExecute);
-            dbInstaller.setPrintInfoDBOnStartup(printInfoDBOnStartup);            
+            dbInstaller.setPrintInfoDBOnStartup(printInfoDBOnStartup);   
+			
             if( script.startsWith("classpath:")){
 				isScript = DBCommandExec.class.getResourceAsStream(script.substring(script.indexOf(":")+1));
 			} else {
 				isScript = new FileInputStream(script);
-			}
-			if(isScript == null){
-				throw new IOException("Cant read from: "+script);
 			}
             exitStatus = dbInstaller.shellDB(isScript, continueWithErrors);
 			
         } catch (Exception ex) {
             ex.printStackTrace(System.err);
         } 
+	}
+	
+	public static Connection createConnection(String driver,String url,String user,String password){
+		int exitStatus = 0;
+		rdbms  = " derby";
+		
+		DBCommandExec dbInstaller = null;
+		InputStream isScript = null;
+		Connection connection = null;
+        try {
+			
+			Properties parameters4CreateAndExecute=new Properties();
+
+			parameters4CreateAndExecute.put(PARAM_CONNECTION_JDBC_CLASS_DRIVER, driver);
+			parameters4CreateAndExecute.put(PARAM_CONNECTION_JDBC_URL         , url);
+			parameters4CreateAndExecute.put(PARAM_CONNECTION_JDBC_USER        , user);
+			parameters4CreateAndExecute.put(PARAM_CONNECTION_JDBC_PASSWORD    , password);
+			
+            dbInstaller = new DBCommandExec(parameters4CreateAndExecute);
+            dbInstaller.setPrintInfoDBOnStartup(printInfoDBOnStartup);   
+			
+			connection = dbInstaller.getConnection();
+			
+        } catch (Exception ex) {
+            ex.printStackTrace(System.err);
+        } 
+		return connection;
 	}
 	
 	public static void main(String[] args) {

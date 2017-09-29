@@ -14,30 +14,27 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class AvionSistemaEntretenimientoDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 455659002;
+    private static final long serialVersionUID = 764977973;
 
     
     /**
     * id avion sistema entretenimiento
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idAvionSistemaEntretenimiento
     private Integer idAvionSistemaEntretenimiento;
     
     /**
     * id avion
     */
-    // Simple: PK?false, FK?true, class=int, o=idAvion
     private int idAvion;
     
     /**
     * id sistema entretenimiento
     */
-    // Simple: PK?false, FK?true, class=int, o=idSistemaEntretenimiento
     private int idSistemaEntretenimiento;
 
     /** 

@@ -14,12 +14,12 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class ModuloPerfilDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 2093631819;
+    private static final long serialVersionUID = 793589513;
 
     
     /**
@@ -30,19 +30,16 @@ public class ModuloPerfilDTO implements java.io.Serializable {
     /**
     * permiso rwd
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=permisoRwd
     private Short permisoRwd;
     
     /**
     * moduloid modulo
     */
-    // Simple: PK?true, FK?true, class=java.lang.Integer, o=moduloidModulo
     private Integer moduloidModulo;
     
     /**
     * perfilid perfil
     */
-    // Simple: PK?true, FK?true, class=java.lang.Integer, o=perfilidPerfil
     private Integer perfilidPerfil;
 
     /** 
@@ -121,7 +118,7 @@ public class ModuloPerfilDTO implements java.io.Serializable {
 		ModuloPerfilDTO x = null;
 		JSONObject jObj = new JSONObject(json);
 		
-		x.permisoRwd = (jObj.getShort("permisoRwd"));
+		x.permisoRwd = (short)(jObj.getInt("permisoRwd"));
 		x.moduloidModulo = (jObj.getInt("moduloidModulo"));
 		x.perfilidPerfil = (jObj.getInt("perfilidPerfil"));
 		

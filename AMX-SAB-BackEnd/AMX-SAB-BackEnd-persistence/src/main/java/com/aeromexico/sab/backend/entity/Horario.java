@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table horario.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -50,7 +51,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Horario.findByEstatus", query = "SELECT h FROM Horario h WHERE h.estatus = :estatus")
 })
 public class Horario implements java.io.Serializable {
-    private static final long serialVersionUID = 1283928880;
+    private static final long serialVersionUID = 668386784;
     
     /**
     * The 'id horario' Maps to COLUMN 'id_horario'
@@ -58,6 +59,7 @@ public class Horario implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_HORARIO" , nullable=false  )
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -77,7 +79,8 @@ public class Horario implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "HORA_INICIO" , nullable=false)
     private java.sql.Time horaInicio;
     
@@ -86,7 +89,8 @@ public class Horario implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "HORA_FIN" , nullable=false)
     private java.sql.Time horaFin;
     
@@ -95,7 +99,8 @@ public class Horario implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
 

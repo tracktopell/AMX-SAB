@@ -14,54 +14,47 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 public class ModeloAvionDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 363771819;
+    private static final long serialVersionUID = 960604060;
 
     
     /**
     * id modelo avion
     */
-    // Simple: PK?true, FK?false, class=java.lang.Integer, o=idModeloAvion
     private Integer idModeloAvion;
     
     /**
     * modelo
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=modelo
     private String modelo;
     
     /**
     * descripcion
     */
-    // Simple: PK?false, FK?false, class=java.lang.String, o=descripcion
     private String descripcion;
     
     /**
     * tipo cabina
     */
-    // Simple: PK?false, FK?true, class=int, o=tipoCabina
     private int tipoCabina;
     
     /**
     * id compania
     */
-    // Simple: PK?false, FK?true, class=int, o=idCompania
     private int idCompania;
     
     /**
     * id fabricante
     */
-    // Simple: PK?false, FK?true, class=int, o=idFabricante
     private int idFabricante;
     
     /**
     * estaus
     */
-    // Simple: PK?false, FK?false, class=java.lang.Short, o=estaus
     private Short estaus;
 
     /** 
@@ -180,7 +173,7 @@ public class ModeloAvionDTO implements java.io.Serializable {
 		x.tipoCabina = (jObj.getInt("tipoCabina"));
 		x.idCompania = (jObj.getInt("idCompania"));
 		x.idFabricante = (jObj.getInt("idFabricante"));
-		x.estaus = (jObj.getShort("estaus"));
+		x.estaus = (short)(jObj.getInt("estaus"));
 		
 		return x;
 	}

@@ -27,15 +27,16 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+// Hibernate Validator 5x is not compatible with validation-api 1.0.x
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 /**
  * Class for mapping JPA Entity of Table traduccion.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.12.9
- * @date 2017/09/27 07:01
+ * @version 1.13.1
+ * @date 2017/09/28 19:09
  */
 
 @Entity
@@ -51,7 +52,7 @@ import javax.validation.constraints.Size;
     , @NamedQuery(name = "Traduccion.findByEstatus", query = "SELECT t FROM Traduccion t WHERE t.estatus = :estatus")
 })
 public class Traduccion implements java.io.Serializable {
-    private static final long serialVersionUID = 2001049719;
+    private static final long serialVersionUID = 295530567;
     
     /**
     * The 'id traduccion' Maps to COLUMN 'id_traduccion'
@@ -59,6 +60,7 @@ public class Traduccion implements java.io.Serializable {
     
     @Id
     //@Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "ID_TRADUCCION" , nullable=false  )
     private Integer idTraduccion;
@@ -68,8 +70,9 @@ public class Traduccion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "NOMBRE_ENTIDAD" , length=50, nullable=false)
     private String nombreEntidad;
     
@@ -78,7 +81,8 @@ public class Traduccion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ID_ENTIDAD" , nullable=false)
     private int idEntidad;
     
@@ -87,8 +91,9 @@ public class Traduccion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 50)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
     @Column(name = "CAMPO" , length=50, nullable=false)
     private String campo;
     
@@ -97,8 +102,9 @@ public class Traduccion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 100)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 100)
     @Column(name = "VALOR" , length=100, nullable=false)
     private String valor;
     
@@ -107,7 +113,8 @@ public class Traduccion implements java.io.Serializable {
     */
     
     @Basic(optional = false)
-    @NotNull
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
 
