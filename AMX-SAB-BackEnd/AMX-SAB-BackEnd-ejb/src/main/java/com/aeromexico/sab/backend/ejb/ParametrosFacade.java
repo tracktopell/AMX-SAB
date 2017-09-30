@@ -1,4 +1,4 @@
-package com.aeromexico.sab.backend.remote;
+package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.Parametros;
 
@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 @Stateless
 public class ParametrosFacade extends AbstractFacade<Parametros> implements ParametrosFacadeRemote {
@@ -46,7 +46,7 @@ public class ParametrosFacade extends AbstractFacade<Parametros> implements Para
 			    paramAsigned++;
 			    sbq.append(" and x.clave = :clave");
 			}
-			if(x.getValor() != 0){
+			if(x.getValor()  != 0){
 			    paramAsigned++;
 			    sbq.append(" and x.valor = :valor");
 			}
@@ -68,7 +68,7 @@ public class ParametrosFacade extends AbstractFacade<Parametros> implements Para
 			if(x.getClave() != null){
 			    nq.setParameter("clave",x.getClave());
 			}
-			if(x.getValor() != (0) ){
+			if(x.getValor()  != 0){
 			    nq.setParameter("valor",x.getValor());
 			}
 			if(x.getEstatus() != null){

@@ -1,4 +1,4 @@
-package com.aeromexico.sab.backend.remote;
+package com.aeromexico.sab.backend.ejb;
 
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -11,7 +11,7 @@ import static javax.ejb.TransactionAttributeType.SUPPORTS;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public abstract class AbstractFacade<T> {

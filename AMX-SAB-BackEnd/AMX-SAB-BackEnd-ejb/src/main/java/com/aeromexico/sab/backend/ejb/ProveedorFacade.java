@@ -1,4 +1,4 @@
-package com.aeromexico.sab.backend.remote;
+package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.Proveedor;
 
@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 @Stateless
 public class ProveedorFacade extends AbstractFacade<Proveedor> implements ProveedorFacadeRemote {
@@ -46,7 +46,7 @@ public class ProveedorFacade extends AbstractFacade<Proveedor> implements Provee
 			    paramAsigned++;
 			    sbq.append(" and x.tipoProveedor = :tipoProveedor");
 			}
-			if(x.getIdEstacion() != 0){
+			if(x.getIdEstacion()  != 0){
 			    paramAsigned++;
 			    sbq.append(" and x.idEstacion = :idEstacion");
 			}
@@ -80,7 +80,7 @@ public class ProveedorFacade extends AbstractFacade<Proveedor> implements Provee
 			if(x.getTipoProveedor() != null){
 			    nq.setParameter("tipoProveedor",x.getTipoProveedor());
 			}
-			if(x.getIdEstacion() != (0) ){
+			if(x.getIdEstacion()  != 0){
 			    nq.setParameter("idEstacion",x.getIdEstacion());
 			}
 			if(x.getNombre() != null){

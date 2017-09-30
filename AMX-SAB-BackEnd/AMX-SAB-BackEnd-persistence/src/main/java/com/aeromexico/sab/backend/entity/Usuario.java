@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 @Entity
@@ -50,7 +50,7 @@ import javax.persistence.TemporalType;
     , @NamedQuery(name = "Usuario.findByEstatus", query = "SELECT u FROM Usuario u WHERE u.estatus = :estatus")
 })
 public class Usuario implements java.io.Serializable {
-    private static final long serialVersionUID = 1922154895;
+    private static final long serialVersionUID = 1989780873;
     
     /**
     * The 'id usuario' Maps to COLUMN 'id_usuario'
@@ -93,7 +93,7 @@ public class Usuario implements java.io.Serializable {
     // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     @Column(name = "FECHA_CREACION" , nullable=false)
-    private java.sql.Date fechaCreacion;
+    private java.sql.Timestamp fechaCreacion;
     
     /**
     * The 'estatus' Maps to COLUMN 'estatus'
@@ -143,8 +143,8 @@ public class Usuario implements java.io.Serializable {
     public String getContrasenia() { return this.contrasenia;}
     public void setContrasenia(String v) { this.contrasenia = v; }
     
-    public java.sql.Date getFechaCreacion() { return this.fechaCreacion;}
-    public void setFechaCreacion(java.sql.Date v) { this.fechaCreacion = v; }
+    public java.sql.Timestamp getFechaCreacion() { return this.fechaCreacion;}
+    public void setFechaCreacion(java.sql.Timestamp v) { this.fechaCreacion = v; }
     
     public Short getEstatus() { return this.estatus;}
     public void setEstatus(Short v) { this.estatus = v; }

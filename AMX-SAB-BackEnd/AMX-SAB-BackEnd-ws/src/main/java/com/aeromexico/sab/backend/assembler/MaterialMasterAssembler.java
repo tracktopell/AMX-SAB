@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.MaterialMaster;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public class MaterialMasterAssembler {    
@@ -30,19 +30,18 @@ public class MaterialMasterAssembler {
 		MaterialMaster jpaEntity = new MaterialMaster();
 
         // MaterialMasterPK is Embeddable. Begin nested settings
-        jpaEntity.getMaterialMasterPK().setLnumeroParte( dtoEntity.getLnumeroParte() );  // nested FKs > BUG
+        jpaEntity.getMaterialMasterPK().setNumeroParte( dtoEntity.getNumeroParte() );  // nested FKs > BUG
         jpaEntity.getMaterialMasterPK().setIdKit( dtoEntity.getIdKit() );  // nested FKs > BUG
         // End nested settings
         jpaEntity.setCantidad( dtoEntity.getCantidad()); // normal
         jpaEntity.setPeso( dtoEntity.getPeso()); // normal
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getIdUnidadMedida());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+        ParametrosDTO idUnidadMedidaDTO = new ParametrosDTO();
+        idUnidadMedidaDTO.setIdParametro( dtoEntity.getIdUnidadMedida());
+        jpaEntity.setIdUnidadMedida( ParametrosAssembler.buildJpaEntity( idUnidadMedidaDTO ));
         jpaEntity.setObservaciones( dtoEntity.getObservaciones()); // normal
-        MaterialDTO materiallDTO = new MaterialDTO();
-        materiallDTO.setNumeroParte( dtoEntity.getLnumeroParte());
-        jpaEntity.setMateriall( MaterialAssembler.buildJpaEntity( materiallDTO ));
+        MaterialDTO materialDTO = new MaterialDTO();
+        materialDTO.setNumeroParte( dtoEntity.getNumeroParte());
+        jpaEntity.setMaterial( MaterialAssembler.buildJpaEntity( materialDTO ));
         MasterDTO masterDTO = new MasterDTO();
         masterDTO.setIdKit( dtoEntity.getIdKit());
         jpaEntity.setMaster( MasterAssembler.buildJpaEntity( masterDTO ));
@@ -59,19 +58,18 @@ public class MaterialMasterAssembler {
 		for(MaterialMasterDTO dtoEntity: dtoEntityList){
 			jpaEntity = new MaterialMaster();
             // MaterialMasterPK is Embeddable. Begin nested settings
-            jpaEntity.getMaterialMasterPK().setLnumeroParte( dtoEntity.getLnumeroParte() );  // nested FKs > BUG
+            jpaEntity.getMaterialMasterPK().setNumeroParte( dtoEntity.getNumeroParte() );  // nested FKs > BUG
             jpaEntity.getMaterialMasterPK().setIdKit( dtoEntity.getIdKit() );  // nested FKs > BUG
             // End nested settings
             jpaEntity.setCantidad( dtoEntity.getCantidad());
             jpaEntity.setPeso( dtoEntity.getPeso());
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getIdUnidadMedida());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+            ParametrosDTO idUnidadMedidaDTO = new ParametrosDTO();
+            idUnidadMedidaDTO.setIdParametro( dtoEntity.getIdUnidadMedida());
+            jpaEntity.setIdUnidadMedida( ParametrosAssembler.buildJpaEntity( idUnidadMedidaDTO ));
             jpaEntity.setObservaciones( dtoEntity.getObservaciones());
-            MaterialDTO materiallDTO = new MaterialDTO();
-            materiallDTO.setNumeroParte( dtoEntity.getLnumeroParte());
-            jpaEntity.setMateriall( MaterialAssembler.buildJpaEntity( materiallDTO ));
+            MaterialDTO materialDTO = new MaterialDTO();
+            materialDTO.setNumeroParte( dtoEntity.getNumeroParte());
+            jpaEntity.setMaterial( MaterialAssembler.buildJpaEntity( materialDTO ));
             MasterDTO masterDTO = new MasterDTO();
             masterDTO.setIdKit( dtoEntity.getIdKit());
             jpaEntity.setMaster( MasterAssembler.buildJpaEntity( masterDTO ));
@@ -89,16 +87,16 @@ public class MaterialMasterAssembler {
         MaterialMasterDTO dtoEntity =  new MaterialMasterDTO();		
 
         // Embedable: MaterialMasterPK, begin nested settings
-        dtoEntity.setLnumeroParte( jpaEntity.getMaterialMasterPK().getLnumeroParte() ); // bug 3 ?
+        dtoEntity.setNumeroParte( jpaEntity.getMaterialMasterPK().getNumeroParte() ); // bug 3 ?
         dtoEntity.setIdKit( jpaEntity.getMaterialMasterPK().getIdKit() ); // bug 3 ?
         // End nested settings
         dtoEntity.setCantidad( jpaEntity.getCantidad() ); // primitive
         dtoEntity.setPeso( jpaEntity.getPeso() ); // primitive
-        //Not Embedable: IdUnidadMedida -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setIdUnidadMedida( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+        //Not Embedable: IdUnidadMedida -> Parametros, FTable: parametros, HyperName:ID_UNIDAD_MEDIDA
+        dtoEntity.setIdUnidadMedida( jpaEntity.getIdUnidadMedida()!=null?jpaEntity.getIdUnidadMedida().getIdParametro():null);
         dtoEntity.setObservaciones( jpaEntity.getObservaciones() ); // primitive
-        //Not Embedable: LnumeroParte -> Material, FTable: material, HyperName:materialL
-        dtoEntity.setLnumeroParte( jpaEntity.getMateriall()!=null?jpaEntity.getMateriall().getNumeroParte():null);
+        //Not Embedable: NumeroParte -> Material, FTable: material, HyperName:material
+        dtoEntity.setNumeroParte( jpaEntity.getMaterial()!=null?jpaEntity.getMaterial().getNumeroParte():null);
         //Not Embedable: IdKit -> Master, FTable: master, HyperName:master
         dtoEntity.setIdKit( jpaEntity.getMaster()!=null?jpaEntity.getMaster().getIdKit():null);
 
@@ -114,16 +112,16 @@ public class MaterialMasterAssembler {
 		for(MaterialMaster jpaEntity: jpaEntityList){
 			dtoEntity =  new MaterialMasterDTO();
             // Embedable: MaterialMasterPK, begin nested settings
-            dtoEntity.setLnumeroParte( jpaEntity.getMaterialMasterPK().getLnumeroParte() );
+            dtoEntity.setNumeroParte( jpaEntity.getMaterialMasterPK().getNumeroParte() );
             dtoEntity.setIdKit( jpaEntity.getMaterialMasterPK().getIdKit() );
             // End nested settings
             dtoEntity.setCantidad( jpaEntity.getCantidad() );
             dtoEntity.setPeso( jpaEntity.getPeso() );
-            //Not Embedable: IdUnidadMedida -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setIdUnidadMedida( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+            //Not Embedable: IdUnidadMedida -> Parametros, FTable: parametros, HyperName:ID_UNIDAD_MEDIDA
+            dtoEntity.setIdUnidadMedida( jpaEntity.getIdUnidadMedida()!=null?jpaEntity.getIdUnidadMedida().getIdParametro():null);
             dtoEntity.setObservaciones( jpaEntity.getObservaciones() );
-            //Not Embedable: LnumeroParte -> Material, FTable: material, HyperName:materialL
-            dtoEntity.setLnumeroParte( jpaEntity.getMateriall()!=null?jpaEntity.getMateriall().getNumeroParte():null);
+            //Not Embedable: NumeroParte -> Material, FTable: material, HyperName:material
+            dtoEntity.setNumeroParte( jpaEntity.getMaterial()!=null?jpaEntity.getMaterial().getNumeroParte():null);
             //Not Embedable: IdKit -> Master, FTable: master, HyperName:master
             dtoEntity.setIdKit( jpaEntity.getMaster()!=null?jpaEntity.getMaster().getIdKit():null);
 			dtoEntityList.add(dtoEntity);

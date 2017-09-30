@@ -2,20 +2,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>TestArch4BackEnd</artifactId>
-		<groupId>com.tracktopell.testarch4.backend</groupId>
+        <groupId>com.aeromexico.sab.backend</groupId>
+		<artifactId>AMX-SAB-BackEnd</artifactId>
 		<version>1.0</version>
-	</parent>
-
-    <groupId>com.tracktopell.testarch4.backend</groupId>
-    <artifactId>TestArch4BackEnd-ear</artifactId>
-    <version>1.0</version>
+    </parent>
+	
+    <groupId>com.aeromexico.sab.backend</groupId>
+    <artifactId>AMX-SAB-BackEnd-ear</artifactId>
+	<version>1.0</version>
+	<name>AMX-SAB-BackEnd-ear</name>
     <packaging>ear</packaging>
 
-    <name>TestArch4BackEnd-ear</name>
-
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
     </properties>
   
     <build>
@@ -42,15 +43,15 @@
     </build>
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>TestArch4BackEnd-ejb</artifactId>
-            <version>${project.version}</version>
+			<groupId>com.aeromexico.sab.backend</groupId>
+			<artifactId>AMX-SAB-BackEnd-ejb</artifactId>
+			<version>1.0</version>
 			<type>ejb</type>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>TestArch4BackEnd-ws</artifactId>
-            <version>${project.version}</version>
+			<groupId>com.aeromexico.sab.backend</groupId>
+			<artifactId>AMX-SAB-BackEnd-ws</artifactId>
+			<version>1.0</version>
 			<type>war</type>
         </dependency>
     </dependencies>

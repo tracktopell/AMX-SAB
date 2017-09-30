@@ -1,4 +1,4 @@
-package com.aeromexico.sab.backend.remote;
+package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.MaterialMaster;
 
@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 @Stateless
 public class MaterialMasterFacade extends AbstractFacade<MaterialMaster> implements MaterialMasterFacadeRemote {
@@ -42,11 +42,11 @@ public class MaterialMasterFacade extends AbstractFacade<MaterialMaster> impleme
 			    paramAsigned++;
 			    sbq.append(" and x.materialMasterPK = :materialMasterPK");
 			}
-			if(x.getCantidad() != 0){
+			if(x.getCantidad()  != 0){
 			    paramAsigned++;
 			    sbq.append(" and x.cantidad = :cantidad");
 			}
-			if(x.getPeso() != null){
+			if(x.getPeso()  != 0.0f){
 			    paramAsigned++;
 			    sbq.append(" and x.peso = :peso");
 			}
@@ -58,9 +58,9 @@ public class MaterialMasterFacade extends AbstractFacade<MaterialMaster> impleme
 			    paramAsigned++;
 			    sbq.append(" and x.observaciones = :observaciones");
 			}
-			if(x.getMateriall() != null){
+			if(x.getMaterial() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.materiall = :materiall");
+			    sbq.append(" and x.material = :material");
 			}
 			if(x.getMaster() != null){
 			    paramAsigned++;
@@ -77,10 +77,10 @@ public class MaterialMasterFacade extends AbstractFacade<MaterialMaster> impleme
 			if(x.getMaterialMasterPK() != null){
 			    nq.setParameter("materialMasterPK",x.getMaterialMasterPK());
 			}
-			if(x.getCantidad() != (0) ){
+			if(x.getCantidad()  != 0){
 			    nq.setParameter("cantidad",x.getCantidad());
 			}
-			if(x.getPeso() != null){
+			if(x.getPeso()  != 0.0f){
 			    nq.setParameter("peso",x.getPeso());
 			}
 			if(x.getIdUnidadMedida() != null){
@@ -89,8 +89,8 @@ public class MaterialMasterFacade extends AbstractFacade<MaterialMaster> impleme
 			if(x.getObservaciones() != null){
 			    nq.setParameter("observaciones",x.getObservaciones());
 			}
-			if(x.getMateriall() != null){
-			    nq.setParameter("materiall",x.getMateriall());
+			if(x.getMaterial() != null){
+			    nq.setParameter("material",x.getMaterial());
 			}
 			if(x.getMaster() != null){
 			    nq.setParameter("master",x.getMaster());

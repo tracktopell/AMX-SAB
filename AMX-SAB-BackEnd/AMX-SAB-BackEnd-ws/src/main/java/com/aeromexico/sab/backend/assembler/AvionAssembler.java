@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.Avion;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public class AvionAssembler {    
@@ -36,10 +36,9 @@ public class AvionAssembler {
         jpaEntity.setMatricula( dtoEntity.getMatricula()); // normal
         jpaEntity.setMatriculaCorta( dtoEntity.getMatriculaCorta()); // normal
         jpaEntity.setEstatus( dtoEntity.getEstatus()); // normal
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getIdConectividad());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+        ParametrosDTO idConectividadDTO = new ParametrosDTO();
+        idConectividadDTO.setIdParametro( dtoEntity.getIdConectividad());
+        jpaEntity.setIdConectividad( ParametrosAssembler.buildJpaEntity( idConectividadDTO ));
 
         return jpaEntity;
     }
@@ -59,10 +58,9 @@ public class AvionAssembler {
             jpaEntity.setMatricula( dtoEntity.getMatricula());
             jpaEntity.setMatriculaCorta( dtoEntity.getMatriculaCorta());
             jpaEntity.setEstatus( dtoEntity.getEstatus());
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getIdConectividad());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+            ParametrosDTO idConectividadDTO = new ParametrosDTO();
+            idConectividadDTO.setIdParametro( dtoEntity.getIdConectividad());
+            jpaEntity.setIdConectividad( ParametrosAssembler.buildJpaEntity( idConectividadDTO ));
 			jpaEntityList.add(jpaEntity);
 		}
 		
@@ -82,8 +80,8 @@ public class AvionAssembler {
         dtoEntity.setMatricula( jpaEntity.getMatricula() ); // primitive
         dtoEntity.setMatriculaCorta( jpaEntity.getMatriculaCorta() ); // primitive
         dtoEntity.setEstatus( jpaEntity.getEstatus() ); // primitive
-        //Not Embedable: IdConectividad -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setIdConectividad( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+        //Not Embedable: IdConectividad -> Parametros, FTable: parametros, HyperName:ID_CONECTIVIDAD
+        dtoEntity.setIdConectividad( jpaEntity.getIdConectividad()!=null?jpaEntity.getIdConectividad().getIdParametro():null);
 
         return dtoEntity;
     }
@@ -102,8 +100,8 @@ public class AvionAssembler {
             dtoEntity.setMatricula( jpaEntity.getMatricula() );
             dtoEntity.setMatriculaCorta( jpaEntity.getMatriculaCorta() );
             dtoEntity.setEstatus( jpaEntity.getEstatus() );
-            //Not Embedable: IdConectividad -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setIdConectividad( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+            //Not Embedable: IdConectividad -> Parametros, FTable: parametros, HyperName:ID_CONECTIVIDAD
+            dtoEntity.setIdConectividad( jpaEntity.getIdConectividad()!=null?jpaEntity.getIdConectividad().getIdParametro():null);
 			dtoEntityList.add(dtoEntity);
 		}
         return dtoEntityList;

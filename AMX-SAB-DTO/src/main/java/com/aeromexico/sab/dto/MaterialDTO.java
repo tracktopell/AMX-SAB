@@ -15,11 +15,11 @@ import org.json.JSONObject;
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public class MaterialDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 1831932724;
+    private static final long serialVersionUID = 424058530;
 
     
     /**

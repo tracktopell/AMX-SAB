@@ -1,4 +1,4 @@
-package com.aeromexico.sab.backend.remote;
+package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.Ciudad;
 
@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 @Stateless
 public class CiudadFacade extends AbstractFacade<Ciudad> implements CiudadFacadeRemote {

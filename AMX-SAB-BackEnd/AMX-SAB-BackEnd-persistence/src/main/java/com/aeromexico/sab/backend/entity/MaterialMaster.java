@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 @Entity
@@ -48,12 +48,12 @@ import javax.persistence.TemporalType;
     , @NamedQuery(name = "MaterialMaster.findByPeso", query = "SELECT m FROM MaterialMaster m WHERE m.peso = :peso")
     , @NamedQuery(name = "MaterialMaster.findByidUnidadMedida", query = "SELECT m FROM MaterialMaster m WHERE m.idUnidadMedida = :idUnidadMedida")
     , @NamedQuery(name = "MaterialMaster.findByObservaciones", query = "SELECT m FROM MaterialMaster m WHERE m.observaciones = :observaciones")
-    , @NamedQuery(name = "MaterialMaster.findBymateriall", query = "SELECT m FROM MaterialMaster m WHERE m.materiall = :materiall")
+    , @NamedQuery(name = "MaterialMaster.findBymaterial", query = "SELECT m FROM MaterialMaster m WHERE m.material = :material")
     , @NamedQuery(name = "MaterialMaster.findBymaster", query = "SELECT m FROM MaterialMaster m WHERE m.master = :master")
     , @NamedQuery(name = "MaterialMaster.findByMaterialMasterPK", query = "SELECT m FROM MaterialMaster m WHERE m.materialMasterPK = :materialMasterPK")
 })
 public class MaterialMaster implements java.io.Serializable {
-    private static final long serialVersionUID = 303563356;
+    private static final long serialVersionUID = 603742814;
     
     /**
     * The 'cantidad' Maps to COLUMN 'cantidad'
@@ -95,12 +95,12 @@ public class MaterialMaster implements java.io.Serializable {
     private String observaciones;
     
     /**
-    * The 'lnumero parte' Maps to COLUMN 'lnumero_parte'
+    * The 'numero parte' Maps to COLUMN 'numero_parte'
     */
     
-    @JoinColumn(name = "LNUMERO_PARTE" , referencedColumnName = "NUMERO_PARTE", insertable = false, updatable = false)
+    @JoinColumn(name = "NUMERO_PARTE" , referencedColumnName = "NUMERO_PARTE", insertable = false, updatable = false)
     @ManyToOne(optional = false)
-    private Material materiall;
+    private Material material;
     
     /**
     * The 'id kit' Maps to COLUMN 'id_kit'
@@ -140,8 +140,8 @@ public class MaterialMaster implements java.io.Serializable {
     public String getObservaciones() { return this.observaciones;}
     public void setObservaciones(String v) { this.observaciones = v; }
     
-    public Material getMateriall(){ return this.materiall ; }
-    public void setMateriall(Material x){ this.materiall = x; }
+    public Material getMaterial(){ return this.material ; }
+    public void setMaterial(Material x){ this.material = x; }
     
     public Master getMaster(){ return this.master ; }
     public void setMaster(Master x){ this.master = x; }
@@ -159,7 +159,7 @@ public class MaterialMaster implements java.io.Serializable {
 		hash += String.valueOf(peso).hashCode();
 		hash += String.valueOf(idUnidadMedida).hashCode();
 		hash += String.valueOf(observaciones).hashCode();
-		hash += String.valueOf(materiall).hashCode();
+		hash += String.valueOf(material).hashCode();
 		hash += String.valueOf(master).hashCode();
 		hash += String.valueOf(materialMasterPK).hashCode();
         return hash;
@@ -184,7 +184,7 @@ public class MaterialMaster implements java.io.Serializable {
 		if (!Objects.equals(this.peso, other.peso)) { return false; }		
 		if (!Objects.equals(this.idUnidadMedida, other.idUnidadMedida)) { return false; }		
 		if (!Objects.equals(this.observaciones, other.observaciones)) { return false; }		
-		if (!Objects.equals(this.materiall, other.materiall)) { return false; }		
+		if (!Objects.equals(this.material, other.material)) { return false; }		
 		if (!Objects.equals(this.master, other.master)) { return false; }		
 		if (!Objects.equals(this.materialMasterPK, other.materialMasterPK)) { return false; }		
     	return true;
@@ -201,7 +201,7 @@ public class MaterialMaster implements java.io.Serializable {
 		sb.append("peso" ).append("=").append(peso).append("|");
 		sb.append("idUnidadMedida" ).append("=").append(idUnidadMedida).append("|");
 		sb.append("observaciones" ).append("=").append(observaciones).append("|");
-		sb.append("materiall" ).append("=").append(materiall).append("|");
+		sb.append("material" ).append("=").append(material).append("|");
 		sb.append("master" ).append("=").append(master).append("|");
 		sb.append("materialMasterPK" ).append("=").append(materialMasterPK).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");

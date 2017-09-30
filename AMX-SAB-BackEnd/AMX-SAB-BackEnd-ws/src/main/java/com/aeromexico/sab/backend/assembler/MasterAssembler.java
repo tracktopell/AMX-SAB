@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.Master;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public class MasterAssembler {    
@@ -34,22 +34,18 @@ public class MasterAssembler {
         jpaEntity.setNombreEn( dtoEntity.getNombreEn()); // normal
         jpaEntity.setUrlMultimedia( dtoEntity.getUrlMultimedia()); // normal
         jpaEntity.setContenedor( dtoEntity.getContenedor()); // normal
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getIdUnidadMedida());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getIdInstruccionesNacionales());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getIdInstruccionesInternac());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getIdTipoKit());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+        ParametrosDTO idUnidadMedidaDTO = new ParametrosDTO();
+        idUnidadMedidaDTO.setIdParametro( dtoEntity.getIdUnidadMedida());
+        jpaEntity.setIdUnidadMedida( ParametrosAssembler.buildJpaEntity( idUnidadMedidaDTO ));
+        ParametrosDTO idInstruccionesNacionalesDTO = new ParametrosDTO();
+        idInstruccionesNacionalesDTO.setIdParametro( dtoEntity.getIdInstruccionesNacionales());
+        jpaEntity.setIdInstruccionesNacionales( ParametrosAssembler.buildJpaEntity( idInstruccionesNacionalesDTO ));
+        ParametrosDTO idInstruccionesInternacDTO = new ParametrosDTO();
+        idInstruccionesInternacDTO.setIdParametro( dtoEntity.getIdInstruccionesInternac());
+        jpaEntity.setIdInstruccionesInternac( ParametrosAssembler.buildJpaEntity( idInstruccionesInternacDTO ));
+        ParametrosDTO idTipoKitDTO = new ParametrosDTO();
+        idTipoKitDTO.setIdParametro( dtoEntity.getIdTipoKit());
+        jpaEntity.setIdTipoKit( ParametrosAssembler.buildJpaEntity( idTipoKitDTO ));
 
         return jpaEntity;
     }
@@ -67,22 +63,18 @@ public class MasterAssembler {
             jpaEntity.setNombreEn( dtoEntity.getNombreEn());
             jpaEntity.setUrlMultimedia( dtoEntity.getUrlMultimedia());
             jpaEntity.setContenedor( dtoEntity.getContenedor());
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getIdUnidadMedida());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getIdInstruccionesNacionales());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getIdInstruccionesInternac());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getIdTipoKit());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+            ParametrosDTO idUnidadMedidaDTO = new ParametrosDTO();
+            idUnidadMedidaDTO.setIdParametro( dtoEntity.getIdUnidadMedida());
+            jpaEntity.setIdUnidadMedida( ParametrosAssembler.buildJpaEntity( idUnidadMedidaDTO ));
+            ParametrosDTO idInstruccionesNacionalesDTO = new ParametrosDTO();
+            idInstruccionesNacionalesDTO.setIdParametro( dtoEntity.getIdInstruccionesNacionales());
+            jpaEntity.setIdInstruccionesNacionales( ParametrosAssembler.buildJpaEntity( idInstruccionesNacionalesDTO ));
+            ParametrosDTO idInstruccionesInternacDTO = new ParametrosDTO();
+            idInstruccionesInternacDTO.setIdParametro( dtoEntity.getIdInstruccionesInternac());
+            jpaEntity.setIdInstruccionesInternac( ParametrosAssembler.buildJpaEntity( idInstruccionesInternacDTO ));
+            ParametrosDTO idTipoKitDTO = new ParametrosDTO();
+            idTipoKitDTO.setIdParametro( dtoEntity.getIdTipoKit());
+            jpaEntity.setIdTipoKit( ParametrosAssembler.buildJpaEntity( idTipoKitDTO ));
 			jpaEntityList.add(jpaEntity);
 		}
 		
@@ -101,14 +93,14 @@ public class MasterAssembler {
         dtoEntity.setNombreEn( jpaEntity.getNombreEn() ); // primitive
         dtoEntity.setUrlMultimedia( jpaEntity.getUrlMultimedia() ); // primitive
         dtoEntity.setContenedor( jpaEntity.getContenedor() ); // primitive
-        //Not Embedable: IdUnidadMedida -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setIdUnidadMedida( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
-        //Not Embedable: IdInstruccionesNacionales -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setIdInstruccionesNacionales( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
-        //Not Embedable: IdInstruccionesInternac -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setIdInstruccionesInternac( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
-        //Not Embedable: IdTipoKit -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setIdTipoKit( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+        //Not Embedable: IdUnidadMedida -> Parametros, FTable: parametros, HyperName:ID_UNIDAD_MEDIDA
+        dtoEntity.setIdUnidadMedida( jpaEntity.getIdUnidadMedida()!=null?jpaEntity.getIdUnidadMedida().getIdParametro():null);
+        //Not Embedable: IdInstruccionesNacionales -> Parametros, FTable: parametros, HyperName:ID_INSTRUCCIONES_NACIONALES
+        dtoEntity.setIdInstruccionesNacionales( jpaEntity.getIdInstruccionesNacionales()!=null?jpaEntity.getIdInstruccionesNacionales().getIdParametro():null);
+        //Not Embedable: IdInstruccionesInternac -> Parametros, FTable: parametros, HyperName:ID_INSTRUCCIONES_INTERNAC
+        dtoEntity.setIdInstruccionesInternac( jpaEntity.getIdInstruccionesInternac()!=null?jpaEntity.getIdInstruccionesInternac().getIdParametro():null);
+        //Not Embedable: IdTipoKit -> Parametros, FTable: parametros, HyperName:ID_TIPO_KIT
+        dtoEntity.setIdTipoKit( jpaEntity.getIdTipoKit()!=null?jpaEntity.getIdTipoKit().getIdParametro():null);
 
         return dtoEntity;
     }
@@ -126,14 +118,14 @@ public class MasterAssembler {
             dtoEntity.setNombreEn( jpaEntity.getNombreEn() );
             dtoEntity.setUrlMultimedia( jpaEntity.getUrlMultimedia() );
             dtoEntity.setContenedor( jpaEntity.getContenedor() );
-            //Not Embedable: IdUnidadMedida -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setIdUnidadMedida( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
-            //Not Embedable: IdInstruccionesNacionales -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setIdInstruccionesNacionales( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
-            //Not Embedable: IdInstruccionesInternac -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setIdInstruccionesInternac( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
-            //Not Embedable: IdTipoKit -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setIdTipoKit( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+            //Not Embedable: IdUnidadMedida -> Parametros, FTable: parametros, HyperName:ID_UNIDAD_MEDIDA
+            dtoEntity.setIdUnidadMedida( jpaEntity.getIdUnidadMedida()!=null?jpaEntity.getIdUnidadMedida().getIdParametro():null);
+            //Not Embedable: IdInstruccionesNacionales -> Parametros, FTable: parametros, HyperName:ID_INSTRUCCIONES_NACIONALES
+            dtoEntity.setIdInstruccionesNacionales( jpaEntity.getIdInstruccionesNacionales()!=null?jpaEntity.getIdInstruccionesNacionales().getIdParametro():null);
+            //Not Embedable: IdInstruccionesInternac -> Parametros, FTable: parametros, HyperName:ID_INSTRUCCIONES_INTERNAC
+            dtoEntity.setIdInstruccionesInternac( jpaEntity.getIdInstruccionesInternac()!=null?jpaEntity.getIdInstruccionesInternac().getIdParametro():null);
+            //Not Embedable: IdTipoKit -> Parametros, FTable: parametros, HyperName:ID_TIPO_KIT
+            dtoEntity.setIdTipoKit( jpaEntity.getIdTipoKit()!=null?jpaEntity.getIdTipoKit().getIdParametro():null);
 			dtoEntityList.add(dtoEntity);
 		}
         return dtoEntityList;

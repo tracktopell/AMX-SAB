@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 @Entity
@@ -49,7 +49,7 @@ import javax.persistence.TemporalType;
     , @NamedQuery(name = "RelacionFlota.findByFecha", query = "SELECT r FROM RelacionFlota r WHERE r.fecha = :fecha")
 })
 public class RelacionFlota implements java.io.Serializable {
-    private static final long serialVersionUID = 1072408673;
+    private static final long serialVersionUID = 1078694789;
     
     /**
     * The 'id relacion flota' Maps to COLUMN 'id_relacion_flota'

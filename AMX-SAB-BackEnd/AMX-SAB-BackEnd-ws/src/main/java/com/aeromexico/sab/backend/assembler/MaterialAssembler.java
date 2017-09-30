@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.Material;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public class MaterialAssembler {    
@@ -30,16 +30,14 @@ public class MaterialAssembler {
 		Material jpaEntity = new Material();
 
         jpaEntity.setNumeroParte( dtoEntity.getNumeroParte()); // normal
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getCategoria());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+        ParametrosDTO categoriaDTO = new ParametrosDTO();
+        categoriaDTO.setIdParametro( dtoEntity.getCategoria());
+        jpaEntity.setCategoria( ParametrosAssembler.buildJpaEntity( categoriaDTO ));
         jpaEntity.setDescripcionEs( dtoEntity.getDescripcionEs()); // normal
         jpaEntity.setDescripcionEn( dtoEntity.getDescripcionEn()); // normal
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getTipoAbastecimiento());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+        ParametrosDTO tipoAbastecimientoDTO = new ParametrosDTO();
+        tipoAbastecimientoDTO.setIdParametro( dtoEntity.getTipoAbastecimiento());
+        jpaEntity.setTipoAbastecimiento( ParametrosAssembler.buildJpaEntity( tipoAbastecimientoDTO ));
         jpaEntity.setUrlMultimedia( dtoEntity.getUrlMultimedia()); // normal
         CategoriaMaterialDTO categoriaMaterialDTO = new CategoriaMaterialDTO();
         categoriaMaterialDTO.setIdCategoriaMaterial( dtoEntity.getIdCategoriaMaterial());
@@ -58,16 +56,14 @@ public class MaterialAssembler {
 		for(MaterialDTO dtoEntity: dtoEntityList){
 			jpaEntity = new Material();
             jpaEntity.setNumeroParte( dtoEntity.getNumeroParte());
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getCategoria());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+            ParametrosDTO categoriaDTO = new ParametrosDTO();
+            categoriaDTO.setIdParametro( dtoEntity.getCategoria());
+            jpaEntity.setCategoria( ParametrosAssembler.buildJpaEntity( categoriaDTO ));
             jpaEntity.setDescripcionEs( dtoEntity.getDescripcionEs());
             jpaEntity.setDescripcionEn( dtoEntity.getDescripcionEn());
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getTipoAbastecimiento());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+            ParametrosDTO tipoAbastecimientoDTO = new ParametrosDTO();
+            tipoAbastecimientoDTO.setIdParametro( dtoEntity.getTipoAbastecimiento());
+            jpaEntity.setTipoAbastecimiento( ParametrosAssembler.buildJpaEntity( tipoAbastecimientoDTO ));
             jpaEntity.setUrlMultimedia( dtoEntity.getUrlMultimedia());
             CategoriaMaterialDTO categoriaMaterialDTO = new CategoriaMaterialDTO();
             categoriaMaterialDTO.setIdCategoriaMaterial( dtoEntity.getIdCategoriaMaterial());
@@ -87,12 +83,12 @@ public class MaterialAssembler {
         MaterialDTO dtoEntity =  new MaterialDTO();		
 
         dtoEntity.setNumeroParte( jpaEntity.getNumeroParte() ); // primitive
-        //Not Embedable: Categoria -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setCategoria( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+        //Not Embedable: Categoria -> Parametros, FTable: parametros, HyperName:CATEGORIA
+        dtoEntity.setCategoria( jpaEntity.getCategoria()!=null?jpaEntity.getCategoria().getIdParametro():null);
         dtoEntity.setDescripcionEs( jpaEntity.getDescripcionEs() ); // primitive
         dtoEntity.setDescripcionEn( jpaEntity.getDescripcionEn() ); // primitive
-        //Not Embedable: TipoAbastecimiento -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setTipoAbastecimiento( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+        //Not Embedable: TipoAbastecimiento -> Parametros, FTable: parametros, HyperName:TIPO_ABASTECIMIENTO
+        dtoEntity.setTipoAbastecimiento( jpaEntity.getTipoAbastecimiento()!=null?jpaEntity.getTipoAbastecimiento().getIdParametro():null);
         dtoEntity.setUrlMultimedia( jpaEntity.getUrlMultimedia() ); // primitive
         //Not Embedable: IdCategoriaMaterial -> CategoriaMaterial, FTable: categoria_material, HyperName:categoria_material
         dtoEntity.setIdCategoriaMaterial( jpaEntity.getCategoriaMaterial()!=null?jpaEntity.getCategoriaMaterial().getIdCategoriaMaterial():null);
@@ -110,12 +106,12 @@ public class MaterialAssembler {
 		for(Material jpaEntity: jpaEntityList){
 			dtoEntity =  new MaterialDTO();
             dtoEntity.setNumeroParte( jpaEntity.getNumeroParte() );
-            //Not Embedable: Categoria -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setCategoria( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+            //Not Embedable: Categoria -> Parametros, FTable: parametros, HyperName:CATEGORIA
+            dtoEntity.setCategoria( jpaEntity.getCategoria()!=null?jpaEntity.getCategoria().getIdParametro():null);
             dtoEntity.setDescripcionEs( jpaEntity.getDescripcionEs() );
             dtoEntity.setDescripcionEn( jpaEntity.getDescripcionEn() );
-            //Not Embedable: TipoAbastecimiento -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setTipoAbastecimiento( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+            //Not Embedable: TipoAbastecimiento -> Parametros, FTable: parametros, HyperName:TIPO_ABASTECIMIENTO
+            dtoEntity.setTipoAbastecimiento( jpaEntity.getTipoAbastecimiento()!=null?jpaEntity.getTipoAbastecimiento().getIdParametro():null);
             dtoEntity.setUrlMultimedia( jpaEntity.getUrlMultimedia() );
             //Not Embedable: IdCategoriaMaterial -> CategoriaMaterial, FTable: categoria_material, HyperName:categoria_material
             dtoEntity.setIdCategoriaMaterial( jpaEntity.getCategoriaMaterial()!=null?jpaEntity.getCategoriaMaterial().getIdCategoriaMaterial():null);

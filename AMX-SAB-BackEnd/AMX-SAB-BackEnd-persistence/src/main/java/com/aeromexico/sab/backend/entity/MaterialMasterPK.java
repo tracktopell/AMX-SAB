@@ -27,21 +27,21 @@ import javax.xml.bind.annotation.XmlTransient;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 @Embeddable
 
 @XmlRootElement
 public class MaterialMasterPK implements java.io.Serializable {
-    private static final long serialVersionUID = 626202354;
+    private static final long serialVersionUID = 812265671;
     
     @Basic(optional = false)
     // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
     //@Size(min = 1, max = 50)
-    @Column(name = "LNUMERO_PARTE", nullable= false)
-    private String lnumeroParte;
+    @Column(name = "NUMERO_PARTE", nullable= false)
+    private String numeroParte;
     
     @Basic(optional = false)
     // Hibernate Validator 5x is not compatible with validation-api 1.0.x
@@ -59,8 +59,8 @@ public class MaterialMasterPK implements java.io.Serializable {
     /**
      * Getters and Setters
      */
-    public String getLnumeroParte() { return this.lnumeroParte;}
-    public void setLnumeroParte(String v) { this.lnumeroParte = v; }
+    public String getNumeroParte() { return this.numeroParte;}
+    public void setNumeroParte(String v) { this.numeroParte = v; }
     
     public String getIdKit() { return this.idKit;}
     public void setIdKit(String v) { this.idKit = v; }
@@ -69,7 +69,7 @@ public class MaterialMasterPK implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-		hash += String.valueOf(lnumeroParte).hashCode();
+		hash += String.valueOf(numeroParte).hashCode();
 		hash += String.valueOf(idKit).hashCode();
         return hash;
     }
@@ -89,7 +89,7 @@ public class MaterialMasterPK implements java.io.Serializable {
             return false;
         }		
 		MaterialMasterPK other = (MaterialMasterPK ) o;
-		if (!Objects.equals(this.lnumeroParte, other.lnumeroParte)) { return false; }		
+		if (!Objects.equals(this.numeroParte, other.numeroParte)) { return false; }		
 		if (!Objects.equals(this.idKit, other.idKit)) { return false; }		
     	return true;
     }
@@ -101,7 +101,7 @@ public class MaterialMasterPK implements java.io.Serializable {
     public String toString() {
 		StringBuilder sb=new StringBuilder();
 		sb.append("MaterialMasterPK{");
-		sb.append("lnumeroParte" ).append("=").append(lnumeroParte).append("|");
+		sb.append("numeroParte" ).append("=").append(numeroParte).append("|");
 		sb.append("idKit" ).append("=").append(idKit).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();

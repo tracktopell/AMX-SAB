@@ -27,14 +27,14 @@ import javax.xml.bind.annotation.XmlTransient;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 @Embeddable
 
 @XmlRootElement
 public class ModuloPerfilPK implements java.io.Serializable {
-    private static final long serialVersionUID = 1604839423;
+    private static final long serialVersionUID = 99550389;
     
     @Basic(optional = false)
     // Hibernate Validator 5x is not compatible with validation-api 1.0.x

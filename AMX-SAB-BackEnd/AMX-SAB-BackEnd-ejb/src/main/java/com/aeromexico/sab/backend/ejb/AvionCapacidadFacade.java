@@ -1,4 +1,4 @@
-package com.aeromexico.sab.backend.remote;
+package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.AvionCapacidad;
 
@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 @Stateless
 public class AvionCapacidadFacade extends AbstractFacade<AvionCapacidad> implements AvionCapacidadFacadeRemote {
@@ -50,7 +50,7 @@ public class AvionCapacidadFacade extends AbstractFacade<AvionCapacidad> impleme
 			    paramAsigned++;
 			    sbq.append(" and x.clase = :clase");
 			}
-			if(x.getCapacidad() != 0){
+			if(x.getCapacidad()  != 0){
 			    paramAsigned++;
 			    sbq.append(" and x.capacidad = :capacidad");
 			}
@@ -71,7 +71,7 @@ public class AvionCapacidadFacade extends AbstractFacade<AvionCapacidad> impleme
 			if(x.getClase() != null){
 			    nq.setParameter("clase",x.getClase());
 			}
-			if(x.getCapacidad() != (0) ){
+			if(x.getCapacidad()  != 0){
 			    nq.setParameter("capacidad",x.getCapacidad());
 			}
 			

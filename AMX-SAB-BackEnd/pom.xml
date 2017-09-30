@@ -4,21 +4,26 @@
 	<parent>
         <groupId>com.aeromexico.sab</groupId>
 		<artifactId>AMX-SAB</artifactId>
-		<version>1.0</version>		
+		<version>1.0</version>
     </parent>
     
+	<groupId>com.aeromexico.sab.backend</groupId>
     <artifactId>AMX-SAB-BackEnd</artifactId>
+	<version>1.0</version>
 	<name>AMX-SAB-BackEnd</name>
-
 	<packaging>pom</packaging>
 	
+    <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+			
 	<modules>
 		<module>AMX-SAB-BackEnd-persistence</module>
-		<!--
-		<module>AMX-SAB-BackEnd-ear</module>    
 		<module>AMX-SAB-BackEnd-remote</module>
 		<module>AMX-SAB-BackEnd-ejb</module>
-		<module>AMX-SAB-BackEnd-ws</module>
-		-->
+		<module>AMX-SAB-BackEnd-ws</module>		
+		<module>AMX-SAB-BackEnd-ear</module>
 	</modules>
 </project>

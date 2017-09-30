@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.AvionAudifono;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public class AvionAudifonoAssembler {    
@@ -36,10 +36,9 @@ public class AvionAudifonoAssembler {
         ClaseDTO claseDTO = new ClaseDTO();
         claseDTO.setIdClase( dtoEntity.getIdClase());
         jpaEntity.setClase( ClaseAssembler.buildJpaEntity( claseDTO ));
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getTipoAudifono());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+        ParametrosDTO tipoAudifonoDTO = new ParametrosDTO();
+        tipoAudifonoDTO.setIdParametro( dtoEntity.getTipoAudifono());
+        jpaEntity.setTipoAudifono( ParametrosAssembler.buildJpaEntity( tipoAudifonoDTO ));
 
         return jpaEntity;
     }
@@ -59,10 +58,9 @@ public class AvionAudifonoAssembler {
             ClaseDTO claseDTO = new ClaseDTO();
             claseDTO.setIdClase( dtoEntity.getIdClase());
             jpaEntity.setClase( ClaseAssembler.buildJpaEntity( claseDTO ));
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getTipoAudifono());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+            ParametrosDTO tipoAudifonoDTO = new ParametrosDTO();
+            tipoAudifonoDTO.setIdParametro( dtoEntity.getTipoAudifono());
+            jpaEntity.setTipoAudifono( ParametrosAssembler.buildJpaEntity( tipoAudifonoDTO ));
 			jpaEntityList.add(jpaEntity);
 		}
 		
@@ -81,8 +79,8 @@ public class AvionAudifonoAssembler {
         dtoEntity.setIdAvion( jpaEntity.getAvion()!=null?jpaEntity.getAvion().getIdAvion():null);
         //Not Embedable: IdClase -> Clase, FTable: clase, HyperName:clase
         dtoEntity.setIdClase( jpaEntity.getClase()!=null?jpaEntity.getClase().getIdClase():null);
-        //Not Embedable: TipoAudifono -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setTipoAudifono( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+        //Not Embedable: TipoAudifono -> Parametros, FTable: parametros, HyperName:TIPO_AUDIFONO
+        dtoEntity.setTipoAudifono( jpaEntity.getTipoAudifono()!=null?jpaEntity.getTipoAudifono().getIdParametro():null);
 
         return dtoEntity;
     }
@@ -100,8 +98,8 @@ public class AvionAudifonoAssembler {
             dtoEntity.setIdAvion( jpaEntity.getAvion()!=null?jpaEntity.getAvion().getIdAvion():null);
             //Not Embedable: IdClase -> Clase, FTable: clase, HyperName:clase
             dtoEntity.setIdClase( jpaEntity.getClase()!=null?jpaEntity.getClase().getIdClase():null);
-            //Not Embedable: TipoAudifono -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setTipoAudifono( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+            //Not Embedable: TipoAudifono -> Parametros, FTable: parametros, HyperName:TIPO_AUDIFONO
+            dtoEntity.setTipoAudifono( jpaEntity.getTipoAudifono()!=null?jpaEntity.getTipoAudifono().getIdParametro():null);
 			dtoEntityList.add(dtoEntity);
 		}
         return dtoEntityList;

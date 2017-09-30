@@ -19,7 +19,7 @@
 	<property name="p1"     value="com.aeromexico.sab.dto"/>
 	<property name="p2"     value="com.aeromexico.sab.backend.assembler"/>
 	<property name="p3"     value="com.aeromexico.sab.backend.entity"/>
-	<property name="p4"     value="com.aeromexico.sab.backend.remote"/>
+	<property name="p4"     value="com.aeromexico.sab.backend.ejb"/>
 	<property name="p5"     value="com.aeromexico.sab.backend.ejb"/>
 	
     <path id="mvn_aeromexico_utils_classpath">

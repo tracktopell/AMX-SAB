@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-		<artifactId>TestArch4BackEnd</artifactId>
-		<groupId>com.tracktopell.testarch4.backend</groupId>
-		<version>1.0</version>
-	  </parent>
-
-    <groupId>com.tracktopell.testarch4.backend</groupId>
-    <artifactId>TestArch4BackEnd-ejb</artifactId>
-    <version>1.0</version>
+	<parent>
+		<groupId>com.aeromexico.sab.backend</groupId>
+		<artifactId>AMX-SAB-BackEnd</artifactId>
+		<version>1.0</version>		
+	</parent>
+    
+	<groupId>com.aeromexico.sab.backend</groupId>
+	<artifactId>AMX-SAB-BackEnd-ejb</artifactId>
+	<version>1.0</version>
+	<name>AMX-SAB-BackEnd-ejb</name>	
     <packaging>ejb</packaging>
 
-    <name>TestArch4BackEnd-ejb</name>
-
     <properties>
-        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>com.tracktopell.testarch4.backend</groupId>
-            <artifactId>TestArch4BackEnd-remote</artifactId>
-            <version>${project.version}</version>
+            <groupId>com.aeromexico.sab.backend</groupId>
+			<artifactId>AMX-SAB-BackEnd-remote</artifactId>
+			<version>1.0</version>
         </dependency>
 		
         <dependency>
@@ -43,9 +43,6 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <compilerArguments>
-                        <endorseddirs>${endorsed.dir}</endorseddirs>
-                    </compilerArguments>
                 </configuration>
             </plugin>
             <plugin>

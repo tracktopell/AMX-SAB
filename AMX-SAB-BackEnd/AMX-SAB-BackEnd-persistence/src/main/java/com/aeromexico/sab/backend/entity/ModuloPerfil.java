@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 @Entity
@@ -50,7 +50,7 @@ import javax.persistence.TemporalType;
     , @NamedQuery(name = "ModuloPerfil.findByModuloPerfilPK", query = "SELECT m FROM ModuloPerfil m WHERE m.moduloPerfilPK = :moduloPerfilPK")
 })
 public class ModuloPerfil implements java.io.Serializable {
-    private static final long serialVersionUID = 793589513;
+    private static final long serialVersionUID = 2093631819;
     
     /**
     * The 'permiso rwd' Maps to COLUMN 'permiso_rwd'

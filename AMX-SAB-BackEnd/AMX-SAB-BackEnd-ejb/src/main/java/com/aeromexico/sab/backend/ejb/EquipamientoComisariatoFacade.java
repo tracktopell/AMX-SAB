@@ -1,4 +1,4 @@
-package com.aeromexico.sab.backend.remote;
+package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.EquipamientoComisariato;
 
@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 @Stateless
 public class EquipamientoComisariatoFacade extends AbstractFacade<EquipamientoComisariato> implements EquipamientoComisariatoFacadeRemote {
@@ -54,11 +54,11 @@ public class EquipamientoComisariatoFacade extends AbstractFacade<EquipamientoCo
 			    paramAsigned++;
 			    sbq.append(" and x.nombreEn = :nombreEn");
 			}
-			if(x.getCantidad() != 0){
+			if(x.getCantidad()  != 0){
 			    paramAsigned++;
 			    sbq.append(" and x.cantidad = :cantidad");
 			}
-			if(x.getPeso() != 0){
+			if(x.getPeso()  != 0.0){
 			    paramAsigned++;
 			    sbq.append(" and x.peso = :peso");
 			}
@@ -94,10 +94,10 @@ public class EquipamientoComisariatoFacade extends AbstractFacade<EquipamientoCo
 			if(x.getNombreEn() != null){
 			    nq.setParameter("nombreEn",x.getNombreEn());
 			}
-			if(x.getCantidad() != (0) ){
+			if(x.getCantidad()  != 0){
 			    nq.setParameter("cantidad",x.getCantidad());
 			}
-			if(x.getPeso() != (0) ){
+			if(x.getPeso()  != 0.0){
 			    nq.setParameter("peso",x.getPeso());
 			}
 			if(x.getObservaciones() != null){

@@ -15,17 +15,17 @@ import org.json.JSONObject;
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public class MaterialMasterDTO implements java.io.Serializable {
-    private static final long serialVersionUID = 303563356;
+    private static final long serialVersionUID = 603742814;
 
     
     /**
     * material master p k
     */
-    // materialMasterPK EmbedableColumn ID References: FKs {[[lnumero_parte] varchar(50,0), [id_kit] varchar(10,0)]}
+    // materialMasterPK EmbedableColumn ID References: FKs {[[numero_parte] varchar(50,0), [id_kit] varchar(10,0)]}
     
     /**
     * cantidad
@@ -48,9 +48,9 @@ public class MaterialMasterDTO implements java.io.Serializable {
     private String observaciones;
     
     /**
-    * lnumero parte
+    * numero parte
     */
-    private String lnumeroParte;
+    private String numeroParte;
     
     /**
     * id kit
@@ -66,8 +66,8 @@ public class MaterialMasterDTO implements java.io.Serializable {
     /**
      * Getters and Setters
      */
-    // materialMasterPK EmbedableColumn ID References: FKs {[[lnumero_parte] varchar(50,0), [id_kit] varchar(10,0)]}
-    // materialMasterPK EmbedableColumn ID References: FKs {[[lnumero_parte] varchar(50,0), [id_kit] varchar(10,0)]}
+    // materialMasterPK EmbedableColumn ID References: FKs {[[numero_parte] varchar(50,0), [id_kit] varchar(10,0)]}
+    // materialMasterPK EmbedableColumn ID References: FKs {[[numero_parte] varchar(50,0), [id_kit] varchar(10,0)]}
     public int getCantidad() {
         return this.cantidad;
     }
@@ -92,11 +92,11 @@ public class MaterialMasterDTO implements java.io.Serializable {
     public void setObservaciones(String v) {
         this.observaciones = v;
     }
-    public String getLnumeroParte() {
-        return this.lnumeroParte;
+    public String getNumeroParte() {
+        return this.numeroParte;
     }
-    public void setLnumeroParte(String v) {
-        this.lnumeroParte = v;
+    public void setNumeroParte(String v) {
+        this.numeroParte = v;
     }
     public String getIdKit() {
         return this.idKit;
@@ -112,7 +112,7 @@ public class MaterialMasterDTO implements java.io.Serializable {
 		hash += String.valueOf(peso).hashCode();
 		hash += String.valueOf(idUnidadMedida).hashCode();
 		hash += String.valueOf(observaciones).hashCode();
-		hash += String.valueOf(lnumeroParte).hashCode();
+		hash += String.valueOf(numeroParte).hashCode();
 		hash += String.valueOf(idKit).hashCode();
         return hash;
     }
@@ -136,7 +136,7 @@ public class MaterialMasterDTO implements java.io.Serializable {
 		if (!Objects.equals(this.peso, other.peso)) { return false; }		
 		if (!Objects.equals(this.idUnidadMedida, other.idUnidadMedida)) { return false; }		
 		if (!Objects.equals(this.observaciones, other.observaciones)) { return false; }		
-		if (!Objects.equals(this.lnumeroParte, other.lnumeroParte)) { return false; }		
+		if (!Objects.equals(this.numeroParte, other.numeroParte)) { return false; }		
 		if (!Objects.equals(this.idKit, other.idKit)) { return false; }		
     	return true;
     }
@@ -151,7 +151,7 @@ public class MaterialMasterDTO implements java.io.Serializable {
 		jsonObj.put("peso", this.peso);
 		jsonObj.put("idUnidadMedida", this.idUnidadMedida);
 		jsonObj.put("observaciones", this.observaciones);
-		jsonObj.put("lnumeroParte", this.lnumeroParte);
+		jsonObj.put("numeroParte", this.numeroParte);
 		jsonObj.put("idKit", this.idKit);
 		return jsonObj.toString();
     }
@@ -164,7 +164,7 @@ public class MaterialMasterDTO implements java.io.Serializable {
 		x.peso = (float)(jObj.getDouble("peso"));
 		x.idUnidadMedida = (jObj.getInt("idUnidadMedida"));
 		x.observaciones = (jObj.getString("observaciones"));
-		x.lnumeroParte = (jObj.getString("lnumeroParte"));
+		x.numeroParte = (jObj.getString("numeroParte"));
 		x.idKit = (jObj.getString("idKit"));
 		
 		return x;

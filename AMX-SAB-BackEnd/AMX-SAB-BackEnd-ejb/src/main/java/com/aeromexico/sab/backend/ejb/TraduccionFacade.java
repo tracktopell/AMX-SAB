@@ -1,4 +1,4 @@
-package com.aeromexico.sab.backend.remote;
+package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.Traduccion;
 
@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 @Stateless
 public class TraduccionFacade extends AbstractFacade<Traduccion> implements TraduccionFacadeRemote {
@@ -46,7 +46,7 @@ public class TraduccionFacade extends AbstractFacade<Traduccion> implements Trad
 			    paramAsigned++;
 			    sbq.append(" and x.nombreEntidad = :nombreEntidad");
 			}
-			if(x.getIdEntidad() != 0){
+			if(x.getIdEntidad()  != 0){
 			    paramAsigned++;
 			    sbq.append(" and x.idEntidad = :idEntidad");
 			}
@@ -76,7 +76,7 @@ public class TraduccionFacade extends AbstractFacade<Traduccion> implements Trad
 			if(x.getNombreEntidad() != null){
 			    nq.setParameter("nombreEntidad",x.getNombreEntidad());
 			}
-			if(x.getIdEntidad() != (0) ){
+			if(x.getIdEntidad()  != 0){
 			    nq.setParameter("idEntidad",x.getIdEntidad());
 			}
 			if(x.getCampo() != null){

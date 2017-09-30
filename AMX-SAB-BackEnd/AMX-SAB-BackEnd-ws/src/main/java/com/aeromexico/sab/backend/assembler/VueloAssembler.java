@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.Vuelo;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public class VueloAssembler {    
@@ -31,20 +31,18 @@ public class VueloAssembler {
 
         jpaEntity.setIdVuelo( dtoEntity.getIdVuelo()); // normal
         jpaEntity.setNumeroVuelo( dtoEntity.getNumeroVuelo()); // normal
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getTipoVuelo());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+        ParametrosDTO tipoVueloDTO = new ParametrosDTO();
+        tipoVueloDTO.setIdParametro( dtoEntity.getTipoVuelo());
+        jpaEntity.setTipoVuelo( ParametrosAssembler.buildJpaEntity( tipoVueloDTO ));
         EstacionDTO estacionOrigenDTO = new EstacionDTO();
         estacionOrigenDTO.setIdEstacion( dtoEntity.getIdEstacionOrigen());
         jpaEntity.setEstacionOrigen( EstacionAssembler.buildJpaEntity( estacionOrigenDTO ));
         EstacionDTO estacionDestinoDTO = new EstacionDTO();
         estacionDestinoDTO.setIdEstacion( dtoEntity.getIdEstacionDestino());
         jpaEntity.setEstacionDestino( EstacionAssembler.buildJpaEntity( estacionDestinoDTO ));
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getTipoCabina());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+        ParametrosDTO tipoCabinaDTO = new ParametrosDTO();
+        tipoCabinaDTO.setIdParametro( dtoEntity.getTipoCabina());
+        jpaEntity.setTipoCabina( ParametrosAssembler.buildJpaEntity( tipoCabinaDTO ));
         CompaniaDTO companiaDTO = new CompaniaDTO();
         companiaDTO.setIdCompania( dtoEntity.getIdCompania());
         jpaEntity.setCompania( CompaniaAssembler.buildJpaEntity( companiaDTO ));
@@ -66,20 +64,18 @@ public class VueloAssembler {
 			jpaEntity = new Vuelo();
             jpaEntity.setIdVuelo( dtoEntity.getIdVuelo());
             jpaEntity.setNumeroVuelo( dtoEntity.getNumeroVuelo());
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getTipoVuelo());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+            ParametrosDTO tipoVueloDTO = new ParametrosDTO();
+            tipoVueloDTO.setIdParametro( dtoEntity.getTipoVuelo());
+            jpaEntity.setTipoVuelo( ParametrosAssembler.buildJpaEntity( tipoVueloDTO ));
             EstacionDTO estacionOrigenDTO = new EstacionDTO();
             estacionOrigenDTO.setIdEstacion( dtoEntity.getIdEstacionOrigen());
             jpaEntity.setEstacionOrigen( EstacionAssembler.buildJpaEntity( estacionOrigenDTO ));
             EstacionDTO estacionDestinoDTO = new EstacionDTO();
             estacionDestinoDTO.setIdEstacion( dtoEntity.getIdEstacionDestino());
             jpaEntity.setEstacionDestino( EstacionAssembler.buildJpaEntity( estacionDestinoDTO ));
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getTipoCabina());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+            ParametrosDTO tipoCabinaDTO = new ParametrosDTO();
+            tipoCabinaDTO.setIdParametro( dtoEntity.getTipoCabina());
+            jpaEntity.setTipoCabina( ParametrosAssembler.buildJpaEntity( tipoCabinaDTO ));
             CompaniaDTO companiaDTO = new CompaniaDTO();
             companiaDTO.setIdCompania( dtoEntity.getIdCompania());
             jpaEntity.setCompania( CompaniaAssembler.buildJpaEntity( companiaDTO ));
@@ -102,14 +98,14 @@ public class VueloAssembler {
 
         dtoEntity.setIdVuelo( jpaEntity.getIdVuelo() ); // primitive
         dtoEntity.setNumeroVuelo( jpaEntity.getNumeroVuelo() ); // primitive
-        //Not Embedable: TipoVuelo -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setTipoVuelo( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+        //Not Embedable: TipoVuelo -> Parametros, FTable: parametros, HyperName:TIPO_VUELO
+        dtoEntity.setTipoVuelo( jpaEntity.getTipoVuelo()!=null?jpaEntity.getTipoVuelo().getIdParametro():null);
         //Not Embedable: IdEstacionOrigen -> Estacion, FTable: estacion, HyperName:estacion_ORIGEN
         dtoEntity.setIdEstacionOrigen( jpaEntity.getEstacionOrigen()!=null?jpaEntity.getEstacionOrigen().getIdEstacion():null);
         //Not Embedable: IdEstacionDestino -> Estacion, FTable: estacion, HyperName:estacion_DESTINO
         dtoEntity.setIdEstacionDestino( jpaEntity.getEstacionDestino()!=null?jpaEntity.getEstacionDestino().getIdEstacion():null);
-        //Not Embedable: TipoCabina -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setTipoCabina( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+        //Not Embedable: TipoCabina -> Parametros, FTable: parametros, HyperName:TIPO_CABINA
+        dtoEntity.setTipoCabina( jpaEntity.getTipoCabina()!=null?jpaEntity.getTipoCabina().getIdParametro():null);
         //Not Embedable: IdCompania -> Compania, FTable: compania, HyperName:compania
         dtoEntity.setIdCompania( jpaEntity.getCompania()!=null?jpaEntity.getCompania().getIdCompania():null);
         //Not Embedable: IdClase -> Clase, FTable: clase, HyperName:clase
@@ -129,14 +125,14 @@ public class VueloAssembler {
 			dtoEntity =  new VueloDTO();
             dtoEntity.setIdVuelo( jpaEntity.getIdVuelo() );
             dtoEntity.setNumeroVuelo( jpaEntity.getNumeroVuelo() );
-            //Not Embedable: TipoVuelo -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setTipoVuelo( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+            //Not Embedable: TipoVuelo -> Parametros, FTable: parametros, HyperName:TIPO_VUELO
+            dtoEntity.setTipoVuelo( jpaEntity.getTipoVuelo()!=null?jpaEntity.getTipoVuelo().getIdParametro():null);
             //Not Embedable: IdEstacionOrigen -> Estacion, FTable: estacion, HyperName:estacion_ORIGEN
             dtoEntity.setIdEstacionOrigen( jpaEntity.getEstacionOrigen()!=null?jpaEntity.getEstacionOrigen().getIdEstacion():null);
             //Not Embedable: IdEstacionDestino -> Estacion, FTable: estacion, HyperName:estacion_DESTINO
             dtoEntity.setIdEstacionDestino( jpaEntity.getEstacionDestino()!=null?jpaEntity.getEstacionDestino().getIdEstacion():null);
-            //Not Embedable: TipoCabina -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setTipoCabina( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+            //Not Embedable: TipoCabina -> Parametros, FTable: parametros, HyperName:TIPO_CABINA
+            dtoEntity.setTipoCabina( jpaEntity.getTipoCabina()!=null?jpaEntity.getTipoCabina().getIdParametro():null);
             //Not Embedable: IdCompania -> Compania, FTable: compania, HyperName:compania
             dtoEntity.setIdCompania( jpaEntity.getCompania()!=null?jpaEntity.getCompania().getIdCompania():null);
             //Not Embedable: IdClase -> Clase, FTable: clase, HyperName:clase

@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.CodigoServicio;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public class CodigoServicioAssembler {    
@@ -33,10 +33,9 @@ public class CodigoServicioAssembler {
         jpaEntity.setCveCodigoServicio( dtoEntity.getCveCodigoServicio()); // normal
         jpaEntity.setNombre( dtoEntity.getNombre()); // normal
         jpaEntity.setEstatus( dtoEntity.getEstatus()); // normal
-        // Assembler delegation: fTable.pk=id_parametro
-        ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-        dtoParametrosDTO.setIdParametro( dtoEntity.getTipoCodigoServicio());
-        jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+        ParametrosDTO tipoCodigoServicioDTO = new ParametrosDTO();
+        tipoCodigoServicioDTO.setIdParametro( dtoEntity.getTipoCodigoServicio());
+        jpaEntity.setTipoCodigoServicio( ParametrosAssembler.buildJpaEntity( tipoCodigoServicioDTO ));
 
         return jpaEntity;
     }
@@ -53,10 +52,9 @@ public class CodigoServicioAssembler {
             jpaEntity.setCveCodigoServicio( dtoEntity.getCveCodigoServicio());
             jpaEntity.setNombre( dtoEntity.getNombre());
             jpaEntity.setEstatus( dtoEntity.getEstatus());
-            // Assembler delegation: fTable.pk=id_parametro
-            ParametrosDTO dtoParametrosDTO = new ParametrosDTO();
-            dtoParametrosDTO.setIdParametro( dtoEntity.getTipoCodigoServicio());
-            jpaEntity.setParametros( ParametrosAssembler.buildJpaEntity( dtoParametrosDTO )); 
+            ParametrosDTO tipoCodigoServicioDTO = new ParametrosDTO();
+            tipoCodigoServicioDTO.setIdParametro( dtoEntity.getTipoCodigoServicio());
+            jpaEntity.setTipoCodigoServicio( ParametrosAssembler.buildJpaEntity( tipoCodigoServicioDTO ));
 			jpaEntityList.add(jpaEntity);
 		}
 		
@@ -74,8 +72,8 @@ public class CodigoServicioAssembler {
         dtoEntity.setCveCodigoServicio( jpaEntity.getCveCodigoServicio() ); // primitive
         dtoEntity.setNombre( jpaEntity.getNombre() ); // primitive
         dtoEntity.setEstatus( jpaEntity.getEstatus() ); // primitive
-        //Not Embedable: TipoCodigoServicio -> Parametros, FTable: parametros, HyperName:null
-        dtoEntity.setTipoCodigoServicio( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+        //Not Embedable: TipoCodigoServicio -> Parametros, FTable: parametros, HyperName:TIPO_CODIGO_SERVICIO
+        dtoEntity.setTipoCodigoServicio( jpaEntity.getTipoCodigoServicio()!=null?jpaEntity.getTipoCodigoServicio().getIdParametro():null);
 
         return dtoEntity;
     }
@@ -92,8 +90,8 @@ public class CodigoServicioAssembler {
             dtoEntity.setCveCodigoServicio( jpaEntity.getCveCodigoServicio() );
             dtoEntity.setNombre( jpaEntity.getNombre() );
             dtoEntity.setEstatus( jpaEntity.getEstatus() );
-            //Not Embedable: TipoCodigoServicio -> Parametros, FTable: parametros, HyperName:null
-            dtoEntity.setTipoCodigoServicio( jpaEntity.getParametros()!=null?jpaEntity.getParametros().getIdParametro():null);
+            //Not Embedable: TipoCodigoServicio -> Parametros, FTable: parametros, HyperName:TIPO_CODIGO_SERVICIO
+            dtoEntity.setTipoCodigoServicio( jpaEntity.getTipoCodigoServicio()!=null?jpaEntity.getTipoCodigoServicio().getIdParametro():null);
 			dtoEntityList.add(dtoEntity);
 		}
         return dtoEntityList;

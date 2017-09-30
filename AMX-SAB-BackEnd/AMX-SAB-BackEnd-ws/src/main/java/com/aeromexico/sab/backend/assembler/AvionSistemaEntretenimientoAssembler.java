@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.AvionSistemaEntretenimiento;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 public class AvionSistemaEntretenimientoAssembler {    

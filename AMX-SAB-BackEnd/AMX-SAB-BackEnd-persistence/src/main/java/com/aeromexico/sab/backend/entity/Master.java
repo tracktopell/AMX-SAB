@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 @Entity
@@ -55,7 +55,7 @@ import javax.persistence.TemporalType;
     , @NamedQuery(name = "Master.findByidTipoKit", query = "SELECT m FROM Master m WHERE m.idTipoKit = :idTipoKit")
 })
 public class Master implements java.io.Serializable {
-    private static final long serialVersionUID = 250421012;
+    private static final long serialVersionUID = 468121027;
     
     /**
     * The 'id kit' Maps to COLUMN 'id_kit'

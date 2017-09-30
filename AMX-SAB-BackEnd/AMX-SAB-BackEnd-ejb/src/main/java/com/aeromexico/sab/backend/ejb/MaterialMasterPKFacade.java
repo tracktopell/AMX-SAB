@@ -1,4 +1,4 @@
-package com.aeromexico.sab.backend.remote;
+package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.MaterialMasterPK;
 
@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 @Stateless
 public class MaterialMasterPKFacade extends AbstractFacade<MaterialMasterPK> implements MaterialMasterPKFacadeRemote {
@@ -38,9 +38,9 @@ public class MaterialMasterPKFacade extends AbstractFacade<MaterialMasterPK> imp
 		int paramAsigned=0;
 		if(x != null){
 			sbq.append(" 1=1 ");
-			if(x.getLnumeroParte() != null){
+			if(x.getNumeroParte() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.lnumeroParte = :lnumeroParte");
+			    sbq.append(" and x.numeroParte = :numeroParte");
 			}
 			if(x.getIdKit() != null){
 			    paramAsigned++;
@@ -54,8 +54,8 @@ public class MaterialMasterPKFacade extends AbstractFacade<MaterialMasterPK> imp
 		TypedQuery<MaterialMasterPK> nq = em.createQuery(sbq.toString(), MaterialMasterPK.class);
 		
 		if(paramAsigned>0){
-			if(x.getLnumeroParte() != null){
-			    nq.setParameter("lnumeroParte",x.getLnumeroParte());
+			if(x.getNumeroParte() != null){
+			    nq.setParameter("numeroParte",x.getNumeroParte());
 			}
 			if(x.getIdKit() != null){
 			    nq.setParameter("idKit",x.getIdKit());

@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 
 @Entity
@@ -51,7 +51,7 @@ import javax.persistence.TemporalType;
     , @NamedQuery(name = "SistemaEntretenimiento.findByEstatus", query = "SELECT s FROM SistemaEntretenimiento s WHERE s.estatus = :estatus")
 })
 public class SistemaEntretenimiento implements java.io.Serializable {
-    private static final long serialVersionUID = 824909230;
+    private static final long serialVersionUID = 2129789493;
     
     /**
     * The 'id sistema entretenimiento' Maps to COLUMN 'id_sistema_entretenimiento'

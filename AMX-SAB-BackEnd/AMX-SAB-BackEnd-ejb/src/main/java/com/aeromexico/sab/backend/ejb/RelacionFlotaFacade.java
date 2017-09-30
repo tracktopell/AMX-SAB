@@ -1,4 +1,4 @@
-package com.aeromexico.sab.backend.remote;
+package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.RelacionFlota;
 
@@ -13,7 +13,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.13.1
- * @date 2017/09/28 19:09
+ * @date 2017/09/30 07:39
  */
 @Stateless
 public class RelacionFlotaFacade extends AbstractFacade<RelacionFlota> implements RelacionFlotaFacadeRemote {
@@ -42,7 +42,7 @@ public class RelacionFlotaFacade extends AbstractFacade<RelacionFlota> implement
 			    paramAsigned++;
 			    sbq.append(" and x.idRelacionFlota = :idRelacionFlota");
 			}
-			if(x.getRevision() != 0){
+			if(x.getRevision()  != 0){
 			    paramAsigned++;
 			    sbq.append(" and x.revision = :revision");
 			}
@@ -61,7 +61,7 @@ public class RelacionFlotaFacade extends AbstractFacade<RelacionFlota> implement
 			if(x.getIdRelacionFlota() != null){
 			    nq.setParameter("idRelacionFlota",x.getIdRelacionFlota());
 			}
-			if(x.getRevision() != (0) ){
+			if(x.getRevision()  != 0){
 			    nq.setParameter("revision",x.getRevision());
 			}
 			if(x.getFecha() != null){
