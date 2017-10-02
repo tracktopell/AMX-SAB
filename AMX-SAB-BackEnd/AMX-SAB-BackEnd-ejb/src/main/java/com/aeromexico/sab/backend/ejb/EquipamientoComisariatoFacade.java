@@ -1,6 +1,7 @@
 package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.EquipamientoComisariato;
+import com.aeromexico.sab.backend.remote.EquipamientoComisariatoFacadeRemote;
 
 import java.util.List;
 import javax.persistence.EntityManager;

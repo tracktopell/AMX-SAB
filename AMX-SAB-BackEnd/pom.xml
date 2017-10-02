@@ -9,7 +9,6 @@
     
 	<groupId>com.aeromexico.sab.backend</groupId>
     <artifactId>AMX-SAB-BackEnd</artifactId>
-	<version>1.0</version>
 	<name>AMX-SAB-BackEnd</name>
 	<packaging>pom</packaging>
 	

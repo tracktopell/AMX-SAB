@@ -7,10 +7,9 @@
 		<version>1.0</version>		
 	</parent>
     
-	<groupId>com.aeromexico.sab.backend</groupId>
 	<artifactId>AMX-SAB-BackEnd-ejb</artifactId>
-	<version>1.0</version>
 	<name>AMX-SAB-BackEnd-ejb</name>	
+
     <packaging>ejb</packaging>
 
     <properties>

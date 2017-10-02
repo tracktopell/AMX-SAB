@@ -1,6 +1,7 @@
 package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.Master;
+import com.aeromexico.sab.backend.remote.MasterFacadeRemote;
 
 import java.util.List;
 import javax.persistence.EntityManager;

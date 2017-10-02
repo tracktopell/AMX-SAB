@@ -1,6 +1,7 @@
 package com.aeromexico.sab.backend.ejb;
 
 import com.aeromexico.sab.backend.entity.AvionCapacidad;
+import com.aeromexico.sab.backend.remote.AvionCapacidadFacadeRemote;
 
 import java.util.List;
 import javax.persistence.EntityManager;

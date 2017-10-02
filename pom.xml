@@ -20,10 +20,8 @@
 		<module>AMX-SAB-DBEngine</module>
 		
 		<module>AMX-SAB-BackEnd</module>
-<!--
 		<module>AMX-SAB-RestClient</module>
 		<module>AMX-SAB-Web</module>
 		<module>AMX-SAB-AngularFront</module>		
--->
 	</modules>
 </project>
