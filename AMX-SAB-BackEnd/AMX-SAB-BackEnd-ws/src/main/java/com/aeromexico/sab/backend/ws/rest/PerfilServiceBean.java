@@ -1,6 +1,6 @@
 package com.aeromexico.sab.backend.ws.rest;
 
-import com.aeromexico.sab.api.PerfilService;
+import com.aeromexico.sab.api.remote.PerfilRemoteService;
 import com.aeromexico.sab.backend.assembler.PerfilAssembler;
 import com.aeromexico.sab.backend.entity.Perfil;
 
@@ -12,7 +12,6 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
 /**
@@ -21,7 +20,7 @@ import javax.ws.rs.Produces;
  */
 @Stateless(name = "perfilServiceBean",mappedName = "perfilServiceBean",description = "perfil RS")
 @Path("/perfil")
-public class PerfilServiceBean implements PerfilService{
+public class PerfilServiceBean implements PerfilRemoteService{
 	/*
 	java:global/AMX-SAB-BackEnd-ear-1.0/AMX-SAB-BackEnd-ejb-1.0/PerfilFacade
 	*/

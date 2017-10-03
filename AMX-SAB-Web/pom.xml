@@ -21,17 +21,18 @@
     <dependencies>
 
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>AMX-SAB-API</artifactId>
-            <version>${project.version}</version>
+			<groupId>com.aeromexico.sab.backend</groupId>    
+			<artifactId>AMX-SAB-BackEnd-API-remote</artifactId>
+			<version>1.0</version>
         </dependency>
 
         <dependency>
             <groupId>javax</groupId>
-            <artifactId>javaee-web-api</artifactId>
+            <artifactId>javaee-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
         </dependency>
+
     </dependencies>
 
     <build>
