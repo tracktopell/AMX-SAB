@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.Region;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/09/30 07:39
+ * @date 2017/10/03 13:52
  */
 
 public class RegionAssembler {    

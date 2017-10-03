@@ -1,7 +1,6 @@
 package com.aeromexico.sab.backend.persistence.test;
 
 import com.aeromexico.sab.backend.entity.Perfil;
-import com.aeromexico.sab.backend.localapp.ShowEntitiesApp;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.EntityManager;
@@ -13,7 +12,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.Ignore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,6 +20,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author alfredo.estrada
  */
+@Ignore
 public class TestLoadPersistence {
 	private static Logger logger = LoggerFactory.getLogger(TestLoadPersistence.class.getName());
 	private static EntityManagerFactory entityManagerFactory;

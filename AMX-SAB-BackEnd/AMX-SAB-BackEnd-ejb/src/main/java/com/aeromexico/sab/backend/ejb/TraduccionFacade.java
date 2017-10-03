@@ -10,11 +10,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 /**
- * ESB JPA Entity of Table traduccion.
+ * SSB JPA Entity of Table traduccion.
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.13.1
- * @date 2017/09/30 07:39
+ * @version 1.14.1
+ * @date 2017/10/03 13:52
  */
 @Stateless
 public class TraduccionFacade extends AbstractFacade<Traduccion> implements TraduccionFacadeRemote {

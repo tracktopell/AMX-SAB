@@ -20,9 +20,11 @@
 			
 	<modules>
 		<module>AMX-SAB-BackEnd-persistence</module>
+		<module>AMX-SAB-BackEnd-local</module>
 		<module>AMX-SAB-BackEnd-remote</module>
 		<module>AMX-SAB-BackEnd-ejb</module>
 		<module>AMX-SAB-BackEnd-ws</module>		
 		<module>AMX-SAB-BackEnd-ear</module>
+		<module>AMX-SAB-BackEnd-API-remote</module>
 	</modules>
 </project>

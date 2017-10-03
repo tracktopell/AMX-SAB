@@ -1,8 +1,5 @@
--- DELETE FROM CUSTOMER;
+INSERT INTO PERFIL(ESTATUS, NOMBRE) VALUES(1,'s0-1');
+INSERT INTO PERFIL(ESTATUS, NOMBRE) VALUES(1,'s0-2');
+INSERT INTO PERFIL(ESTATUS, NOMBRE) VALUES(1,'s0-3');
 
--- ===================================================================================
-
--- INSERT INTO CUSTOMER VALUES( 1 ,'N1','A1','0001', 'email1@server.com' );
--- ===================================================================================
-
--- SELECT * FROM CUSTOMER;
+SELECT * FROM PERFIL;

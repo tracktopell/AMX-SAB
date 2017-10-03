@@ -4,29 +4,31 @@
 	<!-- properties for override by -Dderby.dbroot.user=xxx  -Dderby.dbroot.password=yyyy  -->
 	<property name="admin.db.user"         value="AMX_SAB_DEV_USR"/>
 	<property name="admin.db.password"     value="AMX_SAB_DEV_PWD"/>
-	<property name="derby.system.home"     value="${user.home}/DERBY_DATA"/>
-	<!--
+	<property name="derby.system.home"     value="${user.home}/DERBY_DATABASES"/>
+	
 	<property name="sql" value="../AMX-SAB-BackEnd/AMX-SAB-BackEnd-persistence/src/main/resources/sql"/>
-	-->
+	<!--
 	<property name="sql"    value="sql"/>
+	-->
+	<property name="p1"     value="com.aeromexico.sab.dto"/>
+	<property name="p2"     value="com.aeromexico.sab.backend.assembler"/>
+	<property name="p3"     value="com.aeromexico.sab.backend.entity"/>
+	<property name="p4"     value="com.aeromexico.sab.backend.remote"/>
+	<property name="p5"     value="com.aeromexico.sab.backend.local"/>
+	<property name="p6"     value="com.aeromexico.sab.backend.ejb"/>
 	
 	<property name="s1"     value="../AMX-SAB-DTO/src/main/java"/>
 	<property name="s2"     value="../AMX-SAB-BackEnd/AMX-SAB-BackEnd-ws/src/main/java"/>
 	<property name="s3"     value="../AMX-SAB-BackEnd/AMX-SAB-BackEnd-persistence/src/main/java"/>
 	<property name="s4"     value="../AMX-SAB-BackEnd/AMX-SAB-BackEnd-remote/src/main/java"/>
-	<property name="s5"     value="../AMX-SAB-BackEnd/AMX-SAB-BackEnd-ejb/src/main/java"/>
-
-	<property name="p1"     value="com.aeromexico.sab.dto"/>
-	<property name="p2"     value="com.aeromexico.sab.backend.assembler"/>
-	<property name="p3"     value="com.aeromexico.sab.backend.entity"/>
-	<property name="p4"     value="com.aeromexico.sab.backend.ejb"/>
-	<property name="p5"     value="com.aeromexico.sab.backend.ejb"/>
+	<property name="s5"     value="../AMX-SAB-BackEnd/AMX-SAB-BackEnd-local/src/main/java"/>
+	<property name="s6"     value="../AMX-SAB-BackEnd/AMX-SAB-BackEnd-ejb/src/main/java"/>
 	
     <path id="mvn_aeromexico_utils_classpath">
 		<fileset dir="${user.home}/.m2/repository/com/tracktopell/dbutil/SQLCommander/1.27/">
             <include name="*.jar"/>
 		</fileset>
-		<fileset dir="${user.home}/.m2/repository/com/tracktopell/jpa-builder/1.13.1/">
+		<fileset dir="${user.home}/.m2/repository/com/tracktopell/jpa-builder/1.14.1/">
             <include name="*.jar"/>
 		</fileset>
 		<fileset dir="${user.home}/.m2/repository/org/apache/derby/derby/10.13.1.1">
@@ -72,12 +74,12 @@
 	
    <target name="GENERATE_SQL_DEV">
       <java fork="true" failonerror="yes" classname="com.tracktopell.dao.builder.dbschema.VPModel2SQL">
-         <arg line="model/exported/project.xml derby OLFS_DB_DEV ${sql}/CREATE_SCHEMMA_DEV.DERBY.SQL ${sql}/DROP_SCHEMMA_DEV.DERBY.SQL {all}"/>		 
+         <arg line="model/exported/project.xml derby AMX_SAB_DB_DEV ${sql}/CREATE_SCHEMMA_DEV.DERBY.SQL ${sql}/DROP_SCHEMMA_DEV.DERBY.SQL {all}"/>		 
 		 <classpath refid="mvn_aeromexico_utils_classpath"/>
       </java>
 	  
       <java fork="true" failonerror="yes" classname="com.tracktopell.dao.builder.dbschema.VPModel2SQL">
-         <arg line="model/exported/project.xml mssqlserver OLFS_DB_DEV ${sql}/CREATE_SCHEMMA_DEV.MSSQLSERVER.SQL ${sql}/DROP_SCHEMMA_DEV.MSSQLSERVER.SQL {all}"/>		 
+         <arg line="model/exported/project.xml mssqlserver AMX_SAB_DB_DEV ${sql}/CREATE_SCHEMMA_DEV.MSSQLSERVER.SQL ${sql}/DROP_SCHEMMA_DEV.MSSQLSERVER.SQL {all}"/>		 
 		 <classpath refid="mvn_aeromexico_utils_classpath"/>
 	  </java>
 	  
@@ -87,17 +89,8 @@
         <echo message="------- GENERATING SQL ALL SCHEMMAS: USER=${admin.db.user}, PASSWORD=${admin.db.password}" />
     </target>
     
-    <target name="1STD_DEV">      
-      <echo message="------- INVOKING sql/FIRST_DATA_DEV.DERBY.SQL: USER=AMX_SAB_DEV_USR, PASSWORD=AMX_SAB_DEV_PWD" />
-      <java fork="true" failonerror="yes" classname="com.tracktopell.dbutil.sqlcommander.Main"
-            input="sql/FIRST_DATA_DEV.DERBY.SQL">
-         <arg line="-driverClass org.apache.derby.jdbc.EmbeddedDriver -url 'jdbc:derby:OLFS_DB_DEV' -user AMX_SAB_DEV_USR -password AMX_SAB_DEV_PWD"/>		 
-		 <classpath refid="mvn_aeromexico_utils_classpath"/>		 
-      </java>
-   </target>
-   
    <target name="INIT_DB_DEV">
-        <echo message="------- INVOKING sql/CREATE_SCHEMMA_DEV.DERBY.SQL: USER=${admin.db.user}, PASSWORD=${admin.db.password}" />
+        <echo message="------- INVOKING ${sql}/CREATE_SCHEMMA_DEV.DERBY.SQL: USER=${admin.db.user}, PASSWORD=${admin.db.password}" />
         
 		<delete includeemptydirs="true" failonerror="false">
 			<fileset dir="${derby.system.home}" includes="**/**" />		
@@ -106,29 +99,29 @@
         <mkdir   dir="${derby.system.home}" />
         
         <java fork="true" failonerror="yes" classname="com.tracktopell.dbutil.sqlcommander.Main"
-              input="sql/CREATE_SCHEMMA_DEV.DERBY.SQL">
+              input="${sql}/CREATE_SCHEMMA_DEV.DERBY.SQL">
 		   <sysproperty key="derby.system.home" value="${derby.system.home}"/>
-           <arg line=" -driverClass org.apache.derby.jdbc.EmbeddedDriver -url 'jdbc:derby:OLFS_DB_DEV;create=true' -user ${admin.db.user} -password ${admin.db.password}"/>
-           <!--
-           <classpath refid="local_aeromexico_utils_classpath"/>
-		   -->
+           <arg line=" -driverClass org.apache.derby.jdbc.EmbeddedDriver -url 'jdbc:derby:AMX_SAB_DB_DEV;create=true' -user ${admin.db.user} -password ${admin.db.password}"/>
 		   <classpath refid="mvn_aeromexico_utils_classpath"/>
-		 
          </java>
       
          <echo message="------- INVOKING sql/FIRST_DATA_DEV.DERBY.SQL: USER=AMX_SAB_DEV_USR, PASSWORD=AMX_SAB_DEV_PWD" />
          <java fork="true" failonerror="yes" classname="com.tracktopell.dbutil.sqlcommander.Main"
-               input="sql/FIRST_DATA_DEV.DERBY.SQL">
+               input="${sql}/FIRST_DATA_DEV.DERBY.SQL">
              <sysproperty key="derby.system.home" value="${derby.system.home}"/>
-             <arg line="-driverClass org.apache.derby.jdbc.EmbeddedDriver -url 'jdbc:derby:OLFS_DB_DEV' -user ${admin.db.user} -password ${admin.db.password}"/>
-             <!--
-             <classpath refid="local_aeromexico_utils_classpath"/>
-		     -->
-		     <classpath refid="mvn_aeromexico_utils_classpath"/>
-		 
+             <arg line="-driverClass org.apache.derby.jdbc.EmbeddedDriver -url 'jdbc:derby:AMX_SAB_DB_DEV' -user ${admin.db.user} -password ${admin.db.password}"/>
+             <classpath refid="mvn_aeromexico_utils_classpath"/>
          </java>
     </target>
-
+	
+    <target name="SHOW_DB_DEV">      
+      <echo message="------- INVOKING ${sql}/FIRST_DATA_DEV.DERBY.SQL: USER=AMX_SAB_DEV_USR, PASSWORD=AMX_SAB_DEV_PWD" />
+      <java fork="true" failonerror="yes" classname="com.tracktopell.dbutil.sqlcommander.Main">
+         <arg line="-driverClass org.apache.derby.jdbc.EmbeddedDriver -url 'jdbc:derby://localhost:1527/AMX_SAB_DB_DEV' -user AMX_SAB_DEV_USR -password AMX_SAB_DEV_PWD"/>		 
+		 <classpath refid="mvn_aeromexico_utils_classpath"/>		 
+      </java>
+   </target>
+   
     <target name="CLEAN_GEN_SRC_MVN">
 	  <!--
       <delete includeemptydirs="true">
@@ -151,15 +144,15 @@
    <target name="GENERATE_SRC_MVN" depends="CLEAN_GEN_SRC_MVN" >
 
       <java fork="true" failonerror="yes" classname="com.tracktopell.dao.builder.jpa.VPModel2DTOAndBeans">
-         <arg line="model/exported/project.xml OLFS_DB_DEV ${p1} ${p2} ${p3} ${p4} ${p5} ${s1} ${s2} ${s3} ${s4} ${s5} AMX_SAB_PU true {all}"/>
+         <arg line="model/exported/project.xml AMX_SAB_DB_DEV ${p1} ${p2} ${p3} ${p4} ${p5} ${p6} ${s1} ${s2} ${s3} ${s4} ${s5} ${s6} AMX_SAB_PU true @Remote {all}"/>
 		 <classpath refid="mvn_aeromexico_utils_classpath"/>
       </java>
    </target>
    
     <target name="X_DERBY_DEV">
         <java fork="true" failonerror="yes" classname="com.tracktopell.dbutil.sqlcommander.Main">
-		<echo message="derby -u AMX_SAB_DEV_USR -pAMX_SAB_DEV_PWD OLFS_DB_DEV"/>
-        <arg line="-driverClass com.derby.jdbc.Driver -url 'jdbc:derby://localhost/OLFS_DB_DEV' -user AMX_SAB_DEV_USR -password AMX_SAB_DEV_PWD"/>
+		<echo message="derby -u AMX_SAB_DEV_USR -pAMX_SAB_DEV_PWD AMX_SAB_DB_DEV"/>
+        <arg line="-driverClass com.derby.jdbc.Driver -url 'jdbc:derby://localhost/AMX_SAB_DB_DEV' -user AMX_SAB_DEV_USR -password AMX_SAB_DEV_PWD"/>
          <!--
          <classpath refid="local_aeromexico_utils_classpath"/>
 		 -->

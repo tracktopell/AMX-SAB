@@ -14,8 +14,8 @@ import org.json.JSONObject;
  * @See https://stleary.github.io/JSON-java/
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
- * @version 1.13.1
- * @date 2017/09/30 07:39
+ * @version 1.14.1
+ * @date 2017/10/03 13:52
  */
 
 public class TraduccionDTO implements java.io.Serializable {

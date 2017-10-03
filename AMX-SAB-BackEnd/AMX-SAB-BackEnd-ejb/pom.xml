@@ -19,11 +19,23 @@
     </properties>
 
     <dependencies>
+		<!--
+        <dependency>
+            <groupId>com.aeromexico.sab.backend</groupId>
+			<artifactId>AMX-SAB-BackEnd-local</artifactId>
+			<version>1.0</version>
+        </dependency>
+		-->
         <dependency>
             <groupId>com.aeromexico.sab.backend</groupId>
 			<artifactId>AMX-SAB-BackEnd-remote</artifactId>
 			<version>1.0</version>
-        </dependency>
+        </dependency>		
+		<dependency>
+			<groupId>com.aeromexico.sab.backend</groupId>
+			<artifactId>AMX-SAB-BackEnd-persistence</artifactId>
+			<version>1.0</version>
+		</dependency>
 		
         <dependency>
             <groupId>javax</groupId>

@@ -37,18 +37,37 @@
     </properties>
     
 	<dependencies>
+		
+		<dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+		
 		<!--  Apache DERBY for JUnit persistence tests -->
 		<dependency>
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derby</artifactId>
 			<version>${apache.derby.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbyclient</artifactId>
+			<version>${apache.derby.version}</version>
+			<scope>test</scope>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.apache.derby</groupId>
 			<artifactId>derbyLocale_es</artifactId>
 			<version>${apache.derby.version}</version>			
+			<scope>test</scope>
 		</dependency>
+		
 		<!--  MS SQLServer for JUnit persistence tests -->
 		<dependency>
 			<groupId>com.hynnet</groupId>
@@ -63,6 +82,7 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.entitymanager.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 		<!-- LOGING -->
@@ -81,7 +101,7 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.5</version>
 		</dependency>
-
+		<!-- ===================== TEST ====================== -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

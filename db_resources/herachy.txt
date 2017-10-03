@@ -1,0 +1,39 @@
+	<groupId>com.aeromexico.sab</groupId>
+	<artifactId>AMX-SAB</artifactId>
+	<version>1.0</version>
+	
+			<groupId>com.aeromexico.sab</groupId>
+			<artifactId>AMX-SAB-DTO</artifactId>
+			<version>1.0</version>
+			
+			<groupId>com.aeromexico.sab</groupId>    
+			<artifactId>AMX-SAB-API</artifactId>
+			<version>1.0</version>
+			
+			<groupId>com.aeromexico.sab</groupId>
+			<artifactId>AMX-SAB-DBEngine</artifactId>	
+			<version>1.0</version>	
+
+			<groupId>com.aeromexico.sab.backend</groupId>
+			<artifactId>AMX-SAB-BackEnd</artifactId>
+			<version>1.0</version>
+			
+			    <groupId>com.aeromexico.sab.backend</groupId>
+				<artifactId>AMX-SAB-BackEnd-persistence</artifactId>
+				<version>1.0</version>
+
+				<groupId>com.aeromexico.sab.backend</groupId>
+				<artifactId>AMX-SAB-BackEnd-local</artifactId>
+				<version>1.0</version>
+				
+				<groupId>com.aeromexico.sab.backend</groupId>
+				<artifactId>AMX-SAB-BackEnd-remote</artifactId>
+				<version>1.0</version>
+				
+				<groupId>com.aeromexico.sab.backend</groupId>
+				<artifactId>AMX-SAB-BackEnd-ejb</artifactId>
+				<version>1.0</version>
+
+				<groupId>com.aeromexico.sab.backend</groupId>
+				<artifactId>AMX-SAB-BackEnd-ws</artifactId>
+				<version>1.0</version>

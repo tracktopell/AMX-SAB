@@ -5,15 +5,16 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-
+	<!--
 	<persistence-unit name="AMX_SAB_PU" transaction-type="RESOURCE_LOCAL">
 		
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
-		<properties>			
-			<property name="javax.persistence.jdbc.driver"     value="org.apache.derby.jdbc.ClientDriver" />
-			<property name="javax.persistence.jdbc.url"        value="jdbc:derby://localhost:${derby.server.port}/AMX_SAB_DB_DEV" />
+		<properties>
+			<property name="javax.persistence.jdbc.driver"     value="org.apache.derby.jdbc.EmbeddedDriver" />
+			<property name="javax.persistence.jdbc.url"        value="jdbc:derby:memory:AMX_SAB_DB_DEV;create=true" />
+
 			<property name="javax.persistence.jdbc.user"       value="AMX_SAB_DEV_USR"/>
 			<property name="javax.persistence.jdbc.password"   value="AMX_SAB_DEV_PWD"/>
 
@@ -23,10 +24,36 @@
 			<property name="hibernate.archive.autodetection"   value="class" />
 			<property name="hibernate.dialect"                 value="org.hibernate.dialect.DerbyDialect" />
 			
-			<property name="hibernate.hbm2ddl.auto"            value="validate" />						
+			<property name="hibernate.hbm2ddl.auto"            value="create" />
+			<property name="hibernate.hbm2ddl.import_files"    value="/initial_data.sql"/>
+
 		</properties>
 	</persistence-unit>
+	-->
 	
+	<persistence-unit name="AMX_SAB_PU" transaction-type="JTA">
+		
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<jta-data-source>amx_sab_derby_ds</jta-data-source>
+		<exclude-unlisted-classes>false</exclude-unlisted-classes>
+		<properties>
+			<!--
+			<property name="javax.persistence.jdbc.driver"     value="org.apache.derby.jdbc.ClientDriver" />
+			<property name="javax.persistence.jdbc.url"        value="jdbc:derby://localhost:${derby.server.port}/AMX_SAB_DB_DEV" />
+			<property name="javax.persistence.jdbc.user"       value="AMX_SAB_DEV_USR"/>
+			<property name="javax.persistence.jdbc.password"   value="AMX_SAB_DEV_PWD"/>
+			-->
+			<property name="hibernate.show_sql"                value="true"/>
+			<property name="hibernate.format_sql"              value="true"/>
+			<property name="hibernate.flushMode"               value="FLUSH_AUTO" />			
+			<property name="hibernate.archive.autodetection"   value="class" />
+			<property name="hibernate.dialect"                 value="org.hibernate.dialect.DerbyDialect" />
+			<!--
+			<property name="hibernate.hbm2ddl.auto"            value="validate" />						
+			-->
+		</properties>
+	</persistence-unit>
+	<!--	
 	<persistence-unit name="AMX_SAB_PU_MEMORY_TEST" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
@@ -48,5 +75,5 @@
 			
 		</properties>
 	</persistence-unit>		
-
+	-->
 </persistence>
