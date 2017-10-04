@@ -175,10 +175,10 @@
 								<chmod file="${staging.dir}/*.cmd" perm="751"/>
 
 								<zip destfile="${project.build.directory}/${project.artifactId}.zip" preserve0permissions="true" >
-									<zipfileset dir="${staging.dir}"	                includes="${project.artifactId}.jar"/>
-									<zipfileset dir="${staging.dir}/dependency-jars"	includes="*.jar"   prefix="dependency-jars/"/>
-                                    <zipfileset dir="${staging.dir}"					includes="*.sh"    filemode="751"/>
-                                    <zipfileset dir="${staging.dir}"					includes="*.cmd"   filemode="751"/>
+									<zipfileset dir="${staging.dir}/dependency-jars"	includes="*.jar"   filemode="751"    prefix="${project.artifactId}/dependency-jars/"/>
+									<zipfileset dir="${staging.dir}"	                includes="${project.artifactId}.jar" prefix="${project.artifactId}/"/>
+                                    <zipfileset dir="${staging.dir}"					includes="*.sh"    filemode="751"    prefix="${project.artifactId}/"/>
+                                    <zipfileset dir="${staging.dir}"					includes="*.cmd"   filemode="751"    prefix="${project.artifactId}/"/>
 								</zip>
 																
 							</target>
