@@ -14,7 +14,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 @Stateless
 public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFacadeRemote {
@@ -39,17 +39,25 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
 		int paramAsigned=0;
 		if(x != null){
 			sbq.append(" 1=1 ");
-			if(x.getIdUsuario() != null){
+			if(x.getEmailUsuario() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.idUsuario = :idUsuario");
-			}
-			if(x.getEmail() != null){
-			    paramAsigned++;
-			    sbq.append(" and x.email = :email");
+			    sbq.append(" and x.emailUsuario = :emailUsuario");
 			}
 			if(x.getContrasenia() != null){
 			    paramAsigned++;
 			    sbq.append(" and x.contrasenia = :contrasenia");
+			}
+			if(x.getNombre() != null){
+			    paramAsigned++;
+			    sbq.append(" and x.nombre = :nombre");
+			}
+			if(x.getApellidoPaterno() != null){
+			    paramAsigned++;
+			    sbq.append(" and x.apellidoPaterno = :apellidoPaterno");
+			}
+			if(x.getApellidoMaterno() != null){
+			    paramAsigned++;
+			    sbq.append(" and x.apellidoMaterno = :apellidoMaterno");
 			}
 			if(x.getEstatus() != null){
 			    paramAsigned++;
@@ -63,14 +71,20 @@ public class UsuarioFacade extends AbstractFacade<Usuario> implements UsuarioFac
 		TypedQuery<Usuario> nq = em.createQuery(sbq.toString(), Usuario.class);
 		
 		if(paramAsigned>0){
-			if(x.getIdUsuario() != null){
-			    nq.setParameter("idUsuario",x.getIdUsuario());
-			}
-			if(x.getEmail() != null){
-			    nq.setParameter("email",x.getEmail());
+			if(x.getEmailUsuario() != null){
+			    nq.setParameter("emailUsuario",x.getEmailUsuario());
 			}
 			if(x.getContrasenia() != null){
 			    nq.setParameter("contrasenia",x.getContrasenia());
+			}
+			if(x.getNombre() != null){
+			    nq.setParameter("nombre",x.getNombre());
+			}
+			if(x.getApellidoPaterno() != null){
+			    nq.setParameter("apellidoPaterno",x.getApellidoPaterno());
+			}
+			if(x.getApellidoMaterno() != null){
+			    nq.setParameter("apellidoMaterno",x.getApellidoMaterno());
 			}
 			if(x.getEstatus() != null){
 			    nq.setParameter("estatus",x.getEstatus());

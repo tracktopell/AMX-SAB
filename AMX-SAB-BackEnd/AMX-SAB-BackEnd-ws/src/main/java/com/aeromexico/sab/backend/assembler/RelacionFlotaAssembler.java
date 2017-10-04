@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.RelacionFlota;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 public class RelacionFlotaAssembler {    

@@ -14,7 +14,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 @Stateless
 public class EmpleadoFacade extends AbstractFacade<Empleado> implements EmpleadoFacadeRemote {
@@ -43,17 +43,21 @@ public class EmpleadoFacade extends AbstractFacade<Empleado> implements Empleado
 			    paramAsigned++;
 			    sbq.append(" and x.idEmpleado = :idEmpleado");
 			}
-			if(x.getNombre() != null){
+			if(x.getUsuario() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.nombre = :nombre");
+			    sbq.append(" and x.usuario = :usuario");
 			}
-			if(x.getApellidoPaterno() != null){
+			if(x.getCompania() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.apellidoPaterno = :apellidoPaterno");
+			    sbq.append(" and x.compania = :compania");
 			}
-			if(x.getApellidoMaterno() != null){
+			if(x.getArea() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.apellidoMaterno = :apellidoMaterno");
+			    sbq.append(" and x.area = :area");
+			}
+			if(x.getEstacion() != null){
+			    paramAsigned++;
+			    sbq.append(" and x.estacion = :estacion");
 			}
 			if(x.getTelefono() != null){
 			    paramAsigned++;
@@ -66,22 +70,6 @@ public class EmpleadoFacade extends AbstractFacade<Empleado> implements Empleado
 			if(x.getDirectorioSab() != null){
 			    paramAsigned++;
 			    sbq.append(" and x.directorioSab = :directorioSab");
-			}
-			if(x.getCompania() != null){
-			    paramAsigned++;
-			    sbq.append(" and x.compania = :compania");
-			}
-			if(x.getUsuario() != null){
-			    paramAsigned++;
-			    sbq.append(" and x.usuario = :usuario");
-			}
-			if(x.getArea() != null){
-			    paramAsigned++;
-			    sbq.append(" and x.area = :area");
-			}
-			if(x.getEstacion() != null){
-			    paramAsigned++;
-			    sbq.append(" and x.estacion = :estacion");
 			}
 			if(x.getEsatus() != null){
 			    paramAsigned++;
@@ -98,14 +86,17 @@ public class EmpleadoFacade extends AbstractFacade<Empleado> implements Empleado
 			if(x.getIdEmpleado() != null){
 			    nq.setParameter("idEmpleado",x.getIdEmpleado());
 			}
-			if(x.getNombre() != null){
-			    nq.setParameter("nombre",x.getNombre());
+			if(x.getUsuario() != null){
+			    nq.setParameter("usuario",x.getUsuario());
 			}
-			if(x.getApellidoPaterno() != null){
-			    nq.setParameter("apellidoPaterno",x.getApellidoPaterno());
+			if(x.getCompania() != null){
+			    nq.setParameter("compania",x.getCompania());
 			}
-			if(x.getApellidoMaterno() != null){
-			    nq.setParameter("apellidoMaterno",x.getApellidoMaterno());
+			if(x.getArea() != null){
+			    nq.setParameter("area",x.getArea());
+			}
+			if(x.getEstacion() != null){
+			    nq.setParameter("estacion",x.getEstacion());
 			}
 			if(x.getTelefono() != null){
 			    nq.setParameter("telefono",x.getTelefono());
@@ -115,18 +106,6 @@ public class EmpleadoFacade extends AbstractFacade<Empleado> implements Empleado
 			}
 			if(x.getDirectorioSab() != null){
 			    nq.setParameter("directorioSab",x.getDirectorioSab());
-			}
-			if(x.getCompania() != null){
-			    nq.setParameter("compania",x.getCompania());
-			}
-			if(x.getUsuario() != null){
-			    nq.setParameter("usuario",x.getUsuario());
-			}
-			if(x.getArea() != null){
-			    nq.setParameter("area",x.getArea());
-			}
-			if(x.getEstacion() != null){
-			    nq.setParameter("estacion",x.getEstacion());
 			}
 			if(x.getEsatus() != null){
 			    nq.setParameter("esatus",x.getEsatus());

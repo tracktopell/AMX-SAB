@@ -14,7 +14,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 @Stateless
 public class PerfilFacade extends AbstractFacade<Perfil> implements PerfilFacadeRemote {
@@ -39,17 +39,13 @@ public class PerfilFacade extends AbstractFacade<Perfil> implements PerfilFacade
 		int paramAsigned=0;
 		if(x != null){
 			sbq.append(" 1=1 ");
-			if(x.getIdPerfil() != null){
+			if(x.getPerfil() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.idPerfil = :idPerfil");
+			    sbq.append(" and x.perfil = :perfil");
 			}
-			if(x.getNombre() != null){
+			if(x.getDescripcion() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.nombre = :nombre");
-			}
-			if(x.getEstatus() != null){
-			    paramAsigned++;
-			    sbq.append(" and x.estatus = :estatus");
+			    sbq.append(" and x.descripcion = :descripcion");
 			}
 			
 		} else {
@@ -59,14 +55,11 @@ public class PerfilFacade extends AbstractFacade<Perfil> implements PerfilFacade
 		TypedQuery<Perfil> nq = em.createQuery(sbq.toString(), Perfil.class);
 		
 		if(paramAsigned>0){
-			if(x.getIdPerfil() != null){
-			    nq.setParameter("idPerfil",x.getIdPerfil());
+			if(x.getPerfil() != null){
+			    nq.setParameter("perfil",x.getPerfil());
 			}
-			if(x.getNombre() != null){
-			    nq.setParameter("nombre",x.getNombre());
-			}
-			if(x.getEstatus() != null){
-			    nq.setParameter("estatus",x.getEstatus());
+			if(x.getDescripcion() != null){
+			    nq.setParameter("descripcion",x.getDescripcion());
 			}
 			
 		}		

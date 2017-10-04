@@ -70,7 +70,7 @@ public class TestLoadPersistence {
 			logger.info("\t->Perfil:"+p);
 		}
 		logger.info("Perfil before:<--");
-		
+		/*
 		Perfil perfilX=new Perfil();
 		perfilX.setEstatus((short)1);
 		long t1=System.currentTimeMillis();
@@ -85,7 +85,7 @@ public class TestLoadPersistence {
 			logger.info("\t->Perfil:"+p);
 		}
 		logger.info("Perfil after:<--");
-		
+		*/
 		entityManager.getTransaction().commit();
 		logger.info("---------------------------[TC]<<<");
 		logger.info("<<<====================================");		

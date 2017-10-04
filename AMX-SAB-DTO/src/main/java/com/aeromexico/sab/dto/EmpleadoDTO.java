@@ -15,7 +15,7 @@ import org.json.JSONObject;
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 public class EmpleadoDTO implements java.io.Serializable {
@@ -28,19 +28,24 @@ public class EmpleadoDTO implements java.io.Serializable {
     private Integer idEmpleado;
     
     /**
-    * nombre
+    * email usuario
     */
-    private String nombre;
+    private String emailUsuario;
     
     /**
-    * apellido paterno
+    * id compania
     */
-    private String apellidoPaterno;
+    private int idCompania;
     
     /**
-    * apellido materno
+    * id area
     */
-    private String apellidoMaterno;
+    private Integer idArea;
+    
+    /**
+    * id estacion
+    */
+    private int idEstacion;
     
     /**
     * telefono
@@ -56,26 +61,6 @@ public class EmpleadoDTO implements java.io.Serializable {
     * directorio sab
     */
     private Short directorioSab;
-    
-    /**
-    * id compania
-    */
-    private int idCompania;
-    
-    /**
-    * id usuario
-    */
-    private int idUsuario;
-    
-    /**
-    * id area
-    */
-    private Integer idArea;
-    
-    /**
-    * id estacion
-    */
-    private int idEstacion;
     
     /**
     * esatus
@@ -97,23 +82,29 @@ public class EmpleadoDTO implements java.io.Serializable {
     public void setIdEmpleado(Integer v) {
         this.idEmpleado = v;
     }
-    public String getNombre() {
-        return this.nombre;
+    public String getEmailUsuario() {
+        return this.emailUsuario;
     }
-    public void setNombre(String v) {
-        this.nombre = v;
+    public void setEmailUsuario(String v) {
+        this.emailUsuario = v;
     }
-    public String getApellidoPaterno() {
-        return this.apellidoPaterno;
+    public int getIdCompania() {
+        return this.idCompania;
     }
-    public void setApellidoPaterno(String v) {
-        this.apellidoPaterno = v;
+    public void setIdCompania(int v) {
+        this.idCompania = v;
     }
-    public String getApellidoMaterno() {
-        return this.apellidoMaterno;
+    public Integer getIdArea() {
+        return this.idArea;
     }
-    public void setApellidoMaterno(String v) {
-        this.apellidoMaterno = v;
+    public void setIdArea(Integer v) {
+        this.idArea = v;
+    }
+    public int getIdEstacion() {
+        return this.idEstacion;
+    }
+    public void setIdEstacion(int v) {
+        this.idEstacion = v;
     }
     public String getTelefono() {
         return this.telefono;
@@ -133,30 +124,6 @@ public class EmpleadoDTO implements java.io.Serializable {
     public void setDirectorioSab(Short v) {
         this.directorioSab = v;
     }
-    public int getIdCompania() {
-        return this.idCompania;
-    }
-    public void setIdCompania(int v) {
-        this.idCompania = v;
-    }
-    public int getIdUsuario() {
-        return this.idUsuario;
-    }
-    public void setIdUsuario(int v) {
-        this.idUsuario = v;
-    }
-    public Integer getIdArea() {
-        return this.idArea;
-    }
-    public void setIdArea(Integer v) {
-        this.idArea = v;
-    }
-    public int getIdEstacion() {
-        return this.idEstacion;
-    }
-    public void setIdEstacion(int v) {
-        this.idEstacion = v;
-    }
     public Short getEsatus() {
         return this.esatus;
     }
@@ -168,16 +135,13 @@ public class EmpleadoDTO implements java.io.Serializable {
     public int hashCode() {
         int hash = 0;
 		hash += String.valueOf(idEmpleado).hashCode();
-		hash += String.valueOf(nombre).hashCode();
-		hash += String.valueOf(apellidoPaterno).hashCode();
-		hash += String.valueOf(apellidoMaterno).hashCode();
+		hash += String.valueOf(emailUsuario).hashCode();
+		hash += String.valueOf(idCompania).hashCode();
+		hash += String.valueOf(idArea).hashCode();
+		hash += String.valueOf(idEstacion).hashCode();
 		hash += String.valueOf(telefono).hashCode();
 		hash += String.valueOf(extension).hashCode();
 		hash += String.valueOf(directorioSab).hashCode();
-		hash += String.valueOf(idCompania).hashCode();
-		hash += String.valueOf(idUsuario).hashCode();
-		hash += String.valueOf(idArea).hashCode();
-		hash += String.valueOf(idEstacion).hashCode();
 		hash += String.valueOf(esatus).hashCode();
         return hash;
     }
@@ -198,16 +162,13 @@ public class EmpleadoDTO implements java.io.Serializable {
         }		
 		EmpleadoDTO  other = (EmpleadoDTO ) o;
 		if (!Objects.equals(this.idEmpleado, other.idEmpleado)) { return false; }		
-		if (!Objects.equals(this.nombre, other.nombre)) { return false; }		
-		if (!Objects.equals(this.apellidoPaterno, other.apellidoPaterno)) { return false; }		
-		if (!Objects.equals(this.apellidoMaterno, other.apellidoMaterno)) { return false; }		
+		if (!Objects.equals(this.emailUsuario, other.emailUsuario)) { return false; }		
+		if (!Objects.equals(this.idCompania, other.idCompania)) { return false; }		
+		if (!Objects.equals(this.idArea, other.idArea)) { return false; }		
+		if (!Objects.equals(this.idEstacion, other.idEstacion)) { return false; }		
 		if (!Objects.equals(this.telefono, other.telefono)) { return false; }		
 		if (!Objects.equals(this.extension, other.extension)) { return false; }		
 		if (!Objects.equals(this.directorioSab, other.directorioSab)) { return false; }		
-		if (!Objects.equals(this.idCompania, other.idCompania)) { return false; }		
-		if (!Objects.equals(this.idUsuario, other.idUsuario)) { return false; }		
-		if (!Objects.equals(this.idArea, other.idArea)) { return false; }		
-		if (!Objects.equals(this.idEstacion, other.idEstacion)) { return false; }		
 		if (!Objects.equals(this.esatus, other.esatus)) { return false; }		
     	return true;
     }
@@ -219,16 +180,13 @@ public class EmpleadoDTO implements java.io.Serializable {
     public String toString() {
 		JSONObject jsonObj = new JSONObject();
 		jsonObj.put("idEmpleado", this.idEmpleado);
-		jsonObj.put("nombre", this.nombre);
-		jsonObj.put("apellidoPaterno", this.apellidoPaterno);
-		jsonObj.put("apellidoMaterno", this.apellidoMaterno);
+		jsonObj.put("emailUsuario", this.emailUsuario);
+		jsonObj.put("idCompania", this.idCompania);
+		jsonObj.put("idArea", this.idArea);
+		jsonObj.put("idEstacion", this.idEstacion);
 		jsonObj.put("telefono", this.telefono);
 		jsonObj.put("extension", this.extension);
 		jsonObj.put("directorioSab", this.directorioSab);
-		jsonObj.put("idCompania", this.idCompania);
-		jsonObj.put("idUsuario", this.idUsuario);
-		jsonObj.put("idArea", this.idArea);
-		jsonObj.put("idEstacion", this.idEstacion);
 		jsonObj.put("esatus", this.esatus);
 		return jsonObj.toString();
     }
@@ -238,16 +196,13 @@ public class EmpleadoDTO implements java.io.Serializable {
 		JSONObject jObj = new JSONObject(json);
 		
 		x.idEmpleado = (jObj.getInt("idEmpleado"));
-		x.nombre = (jObj.getString("nombre"));
-		x.apellidoPaterno = (jObj.getString("apellidoPaterno"));
-		x.apellidoMaterno = (jObj.getString("apellidoMaterno"));
+		x.emailUsuario = (jObj.getString("emailUsuario"));
+		x.idCompania = (jObj.getInt("idCompania"));
+		x.idArea = (jObj.getInt("idArea"));
+		x.idEstacion = (jObj.getInt("idEstacion"));
 		x.telefono = (jObj.getString("telefono"));
 		x.extension = (jObj.getString("extension"));
 		x.directorioSab = (short)(jObj.getInt("directorioSab"));
-		x.idCompania = (jObj.getInt("idCompania"));
-		x.idUsuario = (jObj.getInt("idUsuario"));
-		x.idArea = (jObj.getInt("idArea"));
-		x.idEstacion = (jObj.getInt("idEstacion"));
 		x.esatus = (short)(jObj.getInt("esatus"));
 		
 		return x;

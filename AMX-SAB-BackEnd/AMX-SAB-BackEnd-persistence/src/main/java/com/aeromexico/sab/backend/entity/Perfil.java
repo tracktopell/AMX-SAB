@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 @Entity
@@ -44,53 +44,37 @@ import javax.persistence.TemporalType;
 @NamedQueries({
     @NamedQuery(name = "Perfil.findAll", query = "SELECT p FROM Perfil p")
     , @NamedQuery(name = "Perfil.countAll", query = "SELECT COUNT(p) FROM Perfil p")
-    , @NamedQuery(name = "Perfil.findByIdPerfil", query = "SELECT p FROM Perfil p WHERE p.idPerfil = :idPerfil")
-    , @NamedQuery(name = "Perfil.findByNombre", query = "SELECT p FROM Perfil p WHERE p.nombre = :nombre")
-    , @NamedQuery(name = "Perfil.findByEstatus", query = "SELECT p FROM Perfil p WHERE p.estatus = :estatus")
+    , @NamedQuery(name = "Perfil.findByPerfil", query = "SELECT p FROM Perfil p WHERE p.perfil = :perfil")
+    , @NamedQuery(name = "Perfil.findByDescripcion", query = "SELECT p FROM Perfil p WHERE p.descripcion = :descripcion")
 })
 public class Perfil implements java.io.Serializable {
     private static final long serialVersionUID = 2093176254;
     
     /**
-    * The 'id perfil' Maps to COLUMN 'id_perfil'
+    * The 'perfil' Maps to COLUMN 'perfil'
     */
     
     @Id
     //@Basic(optional = false)
-    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
-    //@NotNull
-    @Column(name = "ID_PERFIL" , nullable=false  )
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    //@GeneratedValue(strategy=GenerationType.AUTO)
-    private Integer idPerfil;
-    
-    /**
-    * The 'nombre' Maps to COLUMN 'nombre'
-    */
-    
-    @Basic(optional = false)
-    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
-    //@NotNull
     //@Size(min = 1, max = 50)
-    @Column(name = "NOMBRE" , length=50, nullable=false)
-    private String nombre;
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    @Column(name = "PERFIL" , length=50, nullable=false  )
+    private String perfil;
     
     /**
-    * The 'estatus' Maps to COLUMN 'estatus'
+    * The 'descripcion' Maps to COLUMN 'descripcion'
     */
     
     @Basic(optional = false)
     // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
-    @Column(name = "ESTATUS" , nullable=false)
-    private Short estatus;
+    //@Size(min = 1, max = 255)
+    @Column(name = "DESCRIPCION" , length=255, nullable=false)
+    private String descripcion;
 
     
-    @JoinTable(name               = "PERFIL_USUARIO",
-               joinColumns        = {@JoinColumn(name = "PERFILID_PERFIL", referencedColumnName ="ID_PERFIL")},
-               inverseJoinColumns = {@JoinColumn(name = "USUARIOID_USUARIO", referencedColumnName ="ID_USUARIO")}
-               )
-    @ManyToMany //(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "perfilList")
     private List<Usuario> usuarioList;
     
 	// =========================================================================
@@ -104,14 +88,11 @@ public class Perfil implements java.io.Serializable {
     /**
      * Getters and Setters
      */
-    public Integer getIdPerfil() { return this.idPerfil;}
-    public void setIdPerfil(Integer v) { this.idPerfil = v; }
+    public String getPerfil() { return this.perfil;}
+    public void setPerfil(String v) { this.perfil = v; }
     
-    public String getNombre() { return this.nombre;}
-    public void setNombre(String v) { this.nombre = v; }
-    
-    public Short getEstatus() { return this.estatus;}
-    public void setEstatus(Short v) { this.estatus = v; }
+    public String getDescripcion() { return this.descripcion;}
+    public void setDescripcion(String v) { this.descripcion = v; }
     
     // O2M <*>    
 	// M2M <*>
@@ -122,9 +103,8 @@ public class Perfil implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-		hash += String.valueOf(idPerfil).hashCode();
-		hash += String.valueOf(nombre).hashCode();
-		hash += String.valueOf(estatus).hashCode();
+		hash += String.valueOf(perfil).hashCode();
+		hash += String.valueOf(descripcion).hashCode();
         return hash;
     }
 
@@ -143,9 +123,8 @@ public class Perfil implements java.io.Serializable {
             return false;
         }		
 		Perfil other = (Perfil ) o;
-		if (!Objects.equals(this.idPerfil, other.idPerfil)) { return false; }		
-		if (!Objects.equals(this.nombre, other.nombre)) { return false; }		
-		if (!Objects.equals(this.estatus, other.estatus)) { return false; }		
+		if (!Objects.equals(this.perfil, other.perfil)) { return false; }		
+		if (!Objects.equals(this.descripcion, other.descripcion)) { return false; }		
     	return true;
     }
 
@@ -156,9 +135,8 @@ public class Perfil implements java.io.Serializable {
     public String toString() {
 		StringBuilder sb=new StringBuilder();
 		sb.append("Perfil{");
-		sb.append("idPerfil" ).append("=").append(idPerfil).append("|");
-		sb.append("nombre" ).append("=").append(nombre).append("|");
-		sb.append("estatus" ).append("=").append(estatus).append("|");
+		sb.append("perfil" ).append("=").append(perfil).append("|");
+		sb.append("descripcion" ).append("=").append(descripcion).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();
 	}

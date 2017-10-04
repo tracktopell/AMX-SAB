@@ -14,7 +14,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 @Stateless
 public class MaterialMasterPKFacade extends AbstractFacade<MaterialMasterPK> implements MaterialMasterPKFacadeRemote {

@@ -14,7 +14,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 @Stateless
 public class ModuloPerfilFacade extends AbstractFacade<ModuloPerfil> implements ModuloPerfilFacadeRemote {
@@ -47,13 +47,13 @@ public class ModuloPerfilFacade extends AbstractFacade<ModuloPerfil> implements 
 			    paramAsigned++;
 			    sbq.append(" and x.permisoRwd = :permisoRwd");
 			}
-			if(x.getModulomodulo() != null){
+			if(x.getModulo() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.modulomodulo = :modulomodulo");
+			    sbq.append(" and x.modulo = :modulo");
 			}
-			if(x.getPerfilperfil() != null){
+			if(x.getPerfil() != null){
 			    paramAsigned++;
-			    sbq.append(" and x.perfilperfil = :perfilperfil");
+			    sbq.append(" and x.perfil = :perfil");
 			}
 			
 		} else {
@@ -69,11 +69,11 @@ public class ModuloPerfilFacade extends AbstractFacade<ModuloPerfil> implements 
 			if(x.getPermisoRwd() != null){
 			    nq.setParameter("permisoRwd",x.getPermisoRwd());
 			}
-			if(x.getModulomodulo() != null){
-			    nq.setParameter("modulomodulo",x.getModulomodulo());
+			if(x.getModulo() != null){
+			    nq.setParameter("modulo",x.getModulo());
 			}
-			if(x.getPerfilperfil() != null){
-			    nq.setParameter("perfilperfil",x.getPerfilperfil());
+			if(x.getPerfil() != null){
+			    nq.setParameter("perfil",x.getPerfil());
 			}
 			
 		}		

@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.Usuario;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 public class UsuarioAssembler {    
@@ -29,9 +29,11 @@ public class UsuarioAssembler {
 
 		Usuario jpaEntity = new Usuario();
 
-        jpaEntity.setIdUsuario( dtoEntity.getIdUsuario()); // normal
-        jpaEntity.setEmail( dtoEntity.getEmail()); // normal
+        jpaEntity.setEmailUsuario( dtoEntity.getEmailUsuario()); // normal
         jpaEntity.setContrasenia( dtoEntity.getContrasenia()); // normal
+        jpaEntity.setNombre( dtoEntity.getNombre()); // normal
+        jpaEntity.setApellidoPaterno( dtoEntity.getApellidoPaterno()); // normal
+        jpaEntity.setApellidoMaterno( dtoEntity.getApellidoMaterno()); // normal
         jpaEntity.setEstatus( dtoEntity.getEstatus()); // normal
 
         return jpaEntity;
@@ -45,9 +47,11 @@ public class UsuarioAssembler {
 		Usuario jpaEntity = null;
 		for(UsuarioDTO dtoEntity: dtoEntityList){
 			jpaEntity = new Usuario();
-            jpaEntity.setIdUsuario( dtoEntity.getIdUsuario());
-            jpaEntity.setEmail( dtoEntity.getEmail());
+            jpaEntity.setEmailUsuario( dtoEntity.getEmailUsuario());
             jpaEntity.setContrasenia( dtoEntity.getContrasenia());
+            jpaEntity.setNombre( dtoEntity.getNombre());
+            jpaEntity.setApellidoPaterno( dtoEntity.getApellidoPaterno());
+            jpaEntity.setApellidoMaterno( dtoEntity.getApellidoMaterno());
             jpaEntity.setEstatus( dtoEntity.getEstatus());
 			jpaEntityList.add(jpaEntity);
 		}
@@ -62,9 +66,11 @@ public class UsuarioAssembler {
 
         UsuarioDTO dtoEntity =  new UsuarioDTO();		
 
-        dtoEntity.setIdUsuario( jpaEntity.getIdUsuario() ); // primitive
-        dtoEntity.setEmail( jpaEntity.getEmail() ); // primitive
+        dtoEntity.setEmailUsuario( jpaEntity.getEmailUsuario() ); // primitive
         dtoEntity.setContrasenia( jpaEntity.getContrasenia() ); // primitive
+        dtoEntity.setNombre( jpaEntity.getNombre() ); // primitive
+        dtoEntity.setApellidoPaterno( jpaEntity.getApellidoPaterno() ); // primitive
+        dtoEntity.setApellidoMaterno( jpaEntity.getApellidoMaterno() ); // primitive
         dtoEntity.setEstatus( jpaEntity.getEstatus() ); // primitive
 
         return dtoEntity;
@@ -78,9 +84,11 @@ public class UsuarioAssembler {
         UsuarioDTO dtoEntity =  null;
 		for(Usuario jpaEntity: jpaEntityList){
 			dtoEntity =  new UsuarioDTO();
-            dtoEntity.setIdUsuario( jpaEntity.getIdUsuario() );
-            dtoEntity.setEmail( jpaEntity.getEmail() );
+            dtoEntity.setEmailUsuario( jpaEntity.getEmailUsuario() );
             dtoEntity.setContrasenia( jpaEntity.getContrasenia() );
+            dtoEntity.setNombre( jpaEntity.getNombre() );
+            dtoEntity.setApellidoPaterno( jpaEntity.getApellidoPaterno() );
+            dtoEntity.setApellidoMaterno( jpaEntity.getApellidoMaterno() );
             dtoEntity.setEstatus( jpaEntity.getEstatus() );
 			dtoEntityList.add(dtoEntity);
 		}

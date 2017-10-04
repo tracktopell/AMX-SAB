@@ -14,7 +14,7 @@ import javax.persistence.TypedQuery;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 @Stateless
 public class ContactoProveedorEstacionFacade extends AbstractFacade<ContactoProveedorEstacion> implements ContactoProveedorEstacionFacadeRemote {
@@ -39,6 +39,14 @@ public class ContactoProveedorEstacionFacade extends AbstractFacade<ContactoProv
 		int paramAsigned=0;
 		if(x != null){
 			sbq.append(" 1=1 ");
+			if(x.getId() != null){
+			    paramAsigned++;
+			    sbq.append(" and x.id = :id");
+			}
+			if(x.getUsuario() != null){
+			    paramAsigned++;
+			    sbq.append(" and x.usuario = :usuario");
+			}
 			if(x.getProveedor() != null){
 			    paramAsigned++;
 			    sbq.append(" and x.proveedor = :proveedor");
@@ -46,14 +54,6 @@ public class ContactoProveedorEstacionFacade extends AbstractFacade<ContactoProv
 			if(x.getEstacion() != null){
 			    paramAsigned++;
 			    sbq.append(" and x.estacion = :estacion");
-			}
-			if(x.getNombre() != null){
-			    paramAsigned++;
-			    sbq.append(" and x.nombre = :nombre");
-			}
-			if(x.getEmail() != null){
-			    paramAsigned++;
-			    sbq.append(" and x.email = :email");
 			}
 			if(x.getTelefono() != null){
 			    paramAsigned++;
@@ -71,14 +71,6 @@ public class ContactoProveedorEstacionFacade extends AbstractFacade<ContactoProv
 			    paramAsigned++;
 			    sbq.append(" and x.puestoAreaEs = :puestoAreaEs");
 			}
-			if(x.getId() != null){
-			    paramAsigned++;
-			    sbq.append(" and x.id = :id");
-			}
-			if(x.getUsuario() != null){
-			    paramAsigned++;
-			    sbq.append(" and x.usuario = :usuario");
-			}
 			if(x.getEstatus() != null){
 			    paramAsigned++;
 			    sbq.append(" and x.estatus = :estatus");
@@ -91,17 +83,17 @@ public class ContactoProveedorEstacionFacade extends AbstractFacade<ContactoProv
 		TypedQuery<ContactoProveedorEstacion> nq = em.createQuery(sbq.toString(), ContactoProveedorEstacion.class);
 		
 		if(paramAsigned>0){
+			if(x.getId() != null){
+			    nq.setParameter("id",x.getId());
+			}
+			if(x.getUsuario() != null){
+			    nq.setParameter("usuario",x.getUsuario());
+			}
 			if(x.getProveedor() != null){
 			    nq.setParameter("proveedor",x.getProveedor());
 			}
 			if(x.getEstacion() != null){
 			    nq.setParameter("estacion",x.getEstacion());
-			}
-			if(x.getNombre() != null){
-			    nq.setParameter("nombre",x.getNombre());
-			}
-			if(x.getEmail() != null){
-			    nq.setParameter("email",x.getEmail());
 			}
 			if(x.getTelefono() != null){
 			    nq.setParameter("telefono",x.getTelefono());
@@ -114,12 +106,6 @@ public class ContactoProveedorEstacionFacade extends AbstractFacade<ContactoProv
 			}
 			if(x.getPuestoAreaEs() != null){
 			    nq.setParameter("puestoAreaEs",x.getPuestoAreaEs());
-			}
-			if(x.getId() != null){
-			    nq.setParameter("id",x.getId());
-			}
-			if(x.getUsuario() != null){
-			    nq.setParameter("usuario",x.getUsuario());
 			}
 			if(x.getEstatus() != null){
 			    nq.setParameter("estatus",x.getEstatus());

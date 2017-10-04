@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 @Entity
@@ -45,8 +45,8 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "ModuloPerfil.findAll", query = "SELECT m FROM ModuloPerfil m")
     , @NamedQuery(name = "ModuloPerfil.countAll", query = "SELECT COUNT(m) FROM ModuloPerfil m")
     , @NamedQuery(name = "ModuloPerfil.findByPermisoRwd", query = "SELECT m FROM ModuloPerfil m WHERE m.permisoRwd = :permisoRwd")
-    , @NamedQuery(name = "ModuloPerfil.findBymodulomodulo", query = "SELECT m FROM ModuloPerfil m WHERE m.modulomodulo = :modulomodulo")
-    , @NamedQuery(name = "ModuloPerfil.findByperfilperfil", query = "SELECT m FROM ModuloPerfil m WHERE m.perfilperfil = :perfilperfil")
+    , @NamedQuery(name = "ModuloPerfil.findBymodulo", query = "SELECT m FROM ModuloPerfil m WHERE m.modulo = :modulo")
+    , @NamedQuery(name = "ModuloPerfil.findByperfil", query = "SELECT m FROM ModuloPerfil m WHERE m.perfil = :perfil")
     , @NamedQuery(name = "ModuloPerfil.findByModuloPerfilPK", query = "SELECT m FROM ModuloPerfil m WHERE m.moduloPerfilPK = :moduloPerfilPK")
 })
 public class ModuloPerfil implements java.io.Serializable {
@@ -63,20 +63,20 @@ public class ModuloPerfil implements java.io.Serializable {
     private Short permisoRwd;
     
     /**
-    * The 'moduloid modulo' Maps to COLUMN 'moduloid_modulo'
+    * The 'id modulo' Maps to COLUMN 'id_modulo'
     */
     
-    @JoinColumn(name = "MODULOID_MODULO" , referencedColumnName = "ID_MODULO", insertable = false, updatable = false)
+    @JoinColumn(name = "ID_MODULO" , referencedColumnName = "ID_MODULO", insertable = false, updatable = false)
     @ManyToOne(optional = false)
-    private Modulo modulomodulo;
+    private Modulo modulo;
     
     /**
-    * The 'perfilid perfil' Maps to COLUMN 'perfilid_perfil'
+    * The 'perfil' Maps to COLUMN 'perfil'
     */
     
-    @JoinColumn(name = "PERFILID_PERFIL" , referencedColumnName = "ID_PERFIL", insertable = false, updatable = false)
+    @JoinColumn(name = "PERFIL" , referencedColumnName = "PERFIL", insertable = false, updatable = false)
     @ManyToOne(optional = false)
-    private Perfil perfilperfil;
+    private Perfil perfil;
     
     /**
     * The 'modulo perfil P K' Maps to COLUMN 'modulo_perfil_P_K'
@@ -99,11 +99,11 @@ public class ModuloPerfil implements java.io.Serializable {
     public Short getPermisoRwd() { return this.permisoRwd;}
     public void setPermisoRwd(Short v) { this.permisoRwd = v; }
     
-    public Modulo getModulomodulo(){ return this.modulomodulo ; }
-    public void setModulomodulo(Modulo x){ this.modulomodulo = x; }
+    public Modulo getModulo(){ return this.modulo ; }
+    public void setModulo(Modulo x){ this.modulo = x; }
     
-    public Perfil getPerfilperfil(){ return this.perfilperfil ; }
-    public void setPerfilperfil(Perfil x){ this.perfilperfil = x; }
+    public Perfil getPerfil(){ return this.perfil ; }
+    public void setPerfil(Perfil x){ this.perfil = x; }
     
     public ModuloPerfilPK getModuloPerfilPK() { return this.moduloPerfilPK;}
     public void setModuloPerfilPK(ModuloPerfilPK v) { this.moduloPerfilPK = v; }
@@ -115,8 +115,8 @@ public class ModuloPerfil implements java.io.Serializable {
     public int hashCode() {
         int hash = 0;
 		hash += String.valueOf(permisoRwd).hashCode();
-		hash += String.valueOf(modulomodulo).hashCode();
-		hash += String.valueOf(perfilperfil).hashCode();
+		hash += String.valueOf(modulo).hashCode();
+		hash += String.valueOf(perfil).hashCode();
 		hash += String.valueOf(moduloPerfilPK).hashCode();
         return hash;
     }
@@ -137,8 +137,8 @@ public class ModuloPerfil implements java.io.Serializable {
         }		
 		ModuloPerfil other = (ModuloPerfil ) o;
 		if (!Objects.equals(this.permisoRwd, other.permisoRwd)) { return false; }		
-		if (!Objects.equals(this.modulomodulo, other.modulomodulo)) { return false; }		
-		if (!Objects.equals(this.perfilperfil, other.perfilperfil)) { return false; }		
+		if (!Objects.equals(this.modulo, other.modulo)) { return false; }		
+		if (!Objects.equals(this.perfil, other.perfil)) { return false; }		
 		if (!Objects.equals(this.moduloPerfilPK, other.moduloPerfilPK)) { return false; }		
     	return true;
     }
@@ -151,8 +151,8 @@ public class ModuloPerfil implements java.io.Serializable {
 		StringBuilder sb=new StringBuilder();
 		sb.append("ModuloPerfil{");
 		sb.append("permisoRwd" ).append("=").append(permisoRwd).append("|");
-		sb.append("modulomodulo" ).append("=").append(modulomodulo).append("|");
-		sb.append("perfilperfil" ).append("=").append(perfilperfil).append("|");
+		sb.append("modulo" ).append("=").append(modulo).append("|");
+		sb.append("perfil" ).append("=").append(perfil).append("|");
 		sb.append("moduloPerfilPK" ).append("=").append(moduloPerfilPK).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();

@@ -15,7 +15,7 @@ import org.json.JSONObject;
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 public class ModuloPerfilDTO implements java.io.Serializable {
@@ -25,7 +25,7 @@ public class ModuloPerfilDTO implements java.io.Serializable {
     /**
     * modulo perfil p k
     */
-    // moduloPerfilPK EmbedableColumn ID References: FKs {[[perfilid_perfil] int(0,0), [moduloid_modulo] int(0,0)]}
+    // moduloPerfilPK EmbedableColumn ID References: FKs {[[perfil] varchar(50,0), [id_modulo] int(0,0)]}
     
     /**
     * permiso rwd
@@ -33,14 +33,14 @@ public class ModuloPerfilDTO implements java.io.Serializable {
     private Short permisoRwd;
     
     /**
-    * moduloid modulo
+    * id modulo
     */
-    private Integer moduloidModulo;
+    private Integer idModulo;
     
     /**
-    * perfilid perfil
+    * perfil
     */
-    private Integer perfilidPerfil;
+    private String perfil;
 
     /** 
      * Default Constructor
@@ -51,33 +51,33 @@ public class ModuloPerfilDTO implements java.io.Serializable {
     /**
      * Getters and Setters
      */
-    // moduloPerfilPK EmbedableColumn ID References: FKs {[[perfilid_perfil] int(0,0), [moduloid_modulo] int(0,0)]}
-    // moduloPerfilPK EmbedableColumn ID References: FKs {[[perfilid_perfil] int(0,0), [moduloid_modulo] int(0,0)]}
+    // moduloPerfilPK EmbedableColumn ID References: FKs {[[perfil] varchar(50,0), [id_modulo] int(0,0)]}
+    // moduloPerfilPK EmbedableColumn ID References: FKs {[[perfil] varchar(50,0), [id_modulo] int(0,0)]}
     public Short getPermisoRwd() {
         return this.permisoRwd;
     }
     public void setPermisoRwd(Short v) {
         this.permisoRwd = v;
     }
-    public Integer getModuloidModulo() {
-        return this.moduloidModulo;
+    public Integer getIdModulo() {
+        return this.idModulo;
     }
-    public void setModuloidModulo(Integer v) {
-        this.moduloidModulo = v;
+    public void setIdModulo(Integer v) {
+        this.idModulo = v;
     }
-    public Integer getPerfilidPerfil() {
-        return this.perfilidPerfil;
+    public String getPerfil() {
+        return this.perfil;
     }
-    public void setPerfilidPerfil(Integer v) {
-        this.perfilidPerfil = v;
+    public void setPerfil(String v) {
+        this.perfil = v;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
 		hash += String.valueOf(permisoRwd).hashCode();
-		hash += String.valueOf(moduloidModulo).hashCode();
-		hash += String.valueOf(perfilidPerfil).hashCode();
+		hash += String.valueOf(idModulo).hashCode();
+		hash += String.valueOf(perfil).hashCode();
         return hash;
     }
 
@@ -97,8 +97,8 @@ public class ModuloPerfilDTO implements java.io.Serializable {
         }		
 		ModuloPerfilDTO  other = (ModuloPerfilDTO ) o;
 		if (!Objects.equals(this.permisoRwd, other.permisoRwd)) { return false; }		
-		if (!Objects.equals(this.moduloidModulo, other.moduloidModulo)) { return false; }		
-		if (!Objects.equals(this.perfilidPerfil, other.perfilidPerfil)) { return false; }		
+		if (!Objects.equals(this.idModulo, other.idModulo)) { return false; }		
+		if (!Objects.equals(this.perfil, other.perfil)) { return false; }		
     	return true;
     }
 
@@ -109,8 +109,8 @@ public class ModuloPerfilDTO implements java.io.Serializable {
     public String toString() {
 		JSONObject jsonObj = new JSONObject();
 		jsonObj.put("permisoRwd", this.permisoRwd);
-		jsonObj.put("moduloidModulo", this.moduloidModulo);
-		jsonObj.put("perfilidPerfil", this.perfilidPerfil);
+		jsonObj.put("idModulo", this.idModulo);
+		jsonObj.put("perfil", this.perfil);
 		return jsonObj.toString();
     }
 
@@ -119,8 +119,8 @@ public class ModuloPerfilDTO implements java.io.Serializable {
 		JSONObject jObj = new JSONObject(json);
 		
 		x.permisoRwd = (short)(jObj.getInt("permisoRwd"));
-		x.moduloidModulo = (jObj.getInt("moduloidModulo"));
-		x.perfilidPerfil = (jObj.getInt("perfilidPerfil"));
+		x.idModulo = (jObj.getInt("idModulo"));
+		x.perfil = (jObj.getString("perfil"));
 		
 		return x;
 	}

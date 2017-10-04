@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.Perfil;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 public class PerfilAssembler {    
@@ -29,9 +29,8 @@ public class PerfilAssembler {
 
 		Perfil jpaEntity = new Perfil();
 
-        jpaEntity.setIdPerfil( dtoEntity.getIdPerfil()); // normal
-        jpaEntity.setNombre( dtoEntity.getNombre()); // normal
-        jpaEntity.setEstatus( dtoEntity.getEstatus()); // normal
+        jpaEntity.setPerfil( dtoEntity.getPerfil()); // normal
+        jpaEntity.setDescripcion( dtoEntity.getDescripcion()); // normal
 
         return jpaEntity;
     }
@@ -44,9 +43,8 @@ public class PerfilAssembler {
 		Perfil jpaEntity = null;
 		for(PerfilDTO dtoEntity: dtoEntityList){
 			jpaEntity = new Perfil();
-            jpaEntity.setIdPerfil( dtoEntity.getIdPerfil());
-            jpaEntity.setNombre( dtoEntity.getNombre());
-            jpaEntity.setEstatus( dtoEntity.getEstatus());
+            jpaEntity.setPerfil( dtoEntity.getPerfil());
+            jpaEntity.setDescripcion( dtoEntity.getDescripcion());
 			jpaEntityList.add(jpaEntity);
 		}
 		
@@ -60,9 +58,8 @@ public class PerfilAssembler {
 
         PerfilDTO dtoEntity =  new PerfilDTO();		
 
-        dtoEntity.setIdPerfil( jpaEntity.getIdPerfil() ); // primitive
-        dtoEntity.setNombre( jpaEntity.getNombre() ); // primitive
-        dtoEntity.setEstatus( jpaEntity.getEstatus() ); // primitive
+        dtoEntity.setPerfil( jpaEntity.getPerfil() ); // primitive
+        dtoEntity.setDescripcion( jpaEntity.getDescripcion() ); // primitive
 
         return dtoEntity;
     }
@@ -75,9 +72,8 @@ public class PerfilAssembler {
         PerfilDTO dtoEntity =  null;
 		for(Perfil jpaEntity: jpaEntityList){
 			dtoEntity =  new PerfilDTO();
-            dtoEntity.setIdPerfil( jpaEntity.getIdPerfil() );
-            dtoEntity.setNombre( jpaEntity.getNombre() );
-            dtoEntity.setEstatus( jpaEntity.getEstatus() );
+            dtoEntity.setPerfil( jpaEntity.getPerfil() );
+            dtoEntity.setDescripcion( jpaEntity.getDescripcion() );
 			dtoEntityList.add(dtoEntity);
 		}
         return dtoEntityList;

@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 @Entity
@@ -44,35 +44,27 @@ import javax.persistence.TemporalType;
 @NamedQueries({
     @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u")
     , @NamedQuery(name = "Usuario.countAll", query = "SELECT COUNT(u) FROM Usuario u")
-    , @NamedQuery(name = "Usuario.findByIdUsuario", query = "SELECT u FROM Usuario u WHERE u.idUsuario = :idUsuario")
-    , @NamedQuery(name = "Usuario.findByEmail", query = "SELECT u FROM Usuario u WHERE u.email = :email")
+    , @NamedQuery(name = "Usuario.findByEmailUsuario", query = "SELECT u FROM Usuario u WHERE u.emailUsuario = :emailUsuario")
     , @NamedQuery(name = "Usuario.findByContrasenia", query = "SELECT u FROM Usuario u WHERE u.contrasenia = :contrasenia")
+    , @NamedQuery(name = "Usuario.findByNombre", query = "SELECT u FROM Usuario u WHERE u.nombre = :nombre")
+    , @NamedQuery(name = "Usuario.findByApellidoPaterno", query = "SELECT u FROM Usuario u WHERE u.apellidoPaterno = :apellidoPaterno")
+    , @NamedQuery(name = "Usuario.findByApellidoMaterno", query = "SELECT u FROM Usuario u WHERE u.apellidoMaterno = :apellidoMaterno")
     , @NamedQuery(name = "Usuario.findByEstatus", query = "SELECT u FROM Usuario u WHERE u.estatus = :estatus")
 })
 public class Usuario implements java.io.Serializable {
     private static final long serialVersionUID = 1989780873;
     
     /**
-    * The 'id usuario' Maps to COLUMN 'id_usuario'
+    * The 'email usuario' Maps to COLUMN 'email_usuario'
     */
     
     @Id
     //@Basic(optional = false)
-    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
-    //@NotNull
-    @Column(name = "ID_USUARIO" , nullable=false  )
-    private Integer idUsuario;
-    
-    /**
-    * The 'email' Maps to COLUMN 'email'
-    */
-    
-    @Basic(optional = false)
-    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
-    //@NotNull
     //@Size(min = 1, max = 100)
-    @Column(name = "EMAIL" , length=100, nullable=false)
-    private String email;
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    @Column(name = "EMAIL_USUARIO" , length=100, nullable=false  )
+    private String emailUsuario;
     
     /**
     * The 'contrasenia' Maps to COLUMN 'contrasenia'
@@ -96,6 +88,37 @@ public class Usuario implements java.io.Serializable {
     private java.sql.Timestamp fechaCreacion;
     
     /**
+    * The 'nombre' Maps to COLUMN 'nombre'
+    */
+    
+    @Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
+    @Column(name = "NOMBRE" , length=50, nullable=false)
+    private String nombre;
+    
+    /**
+    * The 'apellido paterno' Maps to COLUMN 'apellido_paterno'
+    */
+    
+    @Basic(optional = false)
+    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
+    //@NotNull
+    //@Size(min = 1, max = 50)
+    @Column(name = "APELLIDO_PATERNO" , length=50, nullable=false)
+    private String apellidoPaterno;
+    
+    /**
+    * The 'apellido materno' Maps to COLUMN 'apellido_materno'
+    */
+    
+    @Basic(optional = true)
+    //@Size(max = 50)
+    @Column(name = "APELLIDO_MATERNO" , length=50, nullable=true)
+    private String apellidoMaterno;
+    
+    /**
     * The 'estatus' Maps to COLUMN 'estatus'
     */
     
@@ -105,14 +128,14 @@ public class Usuario implements java.io.Serializable {
     @Column(name = "ESTATUS" , nullable=false)
     private Short estatus;
     /** 
-    * Map the relation to empleado table where has id_usuario object mapped column of for this class.
+    * Map the relation to empleado table where has email_usuario object mapped column of for this class.
     */ 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
     // empleado Well know as Empleado
     private List<Empleado> empleadoThatHasThisUsuarioList;
     
     /** 
-    * Map the relation to contacto_proveedor_estacion table where has id_usuario object mapped column of for this class.
+    * Map the relation to contacto_proveedor_estacion table where has email_usuario object mapped column of for this class.
     */ 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "usuario")
     // contacto_proveedor_estacion Well know as ContactoProveedorEstacion
@@ -120,7 +143,11 @@ public class Usuario implements java.io.Serializable {
     
 
     
-    @ManyToMany(mappedBy = "usuarioList")
+    @JoinTable(name               = "PERFIL_USUARIO",
+               joinColumns        = {@JoinColumn(name = "EMAIL_USUARIO", referencedColumnName ="EMAIL_USUARIO")},
+               inverseJoinColumns = {@JoinColumn(name = "PERFIL", referencedColumnName ="PERFIL")}
+               )
+    @ManyToMany //(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Perfil> perfilList;
     
 	// =========================================================================
@@ -134,17 +161,23 @@ public class Usuario implements java.io.Serializable {
     /**
      * Getters and Setters
      */
-    public Integer getIdUsuario() { return this.idUsuario;}
-    public void setIdUsuario(Integer v) { this.idUsuario = v; }
-    
-    public String getEmail() { return this.email;}
-    public void setEmail(String v) { this.email = v; }
+    public String getEmailUsuario() { return this.emailUsuario;}
+    public void setEmailUsuario(String v) { this.emailUsuario = v; }
     
     public String getContrasenia() { return this.contrasenia;}
     public void setContrasenia(String v) { this.contrasenia = v; }
     
     public java.sql.Timestamp getFechaCreacion() { return this.fechaCreacion;}
     public void setFechaCreacion(java.sql.Timestamp v) { this.fechaCreacion = v; }
+    
+    public String getNombre() { return this.nombre;}
+    public void setNombre(String v) { this.nombre = v; }
+    
+    public String getApellidoPaterno() { return this.apellidoPaterno;}
+    public void setApellidoPaterno(String v) { this.apellidoPaterno = v; }
+    
+    public String getApellidoMaterno() { return this.apellidoMaterno;}
+    public void setApellidoMaterno(String v) { this.apellidoMaterno = v; }
     
     public Short getEstatus() { return this.estatus;}
     public void setEstatus(Short v) { this.estatus = v; }
@@ -164,10 +197,12 @@ public class Usuario implements java.io.Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-		hash += String.valueOf(idUsuario).hashCode();
-		hash += String.valueOf(email).hashCode();
+		hash += String.valueOf(emailUsuario).hashCode();
 		hash += String.valueOf(contrasenia).hashCode();
 		hash += String.valueOf(fechaCreacion).hashCode();
+		hash += String.valueOf(nombre).hashCode();
+		hash += String.valueOf(apellidoPaterno).hashCode();
+		hash += String.valueOf(apellidoMaterno).hashCode();
 		hash += String.valueOf(estatus).hashCode();
         return hash;
     }
@@ -187,10 +222,12 @@ public class Usuario implements java.io.Serializable {
             return false;
         }		
 		Usuario other = (Usuario ) o;
-		if (!Objects.equals(this.idUsuario, other.idUsuario)) { return false; }		
-		if (!Objects.equals(this.email, other.email)) { return false; }		
+		if (!Objects.equals(this.emailUsuario, other.emailUsuario)) { return false; }		
 		if (!Objects.equals(this.contrasenia, other.contrasenia)) { return false; }		
 		if (!Objects.equals(this.fechaCreacion, other.fechaCreacion)) { return false; }		
+		if (!Objects.equals(this.nombre, other.nombre)) { return false; }		
+		if (!Objects.equals(this.apellidoPaterno, other.apellidoPaterno)) { return false; }		
+		if (!Objects.equals(this.apellidoMaterno, other.apellidoMaterno)) { return false; }		
 		if (!Objects.equals(this.estatus, other.estatus)) { return false; }		
     	return true;
     }
@@ -202,10 +239,12 @@ public class Usuario implements java.io.Serializable {
     public String toString() {
 		StringBuilder sb=new StringBuilder();
 		sb.append("Usuario{");
-		sb.append("idUsuario" ).append("=").append(idUsuario).append("|");
-		sb.append("email" ).append("=").append(email).append("|");
+		sb.append("emailUsuario" ).append("=").append(emailUsuario).append("|");
 		sb.append("contrasenia" ).append("=").append(contrasenia).append("|");
 		sb.append("fechaCreacion" ).append("=").append(fechaCreacion).append("|");
+		sb.append("nombre" ).append("=").append(nombre).append("|");
+		sb.append("apellidoPaterno" ).append("=").append(apellidoPaterno).append("|");
+		sb.append("apellidoMaterno" ).append("=").append(apellidoMaterno).append("|");
 		sb.append("estatus" ).append("=").append(estatus).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();

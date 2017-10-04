@@ -27,7 +27,7 @@ import javax.xml.bind.annotation.XmlTransient;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 @Embeddable
@@ -39,14 +39,15 @@ public class ModuloPerfilPK implements java.io.Serializable {
     @Basic(optional = false)
     // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
-    @Column(name = "MODULOID_MODULO", nullable= false)
-    private Integer moduloidModulo;
+    @Column(name = "ID_MODULO", nullable= false)
+    private Integer idModulo;
     
     @Basic(optional = false)
     // Hibernate Validator 5x is not compatible with validation-api 1.0.x
     //@NotNull
-    @Column(name = "PERFILID_PERFIL", nullable= false)
-    private Integer perfilidPerfil;
+    //@Size(min = 1, max = 50)
+    @Column(name = "PERFIL", nullable= false)
+    private String perfil;
 
     /** 
      * Default Constructor
@@ -57,18 +58,18 @@ public class ModuloPerfilPK implements java.io.Serializable {
     /**
      * Getters and Setters
      */
-    public Integer getModuloidModulo() { return this.moduloidModulo;}
-    public void setModuloidModulo(Integer v) { this.moduloidModulo = v; }
+    public Integer getIdModulo() { return this.idModulo;}
+    public void setIdModulo(Integer v) { this.idModulo = v; }
     
-    public Integer getPerfilidPerfil() { return this.perfilidPerfil;}
-    public void setPerfilidPerfil(Integer v) { this.perfilidPerfil = v; }
+    public String getPerfil() { return this.perfil;}
+    public void setPerfil(String v) { this.perfil = v; }
     
     
     @Override
     public int hashCode() {
         int hash = 0;
-		hash += String.valueOf(moduloidModulo).hashCode();
-		hash += String.valueOf(perfilidPerfil).hashCode();
+		hash += String.valueOf(idModulo).hashCode();
+		hash += String.valueOf(perfil).hashCode();
         return hash;
     }
 
@@ -87,8 +88,8 @@ public class ModuloPerfilPK implements java.io.Serializable {
             return false;
         }		
 		ModuloPerfilPK other = (ModuloPerfilPK ) o;
-		if (!Objects.equals(this.moduloidModulo, other.moduloidModulo)) { return false; }		
-		if (!Objects.equals(this.perfilidPerfil, other.perfilidPerfil)) { return false; }		
+		if (!Objects.equals(this.idModulo, other.idModulo)) { return false; }		
+		if (!Objects.equals(this.perfil, other.perfil)) { return false; }		
     	return true;
     }
 
@@ -99,8 +100,8 @@ public class ModuloPerfilPK implements java.io.Serializable {
     public String toString() {
 		StringBuilder sb=new StringBuilder();
 		sb.append("ModuloPerfilPK{");
-		sb.append("moduloidModulo" ).append("=").append(moduloidModulo).append("|");
-		sb.append("perfilidPerfil" ).append("=").append(perfilidPerfil).append("|");
+		sb.append("idModulo" ).append("=").append(idModulo).append("|");
+		sb.append("perfil" ).append("=").append(perfil).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();
 	}

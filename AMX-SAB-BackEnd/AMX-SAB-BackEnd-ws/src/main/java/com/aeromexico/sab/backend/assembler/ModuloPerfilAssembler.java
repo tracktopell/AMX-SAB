@@ -11,7 +11,7 @@ import com.aeromexico.sab.backend.entity.ModuloPerfil;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/UtilProjects/tree/master/jpa-builder
  * @version 0.10.9
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 public class ModuloPerfilAssembler {    
@@ -30,16 +30,16 @@ public class ModuloPerfilAssembler {
 		ModuloPerfil jpaEntity = new ModuloPerfil();
 
         // ModuloPerfilPK is Embeddable. Begin nested settings
-        jpaEntity.getModuloPerfilPK().setPerfilidPerfil( dtoEntity.getPerfilidPerfil() );  // nested FKs > BUG
-        jpaEntity.getModuloPerfilPK().setModuloidModulo( dtoEntity.getModuloidModulo() );  // nested FKs > BUG
+        jpaEntity.getModuloPerfilPK().setPerfil( dtoEntity.getPerfil() );  // nested FKs > BUG
+        jpaEntity.getModuloPerfilPK().setIdModulo( dtoEntity.getIdModulo() );  // nested FKs > BUG
         // End nested settings
         jpaEntity.setPermisoRwd( dtoEntity.getPermisoRwd()); // normal
-        ModuloDTO modulomoduloDTO = new ModuloDTO();
-        modulomoduloDTO.setIdModulo( dtoEntity.getModuloidModulo());
-        jpaEntity.setModulomodulo( ModuloAssembler.buildJpaEntity( modulomoduloDTO ));
-        PerfilDTO perfilperfilDTO = new PerfilDTO();
-        perfilperfilDTO.setIdPerfil( dtoEntity.getPerfilidPerfil());
-        jpaEntity.setPerfilperfil( PerfilAssembler.buildJpaEntity( perfilperfilDTO ));
+        ModuloDTO moduloDTO = new ModuloDTO();
+        moduloDTO.setIdModulo( dtoEntity.getIdModulo());
+        jpaEntity.setModulo( ModuloAssembler.buildJpaEntity( moduloDTO ));
+        PerfilDTO perfilDTO = new PerfilDTO();
+        perfilDTO.setPerfil( dtoEntity.getPerfil());
+        jpaEntity.setPerfil( PerfilAssembler.buildJpaEntity( perfilDTO ));
 
         return jpaEntity;
     }
@@ -53,16 +53,16 @@ public class ModuloPerfilAssembler {
 		for(ModuloPerfilDTO dtoEntity: dtoEntityList){
 			jpaEntity = new ModuloPerfil();
             // ModuloPerfilPK is Embeddable. Begin nested settings
-            jpaEntity.getModuloPerfilPK().setPerfilidPerfil( dtoEntity.getPerfilidPerfil() );  // nested FKs > BUG
-            jpaEntity.getModuloPerfilPK().setModuloidModulo( dtoEntity.getModuloidModulo() );  // nested FKs > BUG
+            jpaEntity.getModuloPerfilPK().setPerfil( dtoEntity.getPerfil() );  // nested FKs > BUG
+            jpaEntity.getModuloPerfilPK().setIdModulo( dtoEntity.getIdModulo() );  // nested FKs > BUG
             // End nested settings
             jpaEntity.setPermisoRwd( dtoEntity.getPermisoRwd());
-            ModuloDTO modulomoduloDTO = new ModuloDTO();
-            modulomoduloDTO.setIdModulo( dtoEntity.getModuloidModulo());
-            jpaEntity.setModulomodulo( ModuloAssembler.buildJpaEntity( modulomoduloDTO ));
-            PerfilDTO perfilperfilDTO = new PerfilDTO();
-            perfilperfilDTO.setIdPerfil( dtoEntity.getPerfilidPerfil());
-            jpaEntity.setPerfilperfil( PerfilAssembler.buildJpaEntity( perfilperfilDTO ));
+            ModuloDTO moduloDTO = new ModuloDTO();
+            moduloDTO.setIdModulo( dtoEntity.getIdModulo());
+            jpaEntity.setModulo( ModuloAssembler.buildJpaEntity( moduloDTO ));
+            PerfilDTO perfilDTO = new PerfilDTO();
+            perfilDTO.setPerfil( dtoEntity.getPerfil());
+            jpaEntity.setPerfil( PerfilAssembler.buildJpaEntity( perfilDTO ));
 			jpaEntityList.add(jpaEntity);
 		}
 		
@@ -77,14 +77,14 @@ public class ModuloPerfilAssembler {
         ModuloPerfilDTO dtoEntity =  new ModuloPerfilDTO();		
 
         // Embedable: ModuloPerfilPK, begin nested settings
-        dtoEntity.setPerfilidPerfil( jpaEntity.getModuloPerfilPK().getPerfilidPerfil() ); // bug 3 ?
-        dtoEntity.setModuloidModulo( jpaEntity.getModuloPerfilPK().getModuloidModulo() ); // bug 3 ?
+        dtoEntity.setPerfil( jpaEntity.getModuloPerfilPK().getPerfil() ); // bug 3 ?
+        dtoEntity.setIdModulo( jpaEntity.getModuloPerfilPK().getIdModulo() ); // bug 3 ?
         // End nested settings
         dtoEntity.setPermisoRwd( jpaEntity.getPermisoRwd() ); // primitive
-        //Not Embedable: ModuloidModulo -> Modulo, FTable: modulo, HyperName:moduloMODULO
-        dtoEntity.setModuloidModulo( jpaEntity.getModulomodulo()!=null?jpaEntity.getModulomodulo().getIdModulo():null);
-        //Not Embedable: PerfilidPerfil -> Perfil, FTable: perfil, HyperName:perfilPERFIL
-        dtoEntity.setPerfilidPerfil( jpaEntity.getPerfilperfil()!=null?jpaEntity.getPerfilperfil().getIdPerfil():null);
+        //Not Embedable: IdModulo -> Modulo, FTable: modulo, HyperName:modulo
+        dtoEntity.setIdModulo( jpaEntity.getModulo()!=null?jpaEntity.getModulo().getIdModulo():null);
+        //Not Embedable: Perfil -> Perfil, FTable: perfil, HyperName:perfil
+        dtoEntity.setPerfil( jpaEntity.getPerfil()!=null?jpaEntity.getPerfil().getPerfil():null);
 
         return dtoEntity;
     }
@@ -98,14 +98,14 @@ public class ModuloPerfilAssembler {
 		for(ModuloPerfil jpaEntity: jpaEntityList){
 			dtoEntity =  new ModuloPerfilDTO();
             // Embedable: ModuloPerfilPK, begin nested settings
-            dtoEntity.setPerfilidPerfil( jpaEntity.getModuloPerfilPK().getPerfilidPerfil() );
-            dtoEntity.setModuloidModulo( jpaEntity.getModuloPerfilPK().getModuloidModulo() );
+            dtoEntity.setPerfil( jpaEntity.getModuloPerfilPK().getPerfil() );
+            dtoEntity.setIdModulo( jpaEntity.getModuloPerfilPK().getIdModulo() );
             // End nested settings
             dtoEntity.setPermisoRwd( jpaEntity.getPermisoRwd() );
-            //Not Embedable: ModuloidModulo -> Modulo, FTable: modulo, HyperName:moduloMODULO
-            dtoEntity.setModuloidModulo( jpaEntity.getModulomodulo()!=null?jpaEntity.getModulomodulo().getIdModulo():null);
-            //Not Embedable: PerfilidPerfil -> Perfil, FTable: perfil, HyperName:perfilPERFIL
-            dtoEntity.setPerfilidPerfil( jpaEntity.getPerfilperfil()!=null?jpaEntity.getPerfilperfil().getIdPerfil():null);
+            //Not Embedable: IdModulo -> Modulo, FTable: modulo, HyperName:modulo
+            dtoEntity.setIdModulo( jpaEntity.getModulo()!=null?jpaEntity.getModulo().getIdModulo():null);
+            //Not Embedable: Perfil -> Perfil, FTable: perfil, HyperName:perfil
+            dtoEntity.setPerfil( jpaEntity.getPerfil()!=null?jpaEntity.getPerfil().getPerfil():null);
 			dtoEntityList.add(dtoEntity);
 		}
         return dtoEntityList;

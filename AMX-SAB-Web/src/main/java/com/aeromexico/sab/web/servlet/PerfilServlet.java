@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author alfredo.estrada
  */
-@WebServlet(name = "PerfilServlet", urlPatterns = {"/perfil"})
+@WebServlet(name = "PerfilServlet", urlPatterns = {"/pages/perfil"})
 public class PerfilServlet extends HttpServlet {
 
 	/**
@@ -57,24 +57,22 @@ public class PerfilServlet extends HttpServlet {
 			out.println("<!DOCTYPE html>");
 			out.println("<html>");
 			out.println("<head>");
-			out.println("<title>TestArch4Web-PersonServlet</title>");			
+			out.println("<title>AMX-SAB-Web</title>");			
 			out.println("</head>");
 			out.println("<body>");
-			out.println("<h1>TestArch4Web-PersonServlet PersonServlet at " + request.getContextPath() + "</h1>");
+			out.println("<h1>AMX-SAB-Web PerfilServlet at " + request.getContextPath() + "</h1>");
 			//out.println("<h2>PersonRemote :" + perfilRemoteService + "</h2>");
 			if(perfilRemoteService != null){
 				perfilList = perfilRemoteService.getAll();
 				out.println("   <table border='1'>");
 				out.println("      <tr>");
-				out.println("         <td>ID_PERFIL</td>");
-				out.println("         <td>NOMBRE</td>");
-				out.println("         <td>ESTATUS</td>");
+				out.println("         <td>PERFIL</td>");
+				out.println("         <td>DESCRIPCION</td>");				
 				out.println("      </tr>");
 				for(PerfilDTO p:perfilList){
 					out.println("      <tr>");
-					out.println("         <td>"+p.getIdPerfil()+"</td>");
-					out.println("         <td>"+p.getNombre()+"</td>");
-					out.println("         <td>"+p.getEstatus()+"</td>");					
+					out.println("         <td>"+p.getPerfil()+"</td>");
+					out.println("         <td>"+p.getDescripcion()+"</td>");
 					out.println("      </tr>");
 				}
 				out.println("   </table>");

@@ -36,7 +36,7 @@ import javax.persistence.TemporalType;
  * 
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 @Entity
@@ -45,16 +45,13 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "Empleado.findAll", query = "SELECT e FROM Empleado e")
     , @NamedQuery(name = "Empleado.countAll", query = "SELECT COUNT(e) FROM Empleado e")
     , @NamedQuery(name = "Empleado.findByIdEmpleado", query = "SELECT e FROM Empleado e WHERE e.idEmpleado = :idEmpleado")
-    , @NamedQuery(name = "Empleado.findByNombre", query = "SELECT e FROM Empleado e WHERE e.nombre = :nombre")
-    , @NamedQuery(name = "Empleado.findByApellidoPaterno", query = "SELECT e FROM Empleado e WHERE e.apellidoPaterno = :apellidoPaterno")
-    , @NamedQuery(name = "Empleado.findByApellidoMaterno", query = "SELECT e FROM Empleado e WHERE e.apellidoMaterno = :apellidoMaterno")
+    , @NamedQuery(name = "Empleado.findByusuario", query = "SELECT e FROM Empleado e WHERE e.usuario = :usuario")
+    , @NamedQuery(name = "Empleado.findBycompania", query = "SELECT e FROM Empleado e WHERE e.compania = :compania")
+    , @NamedQuery(name = "Empleado.findByarea", query = "SELECT e FROM Empleado e WHERE e.area = :area")
+    , @NamedQuery(name = "Empleado.findByestacion", query = "SELECT e FROM Empleado e WHERE e.estacion = :estacion")
     , @NamedQuery(name = "Empleado.findByTelefono", query = "SELECT e FROM Empleado e WHERE e.telefono = :telefono")
     , @NamedQuery(name = "Empleado.findByExtension", query = "SELECT e FROM Empleado e WHERE e.extension = :extension")
     , @NamedQuery(name = "Empleado.findByDirectorioSab", query = "SELECT e FROM Empleado e WHERE e.directorioSab = :directorioSab")
-    , @NamedQuery(name = "Empleado.findBycompania", query = "SELECT e FROM Empleado e WHERE e.compania = :compania")
-    , @NamedQuery(name = "Empleado.findByusuario", query = "SELECT e FROM Empleado e WHERE e.usuario = :usuario")
-    , @NamedQuery(name = "Empleado.findByarea", query = "SELECT e FROM Empleado e WHERE e.area = :area")
-    , @NamedQuery(name = "Empleado.findByestacion", query = "SELECT e FROM Empleado e WHERE e.estacion = :estacion")
     , @NamedQuery(name = "Empleado.findByEsatus", query = "SELECT e FROM Empleado e WHERE e.esatus = :esatus")
 })
 public class Empleado implements java.io.Serializable {
@@ -74,35 +71,36 @@ public class Empleado implements java.io.Serializable {
     private Integer idEmpleado;
     
     /**
-    * The 'nombre' Maps to COLUMN 'nombre'
+    * The 'email usuario' Maps to COLUMN 'email_usuario'
     */
     
-    @Basic(optional = false)
-    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
-    //@NotNull
-    //@Size(min = 1, max = 50)
-    @Column(name = "NOMBRE" , length=50, nullable=false)
-    private String nombre;
+    @JoinColumn(name = "EMAIL_USUARIO" , referencedColumnName = "EMAIL_USUARIO")
+    @ManyToOne(optional = true)
+    private Usuario usuario;
     
     /**
-    * The 'apellido paterno' Maps to COLUMN 'apellido_paterno'
+    * The 'id compania' Maps to COLUMN 'id_compania'
     */
     
-    @Basic(optional = false)
-    // Hibernate Validator 5x is not compatible with validation-api 1.0.x
-    //@NotNull
-    //@Size(min = 1, max = 50)
-    @Column(name = "APELLIDO_PATERNO" , length=50, nullable=false)
-    private String apellidoPaterno;
+    @JoinColumn(name = "ID_COMPANIA" , referencedColumnName = "ID_COMPANIA")
+    @ManyToOne(optional = false)
+    private Compania compania;
     
     /**
-    * The 'apellido materno' Maps to COLUMN 'apellido_materno'
+    * The 'id area' Maps to COLUMN 'id_area'
     */
     
-    @Basic(optional = true)
-    //@Size(max = 50)
-    @Column(name = "APELLIDO_MATERNO" , length=50, nullable=true)
-    private String apellidoMaterno;
+    @JoinColumn(name = "ID_AREA" , referencedColumnName = "ID_AREA")
+    @ManyToOne(optional = true)
+    private Area area;
+    
+    /**
+    * The 'id estacion' Maps to COLUMN 'id_estacion'
+    */
+    
+    @JoinColumn(name = "ID_ESTACION" , referencedColumnName = "ID_ESTACION")
+    @ManyToOne(optional = false)
+    private Estacion estacion;
     
     /**
     * The 'telefono' Maps to COLUMN 'telefono'
@@ -133,38 +131,6 @@ public class Empleado implements java.io.Serializable {
     private Short directorioSab;
     
     /**
-    * The 'id compania' Maps to COLUMN 'id_compania'
-    */
-    
-    @JoinColumn(name = "ID_COMPANIA" , referencedColumnName = "ID_COMPANIA")
-    @ManyToOne(optional = false)
-    private Compania compania;
-    
-    /**
-    * The 'id usuario' Maps to COLUMN 'id_usuario'
-    */
-    
-    @JoinColumn(name = "ID_USUARIO" , referencedColumnName = "ID_USUARIO")
-    @ManyToOne(optional = false)
-    private Usuario usuario;
-    
-    /**
-    * The 'id area' Maps to COLUMN 'id_area'
-    */
-    
-    @JoinColumn(name = "ID_AREA" , referencedColumnName = "ID_AREA")
-    @ManyToOne(optional = true)
-    private Area area;
-    
-    /**
-    * The 'id estacion' Maps to COLUMN 'id_estacion'
-    */
-    
-    @JoinColumn(name = "ID_ESTACION" , referencedColumnName = "ID_ESTACION")
-    @ManyToOne(optional = false)
-    private Estacion estacion;
-    
-    /**
     * The 'esatus' Maps to COLUMN 'esatus'
     */
     
@@ -188,14 +154,17 @@ public class Empleado implements java.io.Serializable {
     public Integer getIdEmpleado() { return this.idEmpleado;}
     public void setIdEmpleado(Integer v) { this.idEmpleado = v; }
     
-    public String getNombre() { return this.nombre;}
-    public void setNombre(String v) { this.nombre = v; }
+    public Usuario getUsuario(){ return this.usuario ; }
+    public void setUsuario(Usuario x){ this.usuario = x; }
     
-    public String getApellidoPaterno() { return this.apellidoPaterno;}
-    public void setApellidoPaterno(String v) { this.apellidoPaterno = v; }
+    public Compania getCompania(){ return this.compania ; }
+    public void setCompania(Compania x){ this.compania = x; }
     
-    public String getApellidoMaterno() { return this.apellidoMaterno;}
-    public void setApellidoMaterno(String v) { this.apellidoMaterno = v; }
+    public Area getArea(){ return this.area ; }
+    public void setArea(Area x){ this.area = x; }
+    
+    public Estacion getEstacion(){ return this.estacion ; }
+    public void setEstacion(Estacion x){ this.estacion = x; }
     
     public String getTelefono() { return this.telefono;}
     public void setTelefono(String v) { this.telefono = v; }
@@ -205,18 +174,6 @@ public class Empleado implements java.io.Serializable {
     
     public Short getDirectorioSab() { return this.directorioSab;}
     public void setDirectorioSab(Short v) { this.directorioSab = v; }
-    
-    public Compania getCompania(){ return this.compania ; }
-    public void setCompania(Compania x){ this.compania = x; }
-    
-    public Usuario getUsuario(){ return this.usuario ; }
-    public void setUsuario(Usuario x){ this.usuario = x; }
-    
-    public Area getArea(){ return this.area ; }
-    public void setArea(Area x){ this.area = x; }
-    
-    public Estacion getEstacion(){ return this.estacion ; }
-    public void setEstacion(Estacion x){ this.estacion = x; }
     
     public Short getEsatus() { return this.esatus;}
     public void setEsatus(Short v) { this.esatus = v; }
@@ -228,16 +185,13 @@ public class Empleado implements java.io.Serializable {
     public int hashCode() {
         int hash = 0;
 		hash += String.valueOf(idEmpleado).hashCode();
-		hash += String.valueOf(nombre).hashCode();
-		hash += String.valueOf(apellidoPaterno).hashCode();
-		hash += String.valueOf(apellidoMaterno).hashCode();
+		hash += String.valueOf(usuario).hashCode();
+		hash += String.valueOf(compania).hashCode();
+		hash += String.valueOf(area).hashCode();
+		hash += String.valueOf(estacion).hashCode();
 		hash += String.valueOf(telefono).hashCode();
 		hash += String.valueOf(extension).hashCode();
 		hash += String.valueOf(directorioSab).hashCode();
-		hash += String.valueOf(compania).hashCode();
-		hash += String.valueOf(usuario).hashCode();
-		hash += String.valueOf(area).hashCode();
-		hash += String.valueOf(estacion).hashCode();
 		hash += String.valueOf(esatus).hashCode();
         return hash;
     }
@@ -258,16 +212,13 @@ public class Empleado implements java.io.Serializable {
         }		
 		Empleado other = (Empleado ) o;
 		if (!Objects.equals(this.idEmpleado, other.idEmpleado)) { return false; }		
-		if (!Objects.equals(this.nombre, other.nombre)) { return false; }		
-		if (!Objects.equals(this.apellidoPaterno, other.apellidoPaterno)) { return false; }		
-		if (!Objects.equals(this.apellidoMaterno, other.apellidoMaterno)) { return false; }		
+		if (!Objects.equals(this.usuario, other.usuario)) { return false; }		
+		if (!Objects.equals(this.compania, other.compania)) { return false; }		
+		if (!Objects.equals(this.area, other.area)) { return false; }		
+		if (!Objects.equals(this.estacion, other.estacion)) { return false; }		
 		if (!Objects.equals(this.telefono, other.telefono)) { return false; }		
 		if (!Objects.equals(this.extension, other.extension)) { return false; }		
 		if (!Objects.equals(this.directorioSab, other.directorioSab)) { return false; }		
-		if (!Objects.equals(this.compania, other.compania)) { return false; }		
-		if (!Objects.equals(this.usuario, other.usuario)) { return false; }		
-		if (!Objects.equals(this.area, other.area)) { return false; }		
-		if (!Objects.equals(this.estacion, other.estacion)) { return false; }		
 		if (!Objects.equals(this.esatus, other.esatus)) { return false; }		
     	return true;
     }
@@ -280,16 +231,13 @@ public class Empleado implements java.io.Serializable {
 		StringBuilder sb=new StringBuilder();
 		sb.append("Empleado{");
 		sb.append("idEmpleado" ).append("=").append(idEmpleado).append("|");
-		sb.append("nombre" ).append("=").append(nombre).append("|");
-		sb.append("apellidoPaterno" ).append("=").append(apellidoPaterno).append("|");
-		sb.append("apellidoMaterno" ).append("=").append(apellidoMaterno).append("|");
+		sb.append("usuario" ).append("=").append(usuario).append("|");
+		sb.append("compania" ).append("=").append(compania).append("|");
+		sb.append("area" ).append("=").append(area).append("|");
+		sb.append("estacion" ).append("=").append(estacion).append("|");
 		sb.append("telefono" ).append("=").append(telefono).append("|");
 		sb.append("extension" ).append("=").append(extension).append("|");
 		sb.append("directorioSab" ).append("=").append(directorioSab).append("|");
-		sb.append("compania" ).append("=").append(compania).append("|");
-		sb.append("usuario" ).append("=").append(usuario).append("|");
-		sb.append("area" ).append("=").append(area).append("|");
-		sb.append("estacion" ).append("=").append(estacion).append("|");
 		sb.append("esatus" ).append("=").append(esatus).append("|");
 		sb.append("serialVersionUID=").append(serialVersionUID).append("}");
 		return sb.toString();

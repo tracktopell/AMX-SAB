@@ -15,7 +15,7 @@ import org.json.JSONObject;
  *
  * @author Tracktopell::jpa-builder @see  https://github.com/tracktopell/jpa-builder
  * @version 1.14.1
- * @date 2017/10/03 13:52
+ * @date 2017/10/04 07:27
  */
 
 public class PerfilDTO implements java.io.Serializable {
@@ -23,19 +23,14 @@ public class PerfilDTO implements java.io.Serializable {
 
     
     /**
-    * id perfil
+    * perfil
     */
-    private Integer idPerfil;
+    private String perfil;
     
     /**
-    * nombre
+    * descripcion
     */
-    private String nombre;
-    
-    /**
-    * estatus
-    */
-    private Short estatus;
+    private String descripcion;
 
     /** 
      * Default Constructor
@@ -46,31 +41,24 @@ public class PerfilDTO implements java.io.Serializable {
     /**
      * Getters and Setters
      */
-    public Integer getIdPerfil() {
-        return this.idPerfil;
+    public String getPerfil() {
+        return this.perfil;
     }
-    public void setIdPerfil(Integer v) {
-        this.idPerfil = v;
+    public void setPerfil(String v) {
+        this.perfil = v;
     }
-    public String getNombre() {
-        return this.nombre;
+    public String getDescripcion() {
+        return this.descripcion;
     }
-    public void setNombre(String v) {
-        this.nombre = v;
-    }
-    public Short getEstatus() {
-        return this.estatus;
-    }
-    public void setEstatus(Short v) {
-        this.estatus = v;
+    public void setDescripcion(String v) {
+        this.descripcion = v;
     }
 
     @Override
     public int hashCode() {
         int hash = 0;
-		hash += String.valueOf(idPerfil).hashCode();
-		hash += String.valueOf(nombre).hashCode();
-		hash += String.valueOf(estatus).hashCode();
+		hash += String.valueOf(perfil).hashCode();
+		hash += String.valueOf(descripcion).hashCode();
         return hash;
     }
 
@@ -89,9 +77,8 @@ public class PerfilDTO implements java.io.Serializable {
             return false;
         }		
 		PerfilDTO  other = (PerfilDTO ) o;
-		if (!Objects.equals(this.idPerfil, other.idPerfil)) { return false; }		
-		if (!Objects.equals(this.nombre, other.nombre)) { return false; }		
-		if (!Objects.equals(this.estatus, other.estatus)) { return false; }		
+		if (!Objects.equals(this.perfil, other.perfil)) { return false; }		
+		if (!Objects.equals(this.descripcion, other.descripcion)) { return false; }		
     	return true;
     }
 
@@ -101,9 +88,8 @@ public class PerfilDTO implements java.io.Serializable {
     @Override
     public String toString() {
 		JSONObject jsonObj = new JSONObject();
-		jsonObj.put("idPerfil", this.idPerfil);
-		jsonObj.put("nombre", this.nombre);
-		jsonObj.put("estatus", this.estatus);
+		jsonObj.put("perfil", this.perfil);
+		jsonObj.put("descripcion", this.descripcion);
 		return jsonObj.toString();
     }
 
@@ -111,9 +97,8 @@ public class PerfilDTO implements java.io.Serializable {
 		PerfilDTO x = null;
 		JSONObject jObj = new JSONObject(json);
 		
-		x.idPerfil = (jObj.getInt("idPerfil"));
-		x.nombre = (jObj.getString("nombre"));
-		x.estatus = (short)(jObj.getInt("estatus"));
+		x.perfil = (jObj.getString("perfil"));
+		x.descripcion = (jObj.getString("descripcion"));
 		
 		return x;
 	}
