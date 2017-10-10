@@ -18,31 +18,35 @@
     </h:head>
 
     <h:body styleClass="login-body">
+		<form method="POST" action="j_security_check">
         <div class="card login-panel ui-fluid">
             <div class="ui-g">
                 <div class="ui-g-12">
-                    <p:graphicImage name="images/logo-ultima.svg" library="ultima-layout" />
+                    <p:graphicImage name="images/AMX-SAB_logo1_mini.png" library="ultima-layout" />
                 </div>
                 <div class="ui-g-12">
                     <h:panelGroup styleClass="md-inputfield">
-                        <p:inputText />
-                        <label>Username</label>
+                        <input type="text" name="j_username" value="" size="30" />
+                        <label>email</label>
                     </h:panelGroup>
                 </div>
                 <div class="ui-g-12">
                     <h:panelGroup styleClass="md-inputfield">
-                        <p:password />
+                        <input type="password" name="j_password" value="" size="30"/>
                         <label>Password</label>
                     </h:panelGroup>
                 </div>
                 <div class="ui-g-12">
+					<input type="submit" value="ENTRAR" />
+					<!--
                     <p:button outcome="/dashboard" value="Sign In" icon="ui-icon-person" />
                     <p:button outcome="/dashboard" value="Forgot Password" icon="ui-icon-help" styleClass="secondary"/>
+					-->
                 </div>
             </div>
         </div>
-        
-        <div class="login-footer">PrimeFaces Ultima</div>
+        </form>
+        <div class="login-footer">AEROMEXICO :: Servicios A Bordo</div>
         
         <h:outputStylesheet name="css/ripple.css" library="ultima-layout" />
         <h:outputStylesheet name="css/layout-#{guestPreferences.theme}.css" library="ultima-layout" />
