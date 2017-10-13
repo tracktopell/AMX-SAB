@@ -4,7 +4,7 @@
 	<parent>
         <groupId>com.aeromexico.sab.backend</groupId>
 		<artifactId>AMX-SAB-BackEnd</artifactId>
-		<version>1.0</version>
+		<version>2.0.1</version>
     </parent>
 	
     <artifactId>AMX-SAB-BackEnd-ear</artifactId>
@@ -44,13 +44,13 @@
         <dependency>
 			<groupId>com.aeromexico.sab.backend</groupId>
 			<artifactId>AMX-SAB-BackEnd-ejb</artifactId>
-			<version>1.0</version>
+			<version>2.0.1</version>
 			<type>ejb</type>
         </dependency>
         <dependency>
 			<groupId>com.aeromexico.sab.backend</groupId>
 			<artifactId>AMX-SAB-BackEnd-ws</artifactId>
-			<version>1.0</version>
+			<version>2.0.1</version>
 			<type>war</type>
         </dependency>
     </dependencies>

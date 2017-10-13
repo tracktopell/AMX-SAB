@@ -4,7 +4,7 @@
 	<parent>
         <groupId>com.aeromexico.sab</groupId>
 		<artifactId>AMX-SAB</artifactId>
-		<version>1.0</version>
+		<version>2.0.1</version>
     </parent>
 
 	<artifactId>AMX-SAB-API</artifactId>
@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.aeromexico.sab</groupId>
             <artifactId>AMX-SAB-DTO</artifactId>
-            <version>1.0</version>
+            <version>2.0.1</version>
         </dependency>
     </dependencies>
 
